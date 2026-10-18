@@ -234,13 +234,17 @@ for (const d of lastmods) if (!/^\d{4}-\d{2}-\d{2}(T[\d:.]+Z)?$/.test(d)) warn("
 const imgLocs = [...sitemap.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)].map((m) => m[1]);
 for (const i of imgLocs) if (!fs.existsSync(path.join(out, new URL(i).pathname))) warn("sitemap.xml", `image not found: ${i}`);
 const robots = fs.readFileSync(path.join(out, "robots.txt"), "utf8");
-if (!/Sitemap: https:\/\/ironbuddy\.fit\/sitemap\.xml/.test(robots)) warn("robots.txt", "sitemap line missing");
+if (!robots.includes(`Sitemap: ${ORIGIN}/sitemap.xml`)) warn("robots.txt", "sitemap line missing");
 if (/Disallow:\s*\//.test(robots)) warn("robots.txt", "Disallow found");
 if (/^Host:/im.test(robots)) warn("robots.txt", "Host directive still present");
 const llmsPath = path.join(out, "llms.txt");
 if (!fs.existsSync(llmsPath)) warn("llms.txt", "missing");
 const llms = fs.existsSync(llmsPath) ? fs.readFileSync(llmsPath, "utf8") : "";
-for (const m of llms.matchAll(/\]\((https:\/\/ironbuddy\.fit[^)]*)\)/g)) { const u = new URL(m[1]).pathname; if (!known.has(u)) warn("llms.txt", `link to missing page ${u}`); }
+for (const m of llms.matchAll(/\]\((https:\/\/[^)]*)\)/g)) {
+  if (!m[1].startsWith(ORIGIN)) continue;
+  const u = new URL(m[1]).pathname;
+  if (!known.has(u)) warn("llms.txt", `link to missing page ${u}`);
+}
 const manifest = JSON.parse(fs.readFileSync(path.join(out, "manifest.webmanifest"), "utf8"));
 for (const ic of manifest.icons) if (!fs.existsSync(path.join(out, ic.src))) warn("manifest", `icon missing ${ic.src}`);
 const pressZip = path.join(out, "press", "ironbuddy-press-kit.zip");
