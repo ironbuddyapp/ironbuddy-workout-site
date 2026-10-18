@@ -13,6 +13,14 @@ export const metadata: Metadata = pageMetadata(pages.whatsNew);
 /** Newest first. Keep in step with the app's What's New notes (src/lib/whats-new.ts in the app). */
 const releases: Array<{ version: string; date: string; title: string; notes: React.ReactNode[] }> = [
   {
+    version: "2.0.9",
+    date: "18 October 2026",
+    title: "A new home for the privacy policy",
+    notes: [
+      <>Settings → Privacy Policy opens the policy at its new address, workout.ironbuddy.fit/privacy. The old address forwards there.</>,
+    ],
+  },
+  {
     version: "2.0.8",
     date: "16 October 2026",
     title: "A level on every split",

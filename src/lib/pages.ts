@@ -39,9 +39,9 @@ const RELEASE_206 = "2026-10-15";
 /** 2.0.8: preset levels, the dashboard button, Edit week icon. Set to the day it goes live. */
 /** The product's full name, IronBuddy: Workout Tracker, now shows where the app is named. */
 const FULL_NAME = "2026-10-17";
-/** The privacy policy now covers the iPhone app. */
-const PRIVACY_IPHONE = "2026-10-17";
 const RELEASE_208 = "2026-10-16";
+/** 2.0.9 and the move to workout.ironbuddy.fit: the privacy policy names the new address, What's New lists 2.0.9. */
+const SUBDOMAIN = "2026-10-18";
 /** The new promo video (YouTube) replaced the old one: Home, Features and the Press kit show it. */
 const PROMO_VIDEO = "2026-10-16";
 const SPLIT_GUIDES = "2026-10-14";
@@ -209,7 +209,7 @@ export const pages = {
       "Every IronBuddy update, newest first: Home built around today and Calendar look in 2.0.6, the new Home and Muscle Balance in 2.0, and each release in between.",
     summary: "Release notes for every IronBuddy version, newest first.",
     published: RELEASE_203,
-    modified: RELEASE_208,
+    modified: SUBDOMAIN,
   },
   offline: {
     path: "/offline-workout-tracker/",
@@ -543,8 +543,9 @@ export const pages = {
     summary: "How IronBuddy handles data, backups, permissions and purchases.",
     published: LAUNCH,
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
-    // it adds the website-only GoatCounter note, which is not part of the app policy.
-    modified: PRIVACY_IPHONE,
+    // it adds the website-only GoatCounter note, which is not part of the app policy. Moved to workout.ironbuddy.fit
+    // on 18 October 2026.
+    modified: SUBDOMAIN,
   },
 } as const satisfies Record<string, PageDef>;
 
