@@ -1,0 +1,58 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      # From v4 on, hidden files (dotfiles) are left out of the artifact. The only one in out/ is .nojekyll,
+      # which is not needed: this site is deployed by this workflow, so Jekyll never runs.
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+      # Tells IndexNow search engines (Bing and the engines it feeds, Yandex, and others) that the pages
+      # changed, so they re-crawl sooner. Google does not use IndexNow. The key is public by design: it is
+      # served at https://ironbuddy.fit/<key>.txt from public/. This step never fails the deploy.
+      - name: Notify IndexNow
+        continue-on-error: true
+        env:
+          SITE: https://ironbuddy.fit
+          INDEXNOW_KEY: e7d79b4fbfa5bc730138f9a84daab971
+        run: |
+          urls=$(curl -fsSL "$SITE/sitemap.xml?deploy=$GITHUB_SHA" | grep -o '<loc>[^<]*</loc>' | sed -e 's#<loc>##' -e 's#</loc>##' | jq -R . | jq -sc .)
+          echo "Submitting $(echo "$urls" | jq length) URLs"
+          body=$(jq -nc --arg host "${SITE#https://}" --arg key "$INDEXNOW_KEY" --arg loc "$SITE/$INDEXNOW_KEY.txt" --argjson urls "$urls" '{host: $host, key: $key, keyLocation: $loc, urlList: $urls}')
+          status=$(curl -s -o /dev/null -w '%{http_code}' -X POST https://api.indexnow.org/indexnow -H 'Content-Type: application/json; charset=utf-8' -d "$body")
+          echo "IndexNow responded with HTTP $status"
+          case "$status" in 200|202) ;; *) echo "::warning::IndexNow returned HTTP $status" ;; esac
