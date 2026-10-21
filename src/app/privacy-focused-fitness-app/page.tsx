@@ -39,7 +39,7 @@ export default function PrivacyFocusedPage() {
         eyebrow="Privacy-focused fitness app"
         title="A privacy-focused fitness app that stores your data on your phone"
         updated={pages.privacyFocused.modified}
-        lead="IronBuddy is built so your training log belongs to you. There is no account, no IronBuddy server holding your workouts, no ads, and no third-party analytics SDKs. Your sets, body metrics, and notes are stored on your device."
+        lead="IronBuddy is a privacy-focused fitness app, built so your training log belongs to you. There is no account, no IronBuddy server holding your workouts, no ads, and no third-party analytics SDKs. Your sets, body metrics, and notes are stored on your device."
       >
         <HeroCta />
       </PageHero>

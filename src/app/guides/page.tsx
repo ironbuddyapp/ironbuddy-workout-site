@@ -45,7 +45,7 @@ export default function GuidesPage() {
         eyebrow="Guides"
         title="Workout tracking guides"
         updated={pages.guides.modified}
-        lead="Practical, plain-language guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to plan and track the common training splits, from a three-day full body plan to PHAT and the Arnold split."
+        lead="Practical, plain-language workout tracking guides for lifters who log their training: how to track progressive overload, what to record in a workout log, and how to plan and track the common training splits, from a three-day full body plan to PHAT and the Arnold split."
       />
 
       <PageBody>

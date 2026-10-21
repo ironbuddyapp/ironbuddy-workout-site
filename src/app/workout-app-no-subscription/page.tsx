@@ -45,9 +45,9 @@ export default function NoSubscriptionPage() {
       <PageHero
         trail={crumbs}
         eyebrow="No subscription, no ads"
-        title="A workout tracker app with no subscription and no ads"
+        title="A workout app with no subscription and no ads"
         updated={pages.noSubscription.modified}
-        lead={`IronBuddy has no subscription and no ads. It is free to download with a free trial (currently ${trial}). After the trial, a one-time in-app purchase through Google Play is required to keep logging and editing.`}
+        lead={`IronBuddy is a workout app with no subscription and no ads. It is free to download with a free trial (currently ${trial}). After the trial, a one-time in-app purchase through Google Play is required to keep logging and editing.`}
       >
         <HeroCta />
       </PageHero>

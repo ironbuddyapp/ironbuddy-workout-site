@@ -116,9 +116,9 @@ export default function PhulGuidePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Guide · training splits"
-        title="PHUL: the four-day Power Hypertrophy Upper Lower split"
+        title="The PHUL workout: a four-day Power Hypertrophy Upper Lower split"
         updated={pages.phul.modified}
-        lead="PHUL stands for Power Hypertrophy Upper Lower. It is a four-day split with two upper-body and two lower-body sessions, where the first pair of the week is heavier and lower-rep and the second pair lighter and higher-rep. You get strength work and size work in the same week, and every muscle twice."
+        lead="The PHUL workout, short for Power Hypertrophy Upper Lower, is a four-day split with two upper-body and two lower-body sessions, where the first pair of the week is heavier and lower-rep and the second pair lighter and higher-rep. You get strength work and size work in the same week, and every muscle twice."
       />
 
       <PageBody>

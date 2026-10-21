@@ -27,9 +27,9 @@ export default function LogWorkoutsGuidePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Guide"
-        title="How to log your workouts: what to track and why"
+        title="How to log workouts: what to track and why"
         updated={pages.logWorkouts.modified}
-        lead="A useful workout log records the few numbers that let you repeat and improve a session: what you did, how heavy it was, and how many reps you got. Anything beyond that is optional, and the best log is the one you actually keep."
+        lead="How to log workouts comes down to this: a useful workout log records the few numbers that let you repeat and improve a session: what you did, how heavy it was, and how many reps you got. Anything beyond that is optional, and the best log is the one you actually keep."
       />
 
       <PageBody>

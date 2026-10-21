@@ -42,9 +42,9 @@ export default function OfflineWorkoutTrackerPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Offline workout app"
-        title="Offline workout app for Android: no signal, no Wi-Fi, no login"
+        title="Offline workout tracker for Android: no signal, no Wi-Fi, no login"
         updated={pages.offline.modified}
-        lead="IronBuddy is an offline-first workout tracker for Android. You can log sets, reps, and weight, review your history, and browse the exercise library with no signal, no Wi-Fi, and no login, because your training log is stored on your phone rather than on a server."
+        lead="IronBuddy is an offline workout tracker for Android, built offline-first. You can log sets, reps, and weight, review your history, and browse the exercise library with no signal, no Wi-Fi, and no login, because your training log is stored on your phone rather than on a server."
       >
         <HeroCta />
       </PageHero>

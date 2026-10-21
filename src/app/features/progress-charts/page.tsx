@@ -43,9 +43,9 @@ export default function ProgressChartsPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Progress charts"
-        title="Progressive overload tracking: best weight, 1RM, volume and reps"
+        title="Strength progress charts: best weight, 1RM, volume and reps"
         updated={pages.progressCharts.modified}
-        lead="The Progress tab turns your log into charts you can read at a glance: a headline number, how much it changed over the range, and a clean line under it. Three views cover your whole training: Workouts for volume, Exercises for every lift you track, and Body for weight and body fat."
+        lead="The Progress tab turns your log into strength progress charts you can read at a glance: a headline number, how much it changed over the range, and a clean line under it. Three views cover your whole training: Workouts for volume, Exercises for every lift you track, and Body for weight and body fat."
       >
         <HeroCta />
       </PageHero>

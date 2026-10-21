@@ -54,8 +54,8 @@ export const alternatives = {
   strong: {
     name: "Strong",
     page: pages.strongAlternative,
-    heading: "Looking for a Strong alternative? Track your strength offline with IronBuddy",
-    lead: "If the numbers you care about are your 1RM (one-rep max), calculated with the Epley formula, your training volume and your personal records, IronBuddy charts all three on your Android phone, with no connection, no account, no ads and no subscription.",
+    heading: "Looking for a Strong app alternative? Track your strength offline with IronBuddy",
+    lead: "If you want a Strong app alternative and the numbers you care about are your 1RM (one-rep max), calculated with the Epley formula, your training volume and your personal records, IronBuddy charts all three on your Android phone, with no connection, no account, no ads and no subscription.",
     focus: {
       id: "tracking-strength",
       title: "How IronBuddy tracks your strength",
@@ -137,7 +137,7 @@ export const alternatives = {
     name: "Hevy",
     page: pages.hevyAlternative,
     heading: "Looking for a Hevy alternative? Plan your training week offline with IronBuddy",
-    lead: "IronBuddy is built around training splits. Pick one of 10 built-in splits or shape your own, and your whole week appears on the home screen of your Android phone, ready to log offline, with no account, no ads and no subscription.",
+    lead: "As a Hevy alternative, IronBuddy is built around training splits. Pick one of 10 built-in splits or shape your own, and your whole week appears on the home screen of your Android phone, ready to log offline, with no account, no ads and no subscription.",
     focus: {
       id: "planning",
       title: "How IronBuddy plans your week",
@@ -210,7 +210,7 @@ export const alternatives = {
     name: "FitNotes",
     page: pages.fitnotesAlternative,
     heading: "Looking for a FitNotes alternative? Keep an offline gym log with automatic backups",
-    lead: "An offline gym log is only as safe as its backups. IronBuddy keeps your training data on your Android phone and saves an always-current backup file you can copy anywhere, with no account, no ads and no subscription.",
+    lead: "An offline gym log is only as safe as its backups. As a FitNotes alternative, IronBuddy keeps your training data on your Android phone and saves an always-current backup file you can copy anywhere, with no account, no ads and no subscription.",
     focus: {
       id: "backups",
       title: "How IronBuddy keeps your log safe",
@@ -289,7 +289,7 @@ export const alternatives = {
     name: "JEFIT",
     page: pages.jefitAlternative,
     heading: "Looking for a JEFIT alternative? Browse 800+ exercises offline with IronBuddy",
-    lead: "IronBuddy's exercise library has more than 800 exercises, each with a demonstration, and you can search and filter it on your Android phone with no internet connection. There is no account, no ads and no subscription.",
+    lead: "As a JEFIT alternative, IronBuddy's exercise library has more than 800 exercises, each with a demonstration, and you can search and filter it on your Android phone with no internet connection. There is no account, no ads and no subscription.",
     focus: {
       id: "library",
       title: "How IronBuddy's exercise library works",
@@ -367,7 +367,7 @@ export const alternatives = {
     name: "Boostcamp",
     page: pages.boostcampAlternative,
     heading: "Looking for a Boostcamp alternative? Log every set offline with IronBuddy",
-    lead: "IronBuddy is built for logging at the gym: reps and weight for every set, set techniques like drop sets and supersets, and notes, on your Android phone with no connection, no account, no ads and no subscription.",
+    lead: "As a Boostcamp alternative, IronBuddy is built for logging at the gym: reps and weight for every set, set techniques like drop sets and supersets, and notes, on your Android phone with no connection, no account, no ads and no subscription.",
     focus: {
       id: "logging",
       title: "How IronBuddy logs your sets",
@@ -457,7 +457,7 @@ export const alternatives = {
     name: "Caliber",
     page: pages.caliberAlternative,
     heading: "Looking for a Caliber alternative? Track your lifts and body weight offline with IronBuddy",
-    lead: "IronBuddy keeps your strength training and your body measurements in one place: log your lifts, add your body weight and body fat % whenever you like, and see both charted on your Android phone with no connection, no account, no ads and no subscription.",
+    lead: "As a Caliber alternative, IronBuddy keeps your strength training and your body measurements in one place: log your lifts, add your body weight and body fat % whenever you like, and see both charted on your Android phone with no connection, no account, no ads and no subscription.",
     focus: {
       id: "body-tracking",
       title: "How IronBuddy tracks body weight and body fat",

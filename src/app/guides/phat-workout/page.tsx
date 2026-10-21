@@ -127,9 +127,9 @@ export default function PhatGuidePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Guide · training splits"
-        title="PHAT: the five-day Power Hypertrophy Adaptive Training split"
+        title="The PHAT workout: five-day Power Hypertrophy Adaptive Training"
         updated={pages.phat.modified}
-        lead="PHAT stands for Power Hypertrophy Adaptive Training, a five-day split by Layne Norton. Two heavy days early in the week train the upper and lower body for strength; three higher-rep days later in the week train back and shoulders, legs, and chest and arms for size. It is demanding, and for people who recover from it, it covers everything."
+        lead="The PHAT workout, short for Power Hypertrophy Adaptive Training, is a five-day split by Layne Norton. Two heavy days early in the week train the upper and lower body for strength; three higher-rep days later in the week train back and shoulders, legs, and chest and arms for size. It is demanding, and for people who recover from it, it covers everything."
       />
 
       <PageBody>

@@ -26,24 +26,19 @@ export type PageDef = {
   /** ISO dates. Bump `modified` whenever the page content changes; the sitemap and JSON-LD read it. */
   published: string;
   modified: string;
+  /**
+   * The search this page targets, from keyword-map.md (owner-approved). `main` must appear in the title, H1, meta
+   * description and first paragraph, and no two pages share it (seo:check). `null`: a navigational page with no target.
+   */
+  keywords: { main: string; supporting: readonly string[] } | null;
   /** Extra image paths to list in the sitemap for image discovery. */
   images?: readonly string[];
 };
 
-/** IronBuddy 2.0: new Home cards, Muscle Balance, workout summary, share cards, new trial wording. */
-const RELEASE_20 = "2026-10-13";
 /** IronBuddy 2.0.3: one page per feature, What's new, the easier Customise Home. */
 const RELEASE_203 = "2026-10-14";
-/** IronBuddy 2.0.6: the calendar around today, Calendar look, widgets. Set to the Play release day before deploying. */
-const RELEASE_206 = "2026-10-15";
 /** 2.0.8: preset levels, the dashboard button, Edit week icon. Set to the day it goes live. */
-/** The product's full name, IronBuddy: Workout Tracker, now shows where the app is named. */
-const FULL_NAME = "2026-10-17";
 const RELEASE_208 = "2026-10-16";
-/** 2.0.9 and the move to workout.ironbuddy.fit: the privacy policy names the new address, What's New lists 2.0.9. */
-const SUBDOMAIN = "2026-10-18";
-/** The new promo video (YouTube) replaced the old one: Home, Features and the Press kit show it. */
-const PROMO_VIDEO = "2026-10-16";
 const SPLIT_GUIDES = "2026-10-14";
 const TRAINING_GUIDES = "2026-10-14";
 const LAUNCH = "2026-09-17";
@@ -80,6 +75,9 @@ const screenshotImages = [
   "/screenshots/ironbuddy-customise-sizes.webp",
 ] as const;
 
+/** Keyword map applied: titles, H1s, descriptions and intros name each page's main keyword. */
+const KEYWORD_MAP = "2026-10-21";
+
 export const pages = {
   home: {
     path: "/",
@@ -88,44 +86,48 @@ export const pages = {
     title: siteConfig.title,
     description: siteConfig.description,
     summary: "Offline Android workout tracker with no account, ads, or subscription.",
+    keywords: { main: "workout tracker app", supporting: ["gym log app", "IronBuddy: Workout Tracker"] },
     published: LAUNCH,
-    modified: FULL_NAME,
+    modified: KEYWORD_MAP,
     images: screenshotImages,
   },
   features: {
     path: "/features/",
     kind: "product",
     label: "Features",
-    title: "Workout Log, Splits, Charts & Customizable Home",
+    title: "Workout Tracker Features: Log, Splits & Charts",
     description:
-      "IronBuddy's features: offline workout log for sets, reps and weight, ten training splits, Muscle Balance, progress charts, share cards and a customizable Home.",
+      "IronBuddy's workout tracker features: an offline log for sets, reps and weight, ten splits, Muscle Balance, progress charts, share cards and a custom Home.",
     summary: "Workout logging, training splits, Muscle Balance, progress charts, share cards, the exercise library and a customizable Home.",
+    keywords: { main: "workout tracker features", supporting: ["workout log", "training splits", "progress charts"] },
     published: UPDATED,
-    modified: RELEASE_208,
+    modified: KEYWORD_MAP,
     images: screenshotImages,
   },
   customizableHome: {
     path: "/features/customizable-home/",
     kind: "product",
     label: "Customizable Home",
-    title: "Customizable Home for Your Workout Tracker",
+    title: "Customizable Workout Home Screen and Widgets",
     description:
-      "Arrange IronBuddy's Home your way: pick your calendar look, then drag, resize, add and remove widgets for charts, records and Muscle Balance. Works offline.",
+      "IronBuddy's customizable workout home screen: pick your calendar look, then drag, resize, add and remove widgets for charts, records and Muscle Balance.",
     summary: "Pick your calendar look, and drag, resize, add and remove the widgets on IronBuddy's Home, on three pages that fit your screen.",
+    keywords: { main: "customizable workout home screen", supporting: ["workout calendar", "widget"] },
     published: RELEASE_203,
-    modified: RELEASE_208,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-customizable-home.webp", "/screenshots/ironbuddy-calendar-look.webp", "/screenshots/ironbuddy-customise-sizes.webp"],
   },
   muscleBalance: {
     path: "/features/muscle-balance/",
     kind: "product",
     label: "Muscle Balance",
-    title: "Muscle Balance: Weekly Sets per Muscle Group",
+    title: "Muscle Balance Tracker: Weekly Sets per Muscle",
     description:
-      "See your working sets per body area this week against last week, the areas you skipped, and every muscle you trained on a front and back body map.",
+      "The Muscle Balance tracker shows your working sets per body area this week against last week, the areas you skipped, and every muscle you trained on a body map.",
     summary: "Working sets per body area this week against last week, what you skipped, and the muscles you trained on a body map.",
+    keywords: { main: "muscle balance tracker", supporting: ["sets per muscle group", "weekly volume"] },
     published: RELEASE_203,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-muscle-balance.webp", "/screenshots/ironbuddy-muscle-balance-explained.webp"],
   },
   workoutSummary: {
@@ -134,58 +136,63 @@ export const pages = {
     label: "Workout summary",
     title: "Workout Summary: Compare With Last Time",
     description:
-      "After every workout IronBuddy shows each exercise against your last session (+2.5 kg, +2 reps), marks new personal records and sums the sets per muscle.",
+      "IronBuddy's workout summary shows each exercise against your last session (+2.5 kg, +2 reps), marks new personal records and sums the sets per muscle.",
     summary: "Every exercise against your last session, new records marked, the muscles worked and volume per muscle.",
+    keywords: { main: "workout summary", supporting: ["compare with last time", "volume"] },
     published: RELEASE_203,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-workout-summary.webp"],
   },
   progressCharts: {
     path: "/features/progress-charts/",
     kind: "product",
     label: "Progress charts",
-    title: "Progress Charts: Best Weight, 1RM & Volume",
+    title: "Strength Progress Charts: 1RM, Weight & Volume",
     description:
-      "Charts for every exercise: best weight, estimated 1RM, weight vs reps, volume and reps, plus workout volume, body weight and body fat. Offline, on Android.",
+      "Strength progress charts for every exercise: best weight, estimated 1RM, weight vs reps, volume and reps, plus body weight and body fat. Offline, on Android.",
     summary: "Best weight, estimated 1RM, weight vs reps, volume and reps per exercise, workout volume, body weight and body fat.",
+    keywords: { main: "strength progress charts", supporting: ["estimated 1RM", "volume chart"] },
     published: RELEASE_203,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-estimated-1rm-chart.webp", "/screenshots/ironbuddy-training-volume.webp", "/screenshots/ironbuddy-personal-records.webp"],
   },
   shareCards: {
     path: "/features/share-cards/",
     kind: "product",
     label: "Share cards",
-    title: "Share Cards: Workouts, PRs & Charts as Images",
+    title: "Share Your Workout as an Image: PRs and Charts",
     description:
-      "Turn a workout, a personal record or a progress chart into an image made on your phone, then share it to Instagram or save it. Nothing is uploaded.",
+      "Share your workout as an image: turn a workout, a personal record or a progress chart into a picture made on your phone, ready to post. Nothing is uploaded.",
     summary: "A workout, a personal record or a chart as an image, made on your phone and shared or saved (full version).",
+    keywords: { main: "share your workout as an image", supporting: ["share cards", "personal record card"] },
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-share-card.webp", "/screenshots/ironbuddy-share-chart.webp"],
   },
   exerciseLibrary: {
     path: "/features/exercise-library/",
     kind: "product",
     label: "Exercise library",
-    title: "Exercise Library: 800+ Exercises, Offline",
+    title: "Offline Exercise Library: 800+ Exercises, Demos",
     description:
-      "Search 800+ exercises, filter by muscle and equipment, sort by recent, and open any exercise for its demo, your last workout, your records and target muscles.",
+      "An offline exercise library of 800+ exercises: filter by muscle and equipment, sort by recent, and open any one for its demo and your own records.",
     summary: "800+ exercises with form demos, muscle and equipment filters, and an exercise page with your last workout and records.",
+    keywords: { main: "offline exercise library", supporting: ["800+ exercises", "exercise database"] },
     published: RELEASE_203,
-    modified: RELEASE_203,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-exercise-library.webp", "/screenshots/ironbuddy-exercise-filters.webp", "/screenshots/ironbuddy-exercise-page.webp"],
   },
   trainingSplits: {
     path: "/features/training-splits/",
     kind: "product",
     label: "Training splits",
-    title: "Training Splits: 10 Presets or Your Own Plan",
+    title: "Workout Split Planner: 10 Presets or Your Own",
     description:
-      "Pick Push/Pull/Legs, Upper/Lower, Full Body, PHUL, PHAT, 5/3/1 and more, filter presets by days and level, map days to weekdays, or build your own split.",
+      "A workout split planner with Push/Pull/Legs, Upper/Lower, Full Body, PHUL, PHAT, 5/3/1 and more: filter by days and level, or build your own split.",
     summary: "Ten preset splits with rep ranges and rest times, filters by days a week and level, and your own custom splits.",
+    keywords: { main: "workout split planner", supporting: ["training splits", "presets"] },
     published: RELEASE_203,
-    modified: RELEASE_208,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-training-splits.webp", "/screenshots/ironbuddy-split-presets.webp"],
   },
   setTechniques: {
@@ -196,8 +203,9 @@ export const pages = {
     description:
       "Log drop sets, supersets, rest-pause, pyramid, back-off, myo-rep, cluster and mechanical drop sets with their own reps and weight, counted in your volume.",
     summary: "Eight set techniques logged with their own reps and weight, so every drop and every pause counts in your volume.",
+    keywords: { main: "log drop sets", supporting: ["supersets", "rest-pause"] },
     published: RELEASE_203,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-set-techniques.webp", "/screenshots/ironbuddy-workout-log.webp"],
   },
   whatsNew: {
@@ -208,30 +216,33 @@ export const pages = {
     description:
       "Every IronBuddy update, newest first: Home built around today and Calendar look in 2.0.6, the new Home and Muscle Balance in 2.0, and each release in between.",
     summary: "Release notes for every IronBuddy version, newest first.",
+    keywords: null,
     published: RELEASE_203,
-    modified: SUBDOMAIN,
+    modified: KEYWORD_MAP,
   },
   offline: {
     path: "/offline-workout-tracker/",
     kind: "product",
     label: "Offline workout app",
-    title: "Offline Workout App & Gym Log for Android",
+    title: "Offline Workout Tracker & Gym Log for Android",
     description:
-      "IronBuddy is an offline workout app for Android. Log sets and reps with no signal, Wi-Fi or account, and keep your training data on your phone. No ads.",
+      "IronBuddy is an offline workout tracker for Android. Log sets and reps with no signal, Wi-Fi or account, and keep your training data on your phone. No ads.",
     summary: "What works without a signal, what needs the internet, and how to keep an offline log safe.",
+    keywords: { main: "offline workout tracker", supporting: ["offline gym log", "without internet"] },
     published: UPDATED,
-    modified: "2026-09-28",
+    modified: KEYWORD_MAP,
   },
   noSubscription: {
     path: "/workout-app-no-subscription/",
     kind: "product",
     label: "No subscription, no ads",
-    title: "Workout Tracker App With No Subscription",
+    title: "Workout App With No Subscription and No Ads",
     description:
-      `IronBuddy is a workout app with no subscription and no ads. Try it free for ${siteConfig.freeTrialDays} days, then a one-time purchase keeps it all unlocked. Works offline, no account.`,
+      `IronBuddy is a workout app with no subscription and no ads. Try it free for ${siteConfig.freeTrialDays} days, then a one-time purchase keeps it all unlocked. Offline, no account.`,
     summary: "How the free trial and one-time purchase work, and how to check any workout app for ads and subscriptions.",
+    keywords: { main: "workout app with no subscription", supporting: ["one-time purchase", "7-day free trial"] },
     published: UPDATED,
-    modified: "2026-09-28",
+    modified: KEYWORD_MAP,
   },
   privacyFocused: {
     path: "/privacy-focused-fitness-app/",
@@ -239,21 +250,23 @@ export const pages = {
     label: "Privacy-focused fitness app",
     title: "Privacy-Focused Fitness App With Local Data",
     description:
-      "IronBuddy is a privacy-focused workout tracker: no account, no ads, no third-party analytics SDKs and no cloud sync. Your data is stored on your device.",
+      "IronBuddy is a privacy-focused fitness app: no account, no ads, no third-party analytics SDKs and no cloud sync. Your workout data is stored on your device.",
     summary: "What IronBuddy stores, where copies can exist, which permissions it uses, and how to delete your data.",
+    keywords: { main: "privacy-focused fitness app", supporting: ["no account", "local data"] },
     published: UPDATED,
-    modified: CONTACT_ADDED,
+    modified: KEYWORD_MAP,
   },
   alternatives: {
     path: "/alternatives/",
     kind: "product",
     label: "Workout app alternatives",
-    title: "Strong, Hevy, FitNotes & JEFIT Alternative",
+    title: "Workout App Alternatives: Strong, Hevy, FitNotes",
     description:
-      "Looking for a Strong, Hevy, FitNotes or JEFIT alternative? IronBuddy is an Android workout tracker with offline use, no account, no ads and no subscription.",
+      "Workout app alternatives to Strong, Hevy, FitNotes and JEFIT: IronBuddy is an Android workout tracker with offline use, no account, no ads and no subscription.",
     summary: "Who IronBuddy fits, who it does not, and a checklist for comparing any workout tracker.",
+    keywords: { main: "workout app alternatives", supporting: ["Strong alternative", "Hevy alternative"] },
     published: UPDATED,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
   },
   // One page per app people search an alternative to. Like the hub above, they state facts about IronBuddy only,
   // never about the named app (see src/lib/alternatives.tsx).
@@ -265,8 +278,9 @@ export const pages = {
     description:
       "Looking for a Strong app alternative on Android? IronBuddy tracks your 1RM, volume and PRs offline, with no account, no ads and no subscription.",
     summary: "IronBuddy for lifters coming from Strong: strength tracking, switching steps, and how to compare.",
+    keywords: { main: "Strong app alternative", supporting: ["offline", "1RM"] },
     published: ALTERNATIVES_SPLIT,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   hevyAlternative: {
     path: "/alternatives/hevy/",
@@ -276,8 +290,9 @@ export const pages = {
     description:
       "Looking for a Hevy alternative? IronBuddy plans your week with 10 built-in splits or your own, runs offline on Android, and has no account, ads or subscription.",
     summary: "IronBuddy for lifters coming from Hevy: planning splits, switching steps, and how to compare.",
+    keywords: { main: "Hevy alternative", supporting: ["offline", "split"] },
     published: ALTERNATIVES_SPLIT,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   fitnotesAlternative: {
     path: "/alternatives/fitnotes/",
@@ -287,8 +302,9 @@ export const pages = {
     description:
       "Looking for a FitNotes alternative? IronBuddy is an offline Android gym log that keeps an automatic backup file on your phone. No account, ads or subscription.",
     summary: "IronBuddy for lifters coming from FitNotes: backups and exports, switching steps, and how to compare.",
+    keywords: { main: "FitNotes alternative", supporting: ["backup", "gym log"] },
     published: ALTERNATIVES_SPLIT,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   jefitAlternative: {
     path: "/alternatives/jefit/",
@@ -298,8 +314,9 @@ export const pages = {
     description:
       "Looking for a JEFIT alternative? IronBuddy has an offline library of 800+ exercises with demos and filters, on Android, with no account, ads or subscription.",
     summary: "IronBuddy for lifters coming from JEFIT: the exercise library, switching steps, and how to compare.",
+    keywords: { main: "JEFIT alternative", supporting: ["exercise library", "offline"] },
     published: ALTERNATIVES_SPLIT,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   boostcampAlternative: {
     path: "/alternatives/boostcamp/",
@@ -309,8 +326,9 @@ export const pages = {
     description:
       "Looking for a Boostcamp alternative? IronBuddy logs every set offline, with drop sets, supersets and notes, on Android. No account, no ads, no subscription.",
     summary: "IronBuddy for lifters coming from Boostcamp: set-by-set logging, switching steps, and how to compare.",
+    keywords: { main: "Boostcamp alternative", supporting: ["program", "offline"] },
     published: MORE_ALTERNATIVES,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   caliberAlternative: {
     path: "/alternatives/caliber/",
@@ -320,19 +338,21 @@ export const pages = {
     description:
       "Looking for a Caliber alternative? IronBuddy tracks your lifts, body weight and body fat % offline on Android, with no account, no ads and no subscription.",
     summary: "IronBuddy for lifters coming from Caliber: body weight and body fat tracking, switching steps, and how to compare.",
+    keywords: { main: "Caliber alternative", supporting: ["body weight", "offline"] },
     published: MORE_ALTERNATIVES,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   comparison: {
     path: "/workout-tracker-app-comparison/",
     kind: "product",
     label: "App comparison",
-    title: "Android Workout Tracker Apps Compared: Facts",
+    title: "Workout Tracker App Comparison: Android Facts",
     description:
-      "Seven Android workout tracker apps side by side: ads label, in-app purchases, declared data collection and pricing, from Google Play and official pages.",
+      "A workout tracker app comparison of seven Android apps: ads label, in-app purchases, declared data collection and pricing, from Google Play and official pages.",
     summary: "IronBuddy and six popular Android workout trackers compared on Google Play facts and published prices, with sources and dates.",
+    keywords: { main: "workout tracker app comparison", supporting: ["android", "compared"] },
     published: COMPARISON_ADDED,
-    modified: COMPARISON_ADDED,
+    modified: KEYWORD_MAP,
   },
   faq: {
     path: "/faq/",
@@ -342,8 +362,9 @@ export const pages = {
     description:
       "Answers about IronBuddy: does it work offline, need a subscription, show ads, require an account, or store data on your phone? Plus progressive overload.",
     summary: "Answers about offline use, pricing, ads, accounts, data storage and progress tracking.",
+    keywords: null,
     published: UPDATED,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   about: {
     path: "/about/",
@@ -353,8 +374,9 @@ export const pages = {
     description:
       "IronBuddy is an Android workout tracker built on one idea: your training data belongs to you. See how it works, what it costs, and how to get in touch.",
     summary: "What IronBuddy is, how it is priced, how it handles data, and how to contact us.",
+    keywords: null,
     published: UPDATED,
-    modified: FULL_NAME,
+    modified: KEYWORD_MAP,
   },
   press: {
     path: "/press/",
@@ -364,20 +386,22 @@ export const pages = {
     description:
       "Download the IronBuddy press kit: a fact sheet, ready-to-use descriptions, the app icon and screenshots of the offline workout tracker for Android.",
     summary: "Fact sheet, ready-to-use descriptions, the app icon and screenshots for writing about IronBuddy.",
+    keywords: null,
     published: PRESS_ADDED,
-    modified: FULL_NAME,
+    modified: KEYWORD_MAP,
     images: ["/press/ironbuddy-app-icon-1024.png"],
   },
   guides: {
     path: "/guides/",
     kind: "guides",
     label: "Guides",
-    title: "Workout Tracking & Progressive Overload Guides",
+    title: "Workout Tracking Guides: Overload, Logs, Splits",
     description:
-      "Practical guides for lifters who log their training: progressive overload, what to record in a gym log, and how to run PPL, Upper Lower, PHUL, PHAT and more.",
+      "Workout tracking guides for lifters who log their training: progressive overload, what to record in a gym log, and how to run PPL, Upper Lower, PHUL and PHAT.",
     summary: "Plain-language guides to progressive overload, workout logging and training splits.",
+    keywords: { main: "workout tracking guides", supporting: ["progressive overload", "workout split"] },
     published: UPDATED,
-    modified: PPL_ADDED,
+    modified: KEYWORD_MAP,
   },
   progressiveOverload: {
     path: "/guides/how-to-track-progressive-overload/",
@@ -387,19 +411,21 @@ export const pages = {
     description:
       "Learn how to track progressive overload with sets, reps, weight and 1RM. Includes a double progression example and a simple weekly review routine.",
     summary: "A simple method for tracking progressive overload with sets, reps, weight, volume and 1RM.",
+    keywords: { main: "how to track progressive overload", supporting: ["progressive overload log"] },
     published: UPDATED,
-    modified: RELEASE_20,
+    modified: KEYWORD_MAP,
   },
   logWorkouts: {
     path: "/guides/how-to-log-workouts/",
     kind: "guide",
     label: "How to log your workouts",
-    title: "How to Log Your Workouts: What to Track and Why",
+    title: "How to Log Workouts: What to Track and Why",
     description:
-      "A practical guide to logging gym workouts: the few numbers worth recording, how to stay consistent, and how to review it so your training keeps improving.",
+      "How to log workouts at the gym: the few numbers worth recording, how to stay consistent, and how to review your log so your training keeps improving.",
     summary: "The numbers worth recording in a gym log, and how to keep the habit going.",
+    keywords: { main: "how to log workouts", supporting: ["best way to log workouts", "workout log"] },
     published: UPDATED,
-    modified: PPL_ADDED,
+    modified: KEYWORD_MAP,
   },
   pushPullLegs: {
     path: "/guides/push-pull-legs-split/",
@@ -409,6 +435,7 @@ export const pages = {
     description:
       "How to run a Push Pull Legs split: 3-day and 6-day weekly layouts, which lifts go on each day, and how to log and progress a PPL workout routine.",
     summary: "Three-day and six-day Push Pull Legs layouts, what goes on each day, and how to track a PPL split.",
+    keywords: { main: "push pull legs split", supporting: ["PPL", "6-day"] },
     published: PPL_ADDED,
     modified: PPL_ADDED,
   },
@@ -420,6 +447,7 @@ export const pages = {
     description:
       "How to run a four-day Upper Lower split: two upper and two lower sessions a week, the exercises on each day, how to lay out the week, and how to track it.",
     summary: "Two upper and two lower sessions a week: what goes on each day, weekly layouts, and how to track an Upper Lower split.",
+    keywords: { main: "upper lower split", supporting: ["4-day", "upper/lower"] },
     published: SPLIT_GUIDES,
     modified: RELEASE_208,
   },
@@ -429,10 +457,11 @@ export const pages = {
     label: "Full body workout, 3 days a week",
     title: "Full Body Workout 3 Days a Week: Plan & Track It",
     description:
-      "A three-day full body workout plan: three sessions that each train the whole body, the exercises on each one, why it suits beginners, and how to track progress.",
+      "A full body workout 3 days a week: three sessions that each train the whole body, the exercises on each, why it suits beginners, and how to track progress.",
     summary: "Three full-body sessions a week: the exercises on each day, why it suits beginners, and how to track it.",
+    keywords: { main: "full body workout 3 days a week", supporting: ["full body", "beginner"] },
     published: SPLIT_GUIDES,
-    modified: RELEASE_208,
+    modified: KEYWORD_MAP,
   },
   phul: {
     path: "/guides/phul-workout/",
@@ -440,10 +469,11 @@ export const pages = {
     label: "PHUL split",
     title: "PHUL Workout Split: 4 Days, Power + Hypertrophy",
     description:
-      "PHUL explained: a four-day upper/lower split with two power days and two hypertrophy days. The exercises on each day, who it suits, and how to log and track it.",
+      "The PHUL workout explained: a four-day upper/lower split with two power and two hypertrophy days, the exercises on each day, who it suits, and how to track it.",
     summary: "The four-day Power Hypertrophy Upper Lower split: what each day trains, who it suits, and how to run and track it.",
+    keywords: { main: "PHUL workout", supporting: ["PHUL program", "PHUL 4 day split", "PHUL progression"] },
     published: SPLIT_GUIDES,
-    modified: RELEASE_208,
+    modified: KEYWORD_MAP,
   },
   phat: {
     path: "/guides/phat-workout/",
@@ -451,10 +481,11 @@ export const pages = {
     label: "PHAT split",
     title: "PHAT Workout Split: 5 Days, Power + Hypertrophy",
     description:
-      "PHAT explained: the five-day Power Hypertrophy Adaptive Training split, what each day trains, who it suits, how it compares with PHUL, and how to log it.",
+      "The PHAT workout explained: Layne Norton's five-day Power Hypertrophy Adaptive Training split, what each day trains, who it suits, and how to log it.",
     summary: "The five-day Power Hypertrophy Adaptive Training split: what each day trains, who it suits, and how to track it.",
+    keywords: { main: "PHAT workout", supporting: ["Layne Norton", "PHAT routine"] },
     published: SPLIT_GUIDES,
-    modified: SPLIT_GUIDES,
+    modified: KEYWORD_MAP,
   },
   broSplit: {
     path: "/guides/bro-split/",
@@ -464,6 +495,7 @@ export const pages = {
     description:
       "The bro split explained: one body part a day, Monday to Friday. What each day trains, who it suits, its trade-offs, and how to log and progress it.",
     summary: "One body part a day, Monday to Friday: what each day trains, the trade-offs, and how to track a bro split.",
+    keywords: { main: "bro split", supporting: ["bro split workout", "5-day bro split"] },
     published: SPLIT_GUIDES,
     modified: SPLIT_GUIDES,
   },
@@ -475,6 +507,7 @@ export const pages = {
     description:
       "The Arnold split explained: chest and back, shoulders and arms, then legs, each twice a week. The exercises on each day, who it suits, and how to track it.",
     summary: "Chest and back, shoulders and arms, legs, each twice a week: what goes on each day and how to track the Arnold split.",
+    keywords: { main: "Arnold split", supporting: ["Arnold split workout", "what is the Arnold split"] },
     published: SPLIT_GUIDES,
     modified: SPLIT_GUIDES,
   },
@@ -486,8 +519,9 @@ export const pages = {
     description:
       "A simplified 5/3/1 Boring But Big: three days a week, a main lift then 5×10 of the same lift. How it differs from the original, and how to run and track it.",
     summary: "A three-day take on 5/3/1 Boring But Big: a main lift then 5×10 of it, how it differs from the original, and how to track it.",
+    keywords: { main: "5/3/1 Boring But Big", supporting: ["BBB", "3-day"] },
     published: SPLIT_GUIDES,
-    modified: SPLIT_GUIDES,
+    modified: KEYWORD_MAP,
   },
   setsPerWeek: {
     path: "/guides/sets-per-muscle-group-per-week/",
@@ -495,32 +529,35 @@ export const pages = {
     label: "Sets per muscle group per week",
     title: "How Many Sets per Muscle Group per Week?",
     description:
-      "How many working sets each muscle group needs per week, what counts as a set, how to spread them across the week, and how to check your own numbers in your log.",
+      "How many sets per muscle group per week you need: what counts as a set, what the research suggests, how to spread sets over the week, and how to check your log.",
     summary: "What the research suggests for weekly sets per muscle, what counts as a set, and how to check your own week.",
+    keywords: { main: "how many sets per muscle group per week", supporting: ["sets per body part"] },
     published: TRAINING_GUIDES,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
   },
   logTechniques: {
     path: "/guides/drop-sets-supersets-rest-pause/",
     kind: "guide",
     label: "Drop sets, supersets and rest-pause",
-    title: "Drop Sets, Supersets & Rest-Pause, Explained",
+    title: "Rest-Pause Sets, Drop Sets & Supersets Explained",
     description:
       "What drop sets, supersets and rest-pause sets are, how to do each one, when they help and when they get in the way, and how to log them so your volume is right.",
     summary: "How to do drop sets, supersets and rest-pause sets, when to use them, and how to log them properly.",
+    keywords: { main: "rest-pause sets", supporting: ["drop sets", "supersets"] },
     published: TRAINING_GUIDES,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
   },
   oneRmChart: {
     path: "/guides/how-to-read-your-1rm-chart/",
     kind: "guide",
     label: "Reading your 1RM chart",
-    title: "Estimated 1RM: Reading Your One-Rep Max Chart",
+    title: "Estimated 1RM Chart: Reading Your One-Rep Max",
     description:
-      "What an estimated one-rep max is, how the Epley formula works, why the chart moves the way it does, how to pick your next weight from it, and when to doubt it.",
+      "How to read an estimated 1RM chart: what a one-rep max estimate is, how the Epley formula works, why the chart moves, and how to pick your next weight from it.",
     summary: "What an estimated 1RM is, how the Epley formula works, how to read the trend, and when the number misleads.",
+    keywords: { main: "estimated 1RM chart", supporting: ["one-rep max chart"] },
     published: TRAINING_GUIDES,
-    modified: RELEASE_206,
+    modified: KEYWORD_MAP,
   },
   contact: {
     path: "/contact/",
@@ -530,8 +567,9 @@ export const pages = {
     description:
       "Get in touch with IronBuddy for app support, feedback or privacy questions. Find our email address and what to include so we can help you faster.",
     summary: "How to reach IronBuddy for support, feedback or privacy questions, and what to include.",
+    keywords: null,
     published: CONTACT_ADDED,
-    modified: PPL_ADDED,
+    modified: KEYWORD_MAP,
   },
   privacy: {
     path: "/privacy/",
@@ -541,11 +579,12 @@ export const pages = {
     description:
       "IronBuddy's privacy policy: your workout data stays on your device. No account, no ads, no analytics SDKs; one-time purchase via Google Play or the App Store.",
     summary: "How IronBuddy handles data, backups, permissions and purchases.",
+    keywords: null,
     published: LAUNCH,
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
     // it adds the website-only GoatCounter note, which is not part of the app policy. Moved to workout.ironbuddy.fit
     // on 18 October 2026.
-    modified: SUBDOMAIN,
+    modified: KEYWORD_MAP,
   },
 } as const satisfies Record<string, PageDef>;
 

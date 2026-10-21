@@ -43,7 +43,7 @@ export default function WorkoutSummaryPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Workout summary"
-        title="See what improved since last time, after every workout"
+        title="Workout summary: see what improved since last time"
         updated={pages.workoutSummary.modified}
         lead="Progressive overload is simple to describe and easy to lose track of. IronBuddy's workout summary does the comparison for you: every exercise against the last time you did it, new personal records marked on the set that earned them, and the muscles you worked with the sets each one got."
       >

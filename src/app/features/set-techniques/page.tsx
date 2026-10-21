@@ -56,7 +56,7 @@ export default function SetTechniquesPage() {
         eyebrow="Workout logging"
         title="Log drop sets, supersets, rest-pause and more, properly"
         updated={pages.setTechniques.modified}
-        lead="Most gym logs stop at sets, reps and weight. IronBuddy logs the techniques lifters actually use, each with its own numbers: a drop set with every drop, a rest-pause set with every pause, a superset with its pairing. It all counts in your volume, your sets per muscle and your charts."
+        lead="Most gym logs stop at sets, reps and weight. IronBuddy lets you log drop sets and the other techniques lifters actually use, each with its own numbers: a drop set with every drop, a rest-pause set with every pause, a superset with its pairing. It all counts in your volume, your sets per muscle and your charts."
       >
         <HeroCta />
       </PageHero>

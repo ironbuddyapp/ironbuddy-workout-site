@@ -95,7 +95,7 @@ export default function FiveThreeOneGuidePage() {
         eyebrow="Guide · training splits"
         title="5/3/1 Boring But Big: a simple three-day version"
         updated={pages.fiveThreeOne.modified}
-        lead="Boring But Big is the best-known way to run Jim Wendler's 5/3/1: a main lift, then five sets of ten of the same lift at a lighter weight. IronBuddy's 5/3/1 (BBB) preset keeps that structure over three days a week and leaves out the training-max percentages and weekly waves. This guide explains what you get, what you don't, and how to track it."
+        lead="5/3/1 Boring But Big is the best-known way to run Jim Wendler's 5/3/1: a main lift, then five sets of ten of the same lift at a lighter weight. IronBuddy's 5/3/1 (BBB) preset keeps that structure over three days a week and leaves out the training-max percentages and weekly waves. This guide explains what you get, what you don't, and how to track it."
       />
 
       <PageBody>

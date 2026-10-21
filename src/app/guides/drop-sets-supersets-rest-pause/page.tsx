@@ -79,7 +79,7 @@ export default function TechniquesGuidePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Guide · training"
-        title="Drop sets, supersets and rest-pause: how to do them and how to log them"
+        title="Rest-pause sets, drop sets and supersets: how to do and log them"
         updated={pages.logTechniques.modified}
         lead="Drop sets, supersets and rest-pause sets are ways of getting more work out of a set than one straight set gives you. Used on the right exercises, at the right time, they save minutes and add hard reps. Used everywhere, they wreck your recovery and your log. This guide explains each one, when it helps, and how to record it so your numbers still mean something."
       />

@@ -105,9 +105,9 @@ export default function FullBodyGuidePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Guide · training splits"
-        title="Full body workout, three days a week: plan and track it"
+        title="Full body workout 3 days a week: plan and track it"
         updated={pages.fullBody.modified}
-        lead="A three-day full body plan trains every major muscle in each session, three times a week, with a day of rest between. It is the plan most coaches hand to a beginner, and for good reason: the sessions are short, every movement gets practised often, and progress is easy to see from week to week."
+        lead="A full body workout 3 days a week trains every major muscle in each session, with a day of rest between. It is the plan most coaches hand to a beginner, and for good reason: the sessions are short, every movement gets practised often, and progress is easy to see from week to week."
       />
 
       <PageBody>

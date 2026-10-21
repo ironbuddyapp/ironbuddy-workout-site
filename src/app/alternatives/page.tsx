@@ -71,9 +71,9 @@ export default function AlternativesPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Alternatives"
-        title="Looking for a Strong, Hevy, FitNotes, or JEFIT alternative?"
+        title="Looking for workout app alternatives to Strong, Hevy, FitNotes or JEFIT?"
         updated={pages.alternatives.modified}
-        lead="IronBuddy is an Android workout tracker for lifters who want offline use, no account, no ads, and no subscription. This page explains who IronBuddy fits, who it does not, and how to compare any workout app on the same criteria."
+        lead="If you are comparing workout app alternatives, IronBuddy is an Android workout tracker for lifters who want offline use, no account, no ads, and no subscription. This page explains who IronBuddy fits, who it does not, and how to compare any workout app on the same criteria."
       >
         <HeroCta />
       </PageHero>

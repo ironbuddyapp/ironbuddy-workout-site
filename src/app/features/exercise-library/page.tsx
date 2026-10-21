@@ -43,9 +43,9 @@ export default function ExerciseLibraryPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Exercise library"
-        title="800+ exercises with form demos, filters and your own records"
+        title="Offline exercise library: 800+ exercises with demos, filters and your records"
         updated={pages.exerciseLibrary.modified}
-        lead="IronBuddy ships with more than 800 exercises, each with a demonstration, written cues and the muscles it targets. Search them, filter by muscle group and equipment, sort by the ones you did most recently, and open any exercise to see your last workout and your records next to the form demo. All of it works offline."
+        lead="IronBuddy's offline exercise library has more than 800 exercises, each with a demonstration, written cues and the muscles it targets. Search them, filter by muscle group and equipment, sort by the ones you did most recently, and open any exercise to see your last workout and your records next to the form demo. All of it works offline."
       >
         <HeroCta />
       </PageHero>

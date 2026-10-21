@@ -51,9 +51,9 @@ export default function OneRmChartGuidePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Guide · tracking"
-        title="How to read your 1RM chart"
+        title="How to read your estimated 1RM chart"
         updated={pages.oneRmChart.modified}
-        lead="A one-rep max, or 1RM, is the most you could lift once. You almost never test it, so a workout tracker estimates it from the sets you actually do. That estimate turns every session into one number per exercise that you can chart over months. This guide explains where the number comes from, why it moves the way it does, how to use it to pick your next weight, and when to ignore it."
+        lead="A one-rep max, or 1RM, is the most you could lift once. You almost never test it, so a workout tracker estimates it from the sets you actually do. That estimate turns every session into one number per exercise, and the estimated 1RM chart plots it over months. This guide explains where the number comes from, why it moves the way it does, how to use it to pick your next weight, and when to ignore it."
       />
 
       <PageBody>

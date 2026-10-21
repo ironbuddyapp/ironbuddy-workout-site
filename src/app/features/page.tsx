@@ -25,9 +25,9 @@ export default function FeaturesPage() {
         wide
         trail={crumbs}
         eyebrow="Features"
-        title="Workout log, training splits, progress charts and a Home you arrange yourself"
+        title="Workout tracker features: log, splits, charts and a Home you arrange"
         updated={pages.features.modified}
-        lead="IronBuddy is an Android workout tracker built around what lifters actually do at the gym: log sets, follow a training split, and check whether the numbers are going up. It works offline, needs no account, and has no ads or subscription. Each feature below has its own page that goes deeper."
+        lead="IronBuddy's workout tracker features are built around what lifters actually do at the gym: log sets, follow a training split, and check whether the numbers are going up. It works offline, needs no account, and has no ads or subscription. Each feature below has its own page that goes deeper."
       >
         <HeroCta />
       </PageHero>

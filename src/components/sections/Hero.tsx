@@ -25,11 +25,11 @@ export function Hero() {
               <span className="sr-only">. </span>
             </span>
             <span className="mt-2 block text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
-              Gym log &amp; workout log that works offline.
+              Workout tracker app &amp; gym log that works offline.
             </span>
           </h1>
           <p className="mt-2 text-sm font-semibold tracking-tight text-white/85 sm:text-base lg:mt-3 lg:text-2xl">
-            Track progressive overload offline. Pay once, no subscription.
+            The workout tracker app for progressive overload. One-time purchase.
           </p>
 
           <ul

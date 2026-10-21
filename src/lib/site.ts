@@ -16,9 +16,9 @@ export const siteConfig = {
   /** The product's full name, as on the App Store. Use it where the app is named; titles keep the short name (50-60 characters). */
   fullName: "IronBuddy: Workout Tracker",
   tagline: "Your lifelong gym companion.",
-  title: "IronBuddy: Workout Tracker & Gym Log App for Android",
+  title: "IronBuddy: Workout Tracker App & Gym Log for Android",
   description:
-    "Offline workout tracker and gym log for Android: log every set, plan splits, track progressive overload, customize your Home. No subscription, ads or account.",
+    "Offline workout tracker app and gym log for Android: log every set, plan splits, track progressive overload, customize Home. No subscription, ads or account.",
   url: "https://workout.ironbuddy.fit",
   /** The brand home page, and the sister app's site. */
   brandUrl: "https://ironbuddy.fit",
