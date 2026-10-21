@@ -153,7 +153,7 @@ export default function CustomizableHomePage() {
         <ContentSection id="full-version" title="Part of the full version">
           <p>
             The {siteConfig.freeTrialDays}-day free trial includes the whole workout tracker with
-            the default Home. The one-time purchase ({siteConfig.price.label} on Google Play) adds
+            the default Home. The one-time purchase on Google Play adds
             arranging Home&apos;s widgets, the eight accent colours,{" "}
             <TextLink href={pages.shareCards.path}>share cards</TextLink>, and export and import of
             your data. There is no subscription. Read{" "}

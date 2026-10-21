@@ -32,7 +32,7 @@ const criteria = [
   },
   {
     check: "How is it priced?",
-    ironbuddy: `A free trial, then a one-time ${siteConfig.price.label} purchase. No subscription.`,
+    ironbuddy: `A free trial, then a one-time purchase. No subscription.`,
     how: "Look for “In-app purchases” on Google Play and read what is sold and how it renews.",
   },
   {
@@ -58,7 +58,7 @@ const faqs: Faq[] = [
   {
     id: "try-first",
     question: "Can I try IronBuddy before paying?",
-    answer: `Yes. IronBuddy is free to download and includes a free trial (currently ${siteConfig.freeTrialDays} days) of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing.`,
+    answer: `Yes. IronBuddy is free to download and includes a free trial (currently ${siteConfig.freeTrialDays} days) of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase keeps everything unlocked and is required to keep logging and editing.`,
   },
 ];
 

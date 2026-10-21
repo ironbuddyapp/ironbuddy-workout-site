@@ -117,16 +117,14 @@ function appNode(): JsonLdNode {
           sameAs: [siteConfig.playStoreUrl],
         }
       : {}),
-    // The download is free, but after the trial a one-time purchase is required to keep logging and editing. `price` is
-    // that one-time price, never "0" (which would tell search engines and AI systems the app is free). It must also
-    // appear in the page text (it does, in the Download section), because markup has to match what visitors can see.
+    // The download is free, but after the trial a one-time purchase is required to keep logging and editing. No `price`
+    // or `priceCurrency` (owner's rule: never state a price; Google Play shows it per country), and never "0", which
+    // would say the app is free.
     // Add an aggregateRating only when it is genuine and shown on the page.
     offers: {
       "@type": "Offer",
-      price: siteConfig.price.amount,
-      priceCurrency: siteConfig.price.currency,
       category: "Free trial, then one-time purchase",
-      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play keeps everything unlocked and is required to keep logging and editing. No subscription.`,
+      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase through Google Play keeps everything unlocked and is required to keep logging and editing. No subscription.`,
     },
     author: { "@id": ids.organization },
     publisher: { "@id": ids.organization },

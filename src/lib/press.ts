@@ -73,7 +73,7 @@ export const pressDescriptions = [
   {
     id: "long",
     title: "Long",
-    text: `IronBuddy is an offline workout tracker and gym log for Android, built for lifters who want to own their training data. It comes with 10 split templates, including Push Pull Legs, Upper Lower and Full Body, and logs every set with reps, weight, notes and techniques such as drop sets and supersets. Charts show training volume and 1RM for each exercise, alongside body weight and body fat percentage, and an exercise library of more than 800 exercises includes demonstrations. IronBuddy works without an internet connection, needs no account and has no ads. It is free to download with a ${siteConfig.freeTrialDays}-day free trial; after that, a one-time purchase of ${siteConfig.price.label} unlocks the full app. There is no subscription.`,
+    text: `IronBuddy is an offline workout tracker and gym log for Android, built for lifters who want to own their training data. It comes with 10 split templates, including Push Pull Legs, Upper Lower and Full Body, and logs every set with reps, weight, notes and techniques such as drop sets and supersets. Charts show training volume and 1RM for each exercise, alongside body weight and body fat percentage, and an exercise library of more than 800 exercises includes demonstrations. IronBuddy works without an internet connection, needs no account and has no ads. It is free to download with a ${siteConfig.freeTrialDays}-day free trial; after that, a one-time purchase unlocks the full app. There is no subscription.`,
   },
 ] as const;
 
@@ -89,7 +89,7 @@ export const pressFacts: Fact[] = [
   { term: "Released", detail: formatDate(releaseDate) },
   {
     term: "Price",
-    detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time in-app purchase of ${siteConfig.price.label} is required to keep logging and editing. No subscription. Google Play shows the price in local currency.`,
+    detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time in-app purchase is required to keep logging and editing. No subscription. Google Play shows the price in local currency.`,
   },
   { term: "Ads and account", detail: "No ads, no account and no sign-in" },
   { term: "Data", detail: "Stored on the phone and not sent to IronBuddy servers" },

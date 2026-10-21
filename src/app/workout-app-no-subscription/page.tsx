@@ -27,12 +27,12 @@ const faqs: Faq[] = [
   {
     id: "cost",
     question: "How much does IronBuddy cost?",
-    answer: `The download is free and includes a free trial (currently ${trial}). After the trial you pay once: ${siteConfig.price.label} through Google Play. Google Play shows the final amount for your country, which can differ slightly with currency and tax.`,
+    answer: `The download is free and includes a free trial (currently ${trial}). After the trial you pay once, a one-time purchase through Google Play, which shows the price for your country.`,
   },
   {
     id: "in-app-purchases",
     question: "Does IronBuddy have in-app purchases?",
-    answer: `Yes, one: a single one-time purchase (${siteConfig.price.label}), required to keep logging and editing after the free trial. IronBuddy has no subscriptions. Google Play handles the purchase, so the app never receives your payment card or billing details.`,
+    answer: `Yes, one: a single one-time purchase, required to keep logging and editing after the free trial. IronBuddy has no subscriptions. Google Play handles the purchase, so the app never receives your payment card or billing details.`,
   },
 ];
 
@@ -47,7 +47,7 @@ export default function NoSubscriptionPage() {
         eyebrow="No subscription, no ads"
         title="A workout tracker app with no subscription and no ads"
         updated={pages.noSubscription.modified}
-        lead={`IronBuddy has no subscription and no ads. It is free to download with a free trial (currently ${trial}). After the trial, a one-time in-app purchase of ${siteConfig.price.label} through Google Play is required to keep logging and editing.`}
+        lead={`IronBuddy has no subscription and no ads. It is free to download with a free trial (currently ${trial}). After the trial, a one-time in-app purchase through Google Play is required to keep logging and editing.`}
       >
         <HeroCta />
       </PageHero>
@@ -61,8 +61,8 @@ export default function NoSubscriptionPage() {
               {trialDetails.includes}
             </li>
             <li>
-              To keep logging and editing after the trial, make a one-time in-app purchase of{" "}
-              {siteConfig.price.label}. It unlocks every split, the full library of 800+ exercises,
+              To keep logging and editing after the trial, make a one-time in-app purchase
+              on Google Play. It unlocks every split, the full library of 800+ exercises,
               and your own custom splits. There is no subscription and no renewal date.
             </li>
           </NumberedList>
@@ -83,8 +83,8 @@ export default function NoSubscriptionPage() {
           <p>
             Many people searching for a workout app with no subscription want one that costs nothing
             at all. IronBuddy is not free: it is free to download with a{" "}
-            {siteConfig.freeTrialDays}-day free trial, and after that a one-time purchase of{" "}
-            {siteConfig.price.label} is required to keep logging and editing.
+            {siteConfig.freeTrialDays}-day free trial, and after that a one-time purchase
+            is required to keep logging and editing.
           </p>
           <p>
             What you get for that one payment is an app with no subscription, no renewal, no ads and

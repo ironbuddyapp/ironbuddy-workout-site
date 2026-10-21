@@ -74,8 +74,8 @@ export default function ComparisonPage() {
 
         <ContentSection id="pricing" title="What each app says about price">
           <p>
-            From each app&apos;s own pages on {checked}. Where a page does not list a price, this
-            table does not guess one.
+            From each app&apos;s own pages on {checked}. This table says how each app is paid for and
+            leaves out amounts, which change and differ by country.
           </p>
           <FactsTable
             caption={`Pricing statements from the official pages of IronBuddy, Hevy, Strong, FitNotes, JEFIT, Boostcamp and Caliber, checked on ${checked}`}

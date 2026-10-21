@@ -48,7 +48,7 @@ export const comparedApps: ComparedApp[] = [
       lastUpdated: "30 Sep 2026",
     },
     pricing: {
-      text: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time purchase of ${siteConfig.price.label} is required to keep logging and editing. No subscription.`,
+      text: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time purchase is required to keep logging and editing. No subscription.`,
       sources: [{ label: "IronBuddy on Google Play", href: siteConfig.playStoreUrl }],
     },
   },
@@ -126,7 +126,7 @@ export const comparedApps: ComparedApp[] = [
       lastUpdated: "30 Sep 2026",
     },
     pricing: {
-      text: "A free plan, and JEFIT Elite at $12.99 a month or $69.99 a year, in US dollars.",
+      text: "A free plan, and a paid JEFIT Elite subscription, monthly or yearly.",
       sources: [{ label: "jefit.com/elite", href: "https://www.jefit.com/elite" }],
     },
   },
@@ -144,7 +144,7 @@ export const comparedApps: ComparedApp[] = [
       lastUpdated: "1 Oct 2026",
     },
     pricing: {
-      text: "The app and its programs are free. Boostcamp Pro is $59.99 a year with a 7-day free trial, or $14.99 a month, in US dollars.",
+      text: "The app and its programs are free. Boostcamp Pro is a paid subscription, yearly or monthly, with a free trial.",
       sources: [{ label: "boostcamp.app/pro", href: "https://www.boostcamp.app/pro" }],
     },
   },

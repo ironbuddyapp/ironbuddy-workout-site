@@ -48,7 +48,7 @@ export default function FeaturesPage() {
                 { term: "Ads", detail: "None." },
                 {
                   term: "Pricing",
-                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase of ${siteConfig.price.label} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
+                  detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase keeps everything unlocked and is required to keep logging and editing. No subscription.`,
                 },
                 {
                   term: "Your data",

@@ -1,12 +1,6 @@
 /** Length of the free trial. Keep in sync with the privacy policy (section 4) and the Play listing. */
 const freeTrialDays = 7;
 
-/**
- * One-time price charged after the trial. Keep in sync with the Play listing. Google Play shows it in local
- * currency, so the amount a visitor sees there can differ slightly by country and tax.
- */
-const price = { amount: "6.99", currency: "EUR", label: "€6.99" } as const;
-
 const playStoreId = "com.ironbuddy.app";
 /** The listing's canonical address, for structured data, app links and llms.txt. */
 const playStoreUrl = `https://play.google.com/store/apps/details?id=${playStoreId}`;
@@ -75,5 +69,4 @@ export const siteConfig = {
   ogImageAlt:
     "IronBuddy workout tracker app for Android: gym log and workout log that works offline. No account, no ads, no subscription.",
   freeTrialDays,
-  price,
 } as const;

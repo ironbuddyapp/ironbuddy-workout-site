@@ -24,7 +24,7 @@ export function CtaBanner({
         </h2>
         <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
           {children ??
-            `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, pay ${siteConfig.price.label} once to keep it all unlocked. No account, no ads, no subscription.`}
+            `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, make a one-time purchase to keep it all unlocked. No account, no ads, no subscription.`}
         </p>
         <div className="mt-7 flex justify-center">
           <GooglePlayButton lazy />
@@ -40,7 +40,7 @@ export function HeroCta() {
     <div className="flex flex-col items-start gap-3">
       <GooglePlayButton />
       <p className="text-xs text-muted">
-        {siteConfig.freeTrialDays}-day free trial, then {siteConfig.price.label} once · No subscription
+        {siteConfig.freeTrialDays}-day free trial, then a one-time purchase · No subscription
       </p>
     </div>
   );
