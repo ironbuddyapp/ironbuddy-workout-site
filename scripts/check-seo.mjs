@@ -60,7 +60,8 @@ const pageFiles = [];
   }
 })(out);
 
-const pages = pageFiles.map((file) => {
+// Forward pages (meta refresh, e.g. /play/ for the Instagram bio link) are not content pages.
+const pages = pageFiles.filter((file) => !/http-equiv="refresh"/.test(fs.readFileSync(file, "utf8"))).map((file) => {
   const rel = path.relative(out, path.dirname(file)).replace(/\\/g, "/");
   const urlPath = rel === "" ? "/" : `/${rel}/`;
   const html = fs.readFileSync(file, "utf8");
