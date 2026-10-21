@@ -24,6 +24,31 @@ const decode = (s) => s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/
 const textOf = (s) => decode(s.replace(/<script[\s\S]*?<\/script>/g, " ").replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]*>/g, " ")).replace(/\s+/g, " ").trim();
 const attr = (tag, name) => { const m = tag.match(new RegExp(`\\s${name}="([^"]*)"`)); return m ? decode(m[1]) : null; };
 
+// Keyword map: each page's `keywords` in src/lib/pages.ts (copied from the owner-approved keyword-map.md).
+// `main` must appear in the title, H1, meta description and first paragraph; no two pages share it; it must not be
+// stuffed. `keywords: null` marks a navigational page with no target keyword.
+const notes = [];
+const note = (page, msg) => notes.push(`[${page}] ${msg}`);
+const normKw = (s) => s.toLowerCase().replace(/[\u2010-\u2015\-/:]/g, " ").replace(/[^a-z0-9+ ]/g, "").replace(/\s+/g, " ").trim();
+const kwRegex = (kw) => new RegExp(` ${normKw(kw).replace(/[+]/g, "\\+").replace(/s$/, "")}s? `, "g");
+const hasKeyword = (text, kw) => kwRegex(kw).test(` ${normKw(text)} `);
+const pagesSource = fs.readFileSync(path.resolve("src/lib/pages.ts"), "utf8");
+const mainKeyword = new Map();
+for (const seg of pagesSource.split(/\bpath: "/).slice(1)) {
+  const p = seg.slice(0, seg.indexOf('"'));
+  const k = seg.match(/\bkeywords: (null|\{ main: "([^"]+)")/);
+  if (!k) { warn(p, "no `keywords` entry in src/lib/pages.ts (use null for a page with no target keyword)"); continue; }
+  mainKeyword.set(p, k[2] ?? null);
+}
+const seenMain = new Map();
+for (const [p, kw] of mainKeyword) {
+  if (!kw) continue;
+  if (seenMain.has(normKw(kw))) warn(p, `main keyword "${kw}" is also the main keyword of ${seenMain.get(normKw(kw))}`);
+  seenMain.set(normKw(kw), p);
+}
+// The full product names (owner's rule): every one this site names must appear on its home and about pages.
+const FULL_NAMES = [...new Set([...siteSource.matchAll(/"(IronBuddy: (?:Workout|Nutrition) Tracker)"/g)].map((m) => m[1]))];
+
 // ---- collect pages
 const pageFiles = [];
 (function walk(dir) {
@@ -90,6 +115,22 @@ for (const p of indexable) {
   let prev = 0;
   for (const h of heads) { if (prev && h.level > prev + 1) warn(label, `heading skip h${prev}->h${h.level} "${h.text.slice(0, 40)}"`); prev = h.level; }
   if (heads[0] && heads[0].level !== 1) warn(label, "first heading is not H1");
+
+  // keyword map: main keyword in title, H1, meta description and first paragraph; stuffing is a warning
+  const main = mainKeyword.get(urlPath);
+  if (!mainKeyword.has(urlPath)) warn(label, "page missing from src/lib/pages.ts");
+  if (main) {
+    const firstP = textOf(html.slice(html.indexOf("</h1>")).match(/<p\b[^>]*>([\s\S]*?)<\/p>/)?.[1] ?? "");
+    const places = [["title", title], ["H1", h1s[0]?.text ?? ""], ["meta description", desc ?? ""], ["first paragraph", firstP]];
+    for (const [where, value] of places) if (!hasKeyword(value, main)) warn(label, `main keyword "${main}" missing from the ${where}`);
+    const body = textOf(html.match(/<main\b[\s\S]*<\/main>/)?.[0] ?? html);
+    const uses = (` ${normKw(body)} `.match(kwRegex(main)) ?? []).length;
+    const density = (uses * normKw(main).split(" ").length) / body.split(" ").length;
+    if (density > 0.025) note(label, `possible keyword stuffing: "${main}" ${uses}× (${(density * 100).toFixed(1)}% of the words)`);
+  }
+  if (urlPath === "/" || urlPath === "/about/") {
+    for (const name of FULL_NAMES) if (!textOf(html).includes(name)) warn(label, `full product name "${name}" missing`);
+  }
 
   // ids: duplicates
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
@@ -263,5 +304,6 @@ console.log("\nPage                                              inbound  depth 
 for (const p of indexable.sort((a, b) => a.urlPath.localeCompare(b.urlPath))) {
   console.log(`${p.urlPath.padEnd(50)}${String(inbound.get(p.urlPath).size).padStart(7)}  ${String(depth.get(p.urlPath) ?? "-").padStart(5)}  ${p.summary}`);
 }
+if (notes.length) console.log(`\nWARNINGS (do not fail the check):\n${notes.join("\n")}`);
 console.log(`\n${problems.length ? "PROBLEMS:\n" + problems.join("\n") : "No problems found."}`);
 process.exitCode = problems.length ? 1 : 0;
