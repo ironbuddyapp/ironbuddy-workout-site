@@ -43,9 +43,9 @@ export default function MuscleBalancePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Muscle Balance"
-        title="Muscle Balance tracker: sets per muscle group each week, and what you skipped"
+        title="Muscle group tracker: sets per muscle each week, and what you skipped"
         updated={pages.muscleBalance.modified}
-        lead="The Muscle Balance tracker is a widget on IronBuddy's Home. It counts your working sets this week for six body areas, draws them as a shape against last week's, and names the areas you haven't trained yet. Together with the Muscles worked body map, it answers two questions every lifter has: what did I train this week, and did I miss anything?"
+        lead="Muscle Balance, IronBuddy's muscle group tracker, is a widget on its Home. It counts your working sets this week for six body areas, draws them as a shape against last week's, and names the areas you haven't trained yet. Together with the Muscles worked body map, it answers two questions every lifter has: what did I train this week, and did I miss anything?"
       >
         <HeroCta />
       </PageHero>

@@ -43,9 +43,9 @@ export default function ShareCardsPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Share cards · full version"
-        title="Share your workout as an image, with PRs and charts"
+        title="Share workout on Instagram: PRs, charts and workouts as images"
         updated={pages.shareCards.modified}
-        lead="A new record deserves more than a line in a log, so IronBuddy lets you share your workout as an image. It turns a workout, a personal record or a progress chart into an image, made entirely on your phone, that you can post to Instagram, send to a friend or keep in your gallery. Nothing is uploaded to anyone."
+        lead="A new record deserves more than a line in a log. To share workout on Instagram or with a friend, IronBuddy turns a workout, a personal record or a progress chart into an image, made entirely on your phone, that you can post to Instagram, send to a friend or keep in your gallery. Nothing is uploaded to anyone."
       >
         <HeroCta />
       </PageHero>

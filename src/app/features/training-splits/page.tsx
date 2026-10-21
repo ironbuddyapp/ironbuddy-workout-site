@@ -57,9 +57,9 @@ export default function TrainingSplitsPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Training splits"
-        title="Workout split planner: ten ready-made splits, or build your own"
+        title="Workout split app: ten ready-made splits, or build your own"
         updated={pages.trainingSplits.modified}
-        lead="A split is the plan behind your week: which muscles on which days. As a workout split planner, IronBuddy comes with ten presets, from a three-day Full Body to a six-day Arnold split, each with exercises, rep ranges and rest times. Filter them by days a week and level, make one active, edit any day, or start from scratch with your own."
+        lead="A split is the plan behind your week: which muscles on which days. As a workout split app, IronBuddy comes with ten presets, from a three-day Full Body to a six-day Arnold split, each with exercises, rep ranges and rest times. Filter them by days a week and level, make one active, edit any day, or start from scratch with your own."
       >
         <HeroCta />
       </PageHero>

@@ -23,9 +23,9 @@ export default function ComparisonPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Comparison"
-        title="Workout tracker app comparison for Android"
+        title="Workout app comparison: seven Android trackers"
         updated={pages.comparison.modified}
-        lead={`This workout tracker app comparison gives the facts about IronBuddy and six popular Android workout trackers (Hevy, Strong, FitNotes, JEFIT, Boostcamp and Caliber), taken from their Google Play pages and official pricing pages on ${checked}. This page states what those pages say. It does not rank the apps.`}
+        lead={`This workout app comparison gives the facts about IronBuddy and six popular Android workout trackers (Hevy, Strong, FitNotes, JEFIT, Boostcamp and Caliber), taken from their Google Play pages and official pricing pages on ${checked}. This page states what those pages say. It does not rank the apps.`}
       >
         <HeroCta />
       </PageHero>

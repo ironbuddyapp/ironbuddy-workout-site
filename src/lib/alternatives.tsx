@@ -136,8 +136,8 @@ export const alternatives = {
   hevy: {
     name: "Hevy",
     page: pages.hevyAlternative,
-    heading: "Looking for a Hevy alternative? Plan your training week offline with IronBuddy",
-    lead: "As a Hevy alternative, IronBuddy is built around training splits. Pick one of 10 built-in splits or shape your own, and your whole week appears on the home screen of your Android phone, ready to log offline, with no account, no ads and no subscription.",
+    heading: "Looking for a Hevy app alternative? Plan your training week offline with IronBuddy",
+    lead: "As a Hevy app alternative, IronBuddy is built around training splits. Pick one of 10 built-in splits or shape your own, and your whole week appears on the home screen of your Android phone, ready to log offline, with no account, no ads and no subscription.",
     focus: {
       id: "planning",
       title: "How IronBuddy plans your week",
@@ -456,8 +456,8 @@ export const alternatives = {
   caliber: {
     name: "Caliber",
     page: pages.caliberAlternative,
-    heading: "Looking for a Caliber alternative? Track your lifts and body weight offline with IronBuddy",
-    lead: "As a Caliber alternative, IronBuddy keeps your strength training and your body measurements in one place: log your lifts, add your body weight and body fat % whenever you like, and see both charted on your Android phone with no connection, no account, no ads and no subscription.",
+    heading: "Looking for a Caliber app alternative? Track your lifts and body weight offline with IronBuddy",
+    lead: "As a Caliber app alternative, IronBuddy keeps your strength training and your body measurements in one place: log your lifts, add your body weight and body fat % whenever you like, and see both charted on your Android phone with no connection, no account, no ads and no subscription.",
     focus: {
       id: "body-tracking",
       title: "How IronBuddy tracks body weight and body fat",

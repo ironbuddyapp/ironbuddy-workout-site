@@ -44,9 +44,9 @@ export default function CustomizableHomePage() {
       <PageHero
         trail={crumbs}
         eyebrow="Customizable Home · full version"
-        title="A customizable workout home screen you arrange yourself"
+        title="A workout calendar app with a Home you arrange yourself"
         updated={pages.customizableHome.modified}
-        lead="IronBuddy's customizable workout home screen has a calendar at the top and widgets below it: the muscles you worked this week, your last workout, a chart for any exercise, your personal records, Muscle Balance and more. Pick how the calendar looks, and in the full version decide which widgets you see, how big each one is and where it sits, across three pages that fit your screen without scrolling."
+        lead="IronBuddy works as a workout calendar app: its Home has a calendar at the top and widgets below it: the muscles you worked this week, your last workout, a chart for any exercise, your personal records, Muscle Balance and more. Pick how the calendar looks, and in the full version decide which widgets you see, how big each one is and where it sits, across three pages that fit your screen without scrolling."
       >
         <HeroCta />
       </PageHero>
