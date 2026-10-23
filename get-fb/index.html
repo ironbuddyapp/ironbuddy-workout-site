@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="ironbuddy-page" content="forward">
+<title>IronBuddy: Workout Tracker</title>
+<link rel="icon" href="/favicon.ico">
+<style>@font-face{font-family:"Plus Jakarta Sans";font-weight:400 600;font-display:swap;src:url(/fonts/plus-jakarta-sans/latin.woff2) format("woff2")}
+body{margin:0;background:#050b14;color:#a8b0bd;font:16px "Plus Jakarta Sans",system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center}
+main{max-width:22rem;padding:2rem 1rem}h1{color:#fff;font-size:1.35rem;font-weight:600;margin:1rem 0 .75rem}p{line-height:1.5;margin:.75rem 0}a{color:#b7ff2a}
+.badge{display:inline-block;margin:.5rem 0}.badge img{display:block}.opening{display:none}.android .opening{display:block}.android .store{display:none}</style>
+<script>
+(function () {
+  var ua = navigator.userAgent;
+  if (/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) location.replace("/soon-iphone/?from=get-fb");
+  else if (/Android/i.test(ua)) document.documentElement.className = "android";
+})();
+</script>
+</head>
+<body>
+<main>
+<img src="/logo-mark.png" alt="" width="64" height="64">
+<h1>IronBuddy: Workout Tracker</h1>
+<p class="opening">Opening Google Play&hellip; <a href="https://play.google.com/store/apps/details?id=com.ironbuddy.app&amp;referrer=utm_source%3Dfacebook%26utm_medium%3Dbio%26utm_campaign%3Dbio">Tap here if nothing happens</a></p>
+<div class="store">
+<a class="badge" href="https://play.google.com/store/apps/details?id=com.ironbuddy.app&amp;referrer=utm_source%3Dfacebook%26utm_medium%3Dbio%26utm_campaign%3Dbio"><img src="/badges/google-play-badge.svg" alt="Get it on Google Play" width="180" height="53"></a>
+<p>IronBuddy is coming to iPhone.</p>
+</div>
+</main>
+<script data-goatcounter="https://ironbuddy.goatcounter.com/count" data-goatcounter-settings='{"no_onload":true}' async src="//gc.zgo.at/count.js"></script>
+<script>
+(function () {
+  var gc = document.querySelector("script[data-goatcounter]");
+  function count(vars) {
+    if (window.goatcounter && window.goatcounter.count) window.goatcounter.count(vars);
+    else gc.addEventListener("load", function () { window.goatcounter.count(vars); });
+  }
+  var event = { event: true, path: "bio-play-fb", title: "Facebook bio to Google Play" };
+  if (document.documentElement.className === "android") {
+    var done = false;
+    var go = function () { if (!done) { done = true; location.replace("https://play.google.com/store/apps/details?id=com.ironbuddy.app&referrer=utm_source%3Dfacebook%26utm_medium%3Dbio%26utm_campaign%3Dbio"); } };
+    count(event);
+    if (window.goatcounter && window.goatcounter.count) setTimeout(go, 250);
+    else gc.addEventListener("load", function () { setTimeout(go, 250); });
+    setTimeout(go, 1500);
+  } else {
+    document.querySelector(".badge").addEventListener("click", function () { count(event); });
+  }
+})();
+</script>
+</body>
+</html>
