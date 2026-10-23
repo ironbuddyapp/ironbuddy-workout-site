@@ -60,8 +60,10 @@ const pageFiles = [];
   }
 })(out);
 
-// Forward pages (meta refresh, e.g. /play/ for the Instagram bio link) are not content pages.
-const pages = pageFiles.filter((file) => !/http-equiv="refresh"/.test(fs.readFileSync(file, "utf8"))).map((file) => {
+// Forward pages (meta refresh, e.g. /play/ for the Instagram bio link, or the smart store links /get/ ... and
+// /soon-iphone/ marked with <meta name="ironbuddy-page" content="forward">) are not content pages.
+const isForwardPage = (html) => /http-equiv="refresh"/.test(html) || /<meta name="ironbuddy-page" content="forward">/.test(html);
+const pages = pageFiles.filter((file) => !isForwardPage(fs.readFileSync(file, "utf8"))).map((file) => {
   const rel = path.relative(out, path.dirname(file)).replace(/\\/g, "/");
   const urlPath = rel === "" ? "/" : `/${rel}/`;
   const html = fs.readFileSync(file, "utf8");
