@@ -218,7 +218,7 @@ export const pages = {
     summary: "Release notes for every IronBuddy version, newest first.",
     keywords: null,
     published: RELEASE_203,
-    modified: KEYWORD_MAP,
+    modified: "2026-10-25",
   },
   offline: {
     path: "/offline-workout-tracker/",
