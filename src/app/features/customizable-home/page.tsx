@@ -19,7 +19,7 @@ const faqs: Faq[] = [
     id: "trial",
     question: "Can I customise Home during the free trial?",
     answer:
-      "You can pick your calendar look during the trial. Arranging the widgets is part of the full version: during the trial you get the default widgets on all three pages, and tapping the dashboard button shows what the full version adds. After the one-time purchase your arrangement is saved with your settings and included in exports.",
+      "No. Calendar look and arranging the widgets are both part of the full version: during the trial you get the default calendar and widgets on all three pages, and the lock in Settings → Calendar look or the dashboard button opens a sheet that shows what the full version adds. After the one-time purchase your calendar look and arrangement are saved with your settings and included in exports.",
   },
   {
     id: "reset",
@@ -89,7 +89,7 @@ export default function CustomizableHomePage() {
           </BulletList>
           <p>
             Every style keeps the same marks and the same day panel, and changes apply as you tap.
-            Calendar look works during the free trial and in the full version.
+            Calendar look is part of the full version: during the free trial Settings → Calendar look shows a lock.
           </p>
         </FeatureBlock>
 

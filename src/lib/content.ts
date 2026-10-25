@@ -349,7 +349,7 @@ const trial = `free trial (currently ${siteConfig.freeTrialDays} days)`;
  */
 export const trialDetails = {
   includes: `The ${siteConfig.freeTrialDays}-day free trial includes the whole workout tracker: workout logging, progress charts, body metrics, the full library of 800+ exercises, every split and your own custom splits.`,
-  unlocks: `Buying IronBuddy (a one-time purchase) keeps everything unlocked after the trial, and adds export and import of your data, a local copy of your data kept on your phone, share cards, a customizable Home and accent colors. In both the trial and the full version, Android's own backup protects your data if Google backup is turned on.`,
+  unlocks: `Buying IronBuddy (a one-time purchase) keeps everything unlocked after the trial, and adds export and import of your data, a local copy of your data kept on your phone, share cards, a customizable Home, your calendar look and accent colors. In both the trial and the full version, Android's own backup protects your data if Google backup is turned on.`,
   afterTrial:
     "If you don't buy, the app becomes read-only when the trial ends: nothing is deleted and your data stays visible on your phone, but logging and editing need the purchase.",
 } as const;
