@@ -419,6 +419,12 @@ export default function PrivacyPage() {
             The App is not directed at children under 13. Do not use IronBuddy if you are under the
             age required in your country to consent to use of local apps of this type.
           </p>
+          <p>
+            The App collects no data from anyone, children included: what is entered stays on the device
+            and in the backups described in section 7, and section 10 explains how to delete it. A parent
+            or guardian with a question can write to{" "}
+            <TextLink href={`mailto:${email}`}>{email}</TextLink>.
+          </p>
         </ContentSection>
 
         <ContentSection id="third-party" title="13. Third-party services">
