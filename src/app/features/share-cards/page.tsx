@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import type { Faq } from "@/lib/content";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { pageGraph, trail } from "@/lib/structured-data";
@@ -18,7 +19,10 @@ const faqs: Faq[] = [
     id: "upload",
     question: "Does sharing upload my data anywhere?",
     answer:
-      "No. The image is drawn on your phone from your own log. Share image hands it to Android's share sheet, so it goes only to the app you pick (Instagram, WhatsApp, a message); Save to phone writes it to Pictures/IronBuddy. IronBuddy has no servers and never sees it.",
+      onIphone(
+        "No. The image is drawn on your phone from your own log. Share image hands it to your phone's share sheet, so it goes only to the app you pick (Instagram, WhatsApp, a message). Save to phone writes it to Pictures/IronBuddy on Android, and Save to Photos adds it to your Photos on iPhone. IronBuddy has no servers and never sees it.",
+        "No. The image is drawn on your phone from your own log. Share image hands it to Android's share sheet, so it goes only to the app you pick (Instagram, WhatsApp, a message); Save to phone writes it to Pictures/IronBuddy. IronBuddy has no servers and never sees it.",
+      ),
   },
   {
     id: "size",
@@ -84,8 +88,17 @@ export default function ShareCardsPage() {
             <li>Open a workout in History (or a chart in Progress) and tap the share icon.</li>
             <li>Pick the workout card or one of its PR cards in the preview.</li>
             <li>
-              Tap <Strong>Share image</Strong> to send it through Android&apos;s share sheet, or{" "}
-              <Strong>Save to phone</Strong> to keep it in Pictures → IronBuddy.
+              {onIphone(
+                <>
+                  Tap <Strong>Share image</Strong> to send it through your phone&apos;s share sheet. To
+                  keep it, tap <Strong>Save to phone</Strong> on Android (Pictures → IronBuddy) or{" "}
+                  <Strong>Save to Photos</Strong> on iPhone.
+                </>,
+                <>
+                  Tap <Strong>Share image</Strong> to send it through Android&apos;s share sheet, or{" "}
+                  <Strong>Save to phone</Strong> to keep it in Pictures → IronBuddy.
+                </>,
+              )}
             </li>
           </NumberedList>
           <BulletList>

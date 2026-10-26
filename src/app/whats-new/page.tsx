@@ -4,14 +4,34 @@ import { CtaBanner, HeroCta } from "@/components/CtaBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 import { pageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.whatsNew);
 
+type Release = { version: string; id?: string; date?: string; title: string; notes: React.ReactNode[] };
+
+/**
+ * The first iPhone release, shown only while the iPhone switch (src/lib/iphone.ts) is on. No date until Mike
+ * gives the App Store release day. Facts from the iPhone app's App Store listing (ironbuddy-ios docs/store/LISTING.md).
+ */
+const iphoneRelease: Release = {
+  version: "2.0.12 (iPhone)",
+  id: "iphone",
+  title: "The first iPhone release",
+  notes: [
+    <>IronBuddy: Workout Tracker is on the App Store for iPhone, with the same workout tracker as on Android: splits, set logging, progress charts, Muscle Balance and the library of 800+ exercises.</>,
+    <>The {siteConfig.freeTrialDays}-day free trial and the one-time purchase go through the App Store, on your Apple ID. No subscription.</>,
+    <>Your workouts stay on your iPhone and are included in your iPhone&apos;s iCloud Backup, in both the trial and the full version.</>,
+    <>In the full version, the backup file can live in the Files app or in an iCloud Drive folder you choose, and share cards go to your Photos with Save to Photos.</>,
+  ],
+};
+
 /** Newest first. Keep in step with the app's What's New notes (src/lib/whats-new.ts in the app). */
-const releases: Array<{ version: string; date: string; title: string; notes: React.ReactNode[] }> = [
+const androidReleases: Release[] = [
   {
     version: "2.0.12",
     date: "25 October 2026",
@@ -158,6 +178,8 @@ const releases: Array<{ version: string; date: string; title: string; notes: Rea
   },
 ];
 
+const releases: Release[] = onIphone([iphoneRelease, ...androidReleases], androidReleases);
+
 export default function WhatsNewPage() {
   const crumbs = trail(pages.home, pages.whatsNew);
 
@@ -169,15 +191,18 @@ export default function WhatsNewPage() {
         eyebrow="What's new"
         title="What's new in IronBuddy"
         updated={pages.whatsNew.modified}
-        lead="Every IronBuddy release, newest first, in the words the app shows after an update. Updates come through Google Play; the app tells you when one is out."
+        lead={onIphone(
+          "Every IronBuddy release, newest first, in the words the app shows after an update. Updates come through Google Play and the App Store; the app tells you when one is out.",
+          "Every IronBuddy release, newest first, in the words the app shows after an update. Updates come through Google Play; the app tells you when one is out.",
+        )}
       >
         <HeroCta />
       </PageHero>
 
       <PageBody>
         {releases.map((release) => (
-          <ContentSection key={release.version} id={`v${release.version.replace(/\./g, "-")}`} title={`${release.version}: ${release.title}`}>
-            <p className="text-sm text-muted">{release.date}</p>
+          <ContentSection key={release.id ?? release.version} id={release.id ?? `v${release.version.replace(/\./g, "-")}`} title={`${release.version}: ${release.title}`}>
+            {release.date ? <p className="text-sm text-muted">{release.date}</p> : null}
             <BulletList>
               {release.notes.map((note, index) => (
                 <li key={index}>{note}</li>

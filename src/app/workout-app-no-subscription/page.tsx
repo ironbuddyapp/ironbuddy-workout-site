@@ -14,6 +14,7 @@ import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { trialDetails } from "@/lib/content";
 import type { Faq } from "@/lib/content";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -27,12 +28,12 @@ const faqs: Faq[] = [
   {
     id: "cost",
     question: "How much does IronBuddy cost?",
-    answer: `The download is free and includes a free trial (currently ${trial}). After the trial you pay once, a one-time purchase through Google Play, which shows the price for your country.`,
+    answer: `The download is free and includes a free trial (currently ${trial}). After the trial you pay once, a one-time purchase through ${onIphone("Google Play or the App Store, which show", "Google Play, which shows")} the price for your country.`,
   },
   {
     id: "in-app-purchases",
     question: "Does IronBuddy have in-app purchases?",
-    answer: `Yes, one: a single one-time purchase, required to keep logging and editing after the free trial. IronBuddy has no subscriptions. Google Play handles the purchase, so the app never receives your payment card or billing details.`,
+    answer: `Yes, one: a single one-time purchase, required to keep logging and editing after the free trial. IronBuddy has no subscriptions. ${onIphone("Google Play or the App Store handles", "Google Play handles")} the purchase, so the app never receives your payment card or billing details.`,
   },
 ];
 
@@ -47,7 +48,7 @@ export default function NoSubscriptionPage() {
         eyebrow="No subscription, no ads"
         title="A workout app with no subscription and no ads"
         updated={pages.noSubscription.modified}
-        lead={`IronBuddy is a workout app with no subscription and no ads. It is free to download with a free trial (currently ${trial}). After the trial, a one-time in-app purchase through Google Play is required to keep logging and editing.`}
+        lead={`IronBuddy is a workout app with no subscription and no ads. It is free to download with a free trial (currently ${trial}). After the trial, a one-time in-app purchase through ${onIphone("Google Play or the App Store", "Google Play")} is required to keep logging and editing.`}
       >
         <HeroCta />
       </PageHero>
@@ -55,23 +56,29 @@ export default function NoSubscriptionPage() {
       <PageBody>
         <ContentSection id="pricing" title="How IronBuddy pricing works">
           <NumberedList>
-            <li>Download IronBuddy from Google Play. The download is free.</li>
+            <li>
+              {onIphone(
+                "Download IronBuddy from Google Play or the App Store. The download is free.",
+                "Download IronBuddy from Google Play. The download is free.",
+              )}
+            </li>
             <li>
               Use the free trial to see whether the app fits how you train.{" "}
               {trialDetails.includes}
             </li>
             <li>
-              To keep logging and editing after the trial, make a one-time in-app purchase
-              on Google Play. It unlocks every split, the full library of 800+ exercises,
-              and your own custom splits. There is no subscription and no renewal date.
+              {onIphone(
+                "To keep logging and editing after the trial, make a one-time in-app purchase on Google Play or the App Store. It unlocks every split, the full library of 800+ exercises, and your own custom splits. There is no subscription and no renewal date.",
+                "To keep logging and editing after the trial, make a one-time in-app purchase on Google Play. It unlocks every split, the full library of 800+ exercises, and your own custom splits. There is no subscription and no renewal date.",
+              )}
             </li>
           </NumberedList>
           <p>{trialDetails.afterTrial}</p>
           <p>
-            Google Play handles the purchase. IronBuddy never sees your card or billing details, and
-            it only stores confirmation that the purchase exists so it can unlock the app. Google Play
-            shows the final amount for your country, which can differ slightly with currency and
-            tax. The{" "}
+            {onIphone(
+              "Google Play or the App Store handles the purchase. IronBuddy never sees your card or billing details, and it only stores confirmation that the purchase exists so it can unlock the app. The store shows the final amount for your country, which can differ slightly with currency and tax. The",
+              "Google Play handles the purchase. IronBuddy never sees your card or billing details, and it only stores confirmation that the purchase exists so it can unlock the app. Google Play shows the final amount for your country, which can differ slightly with currency and tax. The",
+            )}{" "}
             <TextLink href={`${pages.privacy.path}#purchases`}>purchases section of the privacy policy</TextLink>{" "}
             has the details.
           </p>

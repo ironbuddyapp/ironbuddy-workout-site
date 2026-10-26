@@ -8,6 +8,7 @@ import { KeyFacts } from "@/components/KeyFacts";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { VideoCard } from "@/components/VideoCard";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -39,7 +40,13 @@ export default function FeaturesPage() {
               id="at-a-glance"
               title="IronBuddy at a glance"
               items={[
-                { term: "Platform", detail: "Android, through Google Play. Not available on iPhone yet." },
+                {
+                  term: "Platform",
+                  detail: onIphone(
+                    "Android, through Google Play, and iPhone, through the App Store.",
+                    "Android, through Google Play. Not available on iPhone yet.",
+                  ),
+                },
                 {
                   term: "Works offline",
                   detail: "Yes. Logging, workout history and the exercise library need no internet connection.",
@@ -213,9 +220,10 @@ export default function FeaturesPage() {
             more={{ href: pages.shareCards.path, label: "How share cards work" }}
           >
             <p>
-              Turn a workout, a personal record or a progress chart into an image in your accent
-              colour and share it with Android&apos;s share sheet, or save it to your phone. The image
-              is made on your phone; nothing is uploaded.
+              {onIphone(
+                "Turn a workout, a personal record or a progress chart into an image in your accent colour and share it with your phone's share sheet, or save it to your phone (Pictures/IronBuddy on Android, your Photos on iPhone). The image is made on your phone; nothing is uploaded.",
+                "Turn a workout, a personal record or a progress chart into an image in your accent colour and share it with Android's share sheet, or save it to your phone. The image is made on your phone; nothing is uploaded.",
+              )}
             </p>
           </FeatureBlock>
 
@@ -277,7 +285,11 @@ export default function FeaturesPage() {
                 <TextLink href={pages.privacyFocused.path}>what IronBuddy stores and where</TextLink>.
               </li>
               <li>
-                <Strong>Backups you control:</Strong> in the full version, an automatic JSON backup file in your Downloads folder (you can turn it off in Settings), manual JSON export, and import with an undo copy kept from just before the import.
+                <Strong>Backups you control:</Strong>
+                {onIphone(
+                  " in the full version, an automatic JSON backup file in your Downloads folder on Android, or in the Files app on iPhone (you can turn it off in Settings), manual JSON export, and import with an undo copy kept from just before the import.",
+                  " in the full version, an automatic JSON backup file in your Downloads folder (you can turn it off in Settings), manual JSON export, and import with an undo copy kept from just before the import.",
+                )}
               </li>
               <li>
                 <Strong>Reset All Data:</Strong> clears what IronBuddy stores on the device.

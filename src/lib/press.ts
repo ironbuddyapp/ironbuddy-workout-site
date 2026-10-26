@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { appScreenshots } from "@/lib/content";
 import { formatDate } from "@/lib/format";
+import { appStoreUrl, iphoneListingLive, onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { siteConfig } from "@/lib/site";
 import { appFeatureList } from "@/lib/structured-data";
@@ -63,17 +64,20 @@ export const pressDescriptions = [
   {
     id: "one-sentence",
     title: "One sentence",
-    text: "IronBuddy is an offline workout tracker and gym log for Android, with no account, no ads and no subscription.",
+    text: onIphone(
+      "IronBuddy is an offline workout tracker and gym log for Android and iPhone, with no account, no ads and no subscription.",
+      "IronBuddy is an offline workout tracker and gym log for Android, with no account, no ads and no subscription.",
+    ),
   },
   {
     id: "short",
     title: "Short",
-    text: "IronBuddy is an offline workout tracker and gym log app for Android. Lifters use it to plan training splits, log sets, reps and weight, and track progressive overload with charts of training volume and 1RM (one-rep max), calculated with the Epley formula. It needs no account, shows no ads, and keeps workout data on the phone.",
+    text: `IronBuddy is an offline workout tracker and gym log app for ${onIphone("Android and iPhone", "Android")}. Lifters use it to plan training splits, log sets, reps and weight, and track progressive overload with charts of training volume and 1RM (one-rep max), calculated with the Epley formula. It needs no account, shows no ads, and keeps workout data on the phone.`,
   },
   {
     id: "long",
     title: "Long",
-    text: `IronBuddy is an offline workout tracker and gym log for Android, built for lifters who want to own their training data. It comes with 10 split templates, including Push Pull Legs, Upper Lower and Full Body, and logs every set with reps, weight, notes and techniques such as drop sets and supersets. Charts show training volume and 1RM for each exercise, alongside body weight and body fat percentage, and an exercise library of more than 800 exercises includes demonstrations. IronBuddy works without an internet connection, needs no account and has no ads. It is free to download with a ${siteConfig.freeTrialDays}-day free trial; after that, a one-time purchase unlocks the full app. There is no subscription.`,
+    text: `IronBuddy is an offline workout tracker and gym log for ${onIphone("Android and iPhone", "Android")}, built for lifters who want to own their training data. It comes with 10 split templates, including Push Pull Legs, Upper Lower and Full Body, and logs every set with reps, weight, notes and techniques such as drop sets and supersets. Charts show training volume and 1RM for each exercise, alongside body weight and body fat percentage, and an exercise library of more than 800 exercises includes demonstrations. IronBuddy works without an internet connection, needs no account and has no ads. It is free to download with a ${siteConfig.freeTrialDays}-day free trial; after that, a one-time purchase unlocks the full app. There is no subscription.`,
   },
 ] as const;
 
@@ -85,20 +89,28 @@ export const pressFacts: Fact[] = [
   { term: "Name", detail: siteConfig.fullName },
   { term: "Developer", detail: siteConfig.name },
   { term: "What it is", detail: "An offline workout tracker and gym log app" },
-  { term: "Platform", detail: "Android, on Google Play. Not available on iPhone yet." },
+  {
+    term: "Platform",
+    detail: onIphone(
+      "Android, on Google Play, and iPhone, on the App Store.",
+      "Android, on Google Play. Not available on iPhone yet.",
+    ),
+  },
   { term: "Released", detail: formatDate(releaseDate) },
   {
     term: "Price",
-    detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time in-app purchase is required to keep logging and editing. No subscription. Google Play shows the price in local currency.`,
+    detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time in-app purchase is required to keep logging and editing. No subscription. ${onIphone("Google Play and the App Store show", "Google Play shows")} the price in local currency.`,
   },
   { term: "Ads and account", detail: "No ads, no account and no sign-in" },
   { term: "Data", detail: "Stored on the phone and not sent to IronBuddy servers" },
   { term: "Category", detail: "Health & Fitness" },
   { term: "Language", detail: "English" },
   { term: "Android package", detail: siteConfig.playStoreId },
+  ...onIphone<Fact[]>([{ term: "iPhone bundle ID", detail: "com.ironbuddy.app" }], []),
   { term: "Website", detail: siteConfig.url, href: "/" },
   // The plain listing URL, not the site's tagged one: writers copy it into their own articles.
   { term: "Google Play", detail: siteConfig.playStoreUrl, href: siteConfig.playStoreUrl },
+  ...(iphoneListingLive && appStoreUrl ? [{ term: "App Store", detail: appStoreUrl, href: appStoreUrl }] : []),
   { term: "Press contact", detail: `${siteConfig.url}${pages.contact.path}`, href: pages.contact.path },
 ];
 

@@ -5,7 +5,8 @@ import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
-import { faqGroups } from "@/lib/content";
+import { faqGroups as baseFaqGroups } from "@/lib/content";
+import { onIphone, withIphoneFaqs } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -13,6 +14,10 @@ import { faqPageGraph, trail } from "@/lib/structured-data";
 
 export const metadata: Metadata = pageMetadata(pages.faq);
 
+const faqGroups = onIphone(
+  baseFaqGroups.map((group) => ({ ...group, items: withIphoneFaqs(group.items) })),
+  baseFaqGroups,
+);
 const allFaqs = faqGroups.flatMap((group) => group.items);
 
 export default function FaqPage() {
@@ -26,7 +31,10 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title="IronBuddy FAQ: offline use, pricing, ads, and privacy"
         updated={pages.faq.modified}
-        lead="Answers to the questions people ask most about IronBuddy, an offline workout tracker for Android with no account, no ads, and no subscription."
+        lead={onIphone(
+          "Answers to the questions people ask most about IronBuddy, an offline workout tracker for Android and iPhone with no account, no ads, and no subscription.",
+          "Answers to the questions people ask most about IronBuddy, an offline workout tracker for Android with no account, no ads, and no subscription.",
+        )}
       />
 
       <PageBody>

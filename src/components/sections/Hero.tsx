@@ -1,9 +1,11 @@
 import { AppScreen, PhoneMockup } from "@/components/PhoneMockup";
 import { Container } from "@/components/Container";
 import { ExploreIronBuddyButton } from "@/components/ExploreIronBuddyButton";
+import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Icon } from "@/components/icons";
 import { heroBullets, heroHighlights, screenshotSrc } from "@/lib/content";
+import { onIphone } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 import { preload } from "react-dom";
 
@@ -21,7 +23,8 @@ export function Hero() {
           {/* The eyebrow is part of the H1 so the page's main heading names what the app is. */}
           <h1 className="max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-              {siteConfig.fullName} for Android
+              {siteConfig.fullName}
+              {onIphone(" for Android and iPhone", " for Android")}
               <span className="sr-only">. </span>
             </span>
             <span className="mt-2 block text-[1.65rem] font-semibold leading-[1.1] tracking-tight text-white lg:mt-4 lg:text-[3.4rem] lg:leading-[1.08]">
@@ -47,9 +50,10 @@ export function Hero() {
           </ul>
 
           <p className="mt-3 hidden max-w-lg text-sm leading-relaxed text-muted sm:mt-5 sm:text-base lg:block lg:text-lg">
-            IronBuddy is an offline workout tracker for Android, built for lifters who want complete
-            ownership of their data. Log sets, reps and weight, plan your split, and track strength
-            with no account and no ads.
+            {onIphone(
+              "IronBuddy is an offline workout tracker for Android and iPhone, built for lifters who want complete ownership of their data. Log sets, reps and weight, plan your split, and track strength with no account and no ads.",
+              "IronBuddy is an offline workout tracker for Android, built for lifters who want complete ownership of their data. Log sets, reps and weight, plan your split, and track strength with no account and no ads.",
+            )}
           </p>
 
           <ul className="mt-8 hidden grid-cols-2 gap-3 lg:mt-8 lg:grid">
@@ -64,8 +68,9 @@ export function Hero() {
           </ul>
 
           <div className="mt-4 flex flex-col gap-3 lg:mt-10 lg:flex-row lg:items-center">
-            <div className="hidden lg:block">
+            <div className={onIphone("hidden lg:flex lg:items-center lg:gap-3", "hidden lg:block")}>
               <GooglePlayButton />
+              <AppStoreBadge />
             </div>
             <ExploreIronBuddyButton />
             <a

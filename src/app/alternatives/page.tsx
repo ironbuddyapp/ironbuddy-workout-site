@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import type { Faq } from "@/lib/content";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -73,7 +74,10 @@ export default function AlternativesPage() {
         eyebrow="Alternatives"
         title="Looking for workout app alternatives to Strong, Hevy, FitNotes or JEFIT?"
         updated={pages.alternatives.modified}
-        lead="If you are comparing workout app alternatives, IronBuddy is an Android workout tracker for lifters who want offline use, no account, no ads, and no subscription. This page explains who IronBuddy fits, who it does not, and how to compare any workout app on the same criteria."
+        lead={onIphone(
+          "If you are comparing workout app alternatives, IronBuddy is a workout tracker for Android and iPhone, for lifters who want offline use, no account, no ads, and no subscription. This page explains who IronBuddy fits, who it does not, and how to compare any workout app on the same criteria.",
+          "If you are comparing workout app alternatives, IronBuddy is an Android workout tracker for lifters who want offline use, no account, no ads, and no subscription. This page explains who IronBuddy fits, who it does not, and how to compare any workout app on the same criteria.",
+        )}
       >
         <HeroCta />
       </PageHero>
@@ -85,13 +89,13 @@ export default function AlternativesPage() {
             <li>You would rather not create an account or sign in.</li>
             <li>You do not want ads or a subscription.</li>
             <li>You want your training data stored on your own device.</li>
-            <li>You train with an Android phone.</li>
+            <li>{onIphone("You train with an Android phone or an iPhone.", "You train with an Android phone.")}</li>
           </BulletList>
         </ContentSection>
 
         <ContentSection id="who-its-not-for" title="Who IronBuddy may not be for">
           <BulletList>
-            <li>You use an iPhone. IronBuddy is Android-only for now.</li>
+            {onIphone(null, <li>You use an iPhone. IronBuddy is Android-only for now.</li>)}
             <li>
               You want automatic cloud sync between devices. IronBuddy does not operate a sync
               service, but you can export a backup and import it on another device you own.

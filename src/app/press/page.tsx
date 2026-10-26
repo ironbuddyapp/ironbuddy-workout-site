@@ -6,6 +6,7 @@ import { KeyFacts } from "@/components/KeyFacts";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { formatDate } from "@/lib/format";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { siteConfig } from "@/lib/site";
 import {
@@ -45,7 +46,7 @@ export default function PressPage() {
         eyebrow="Press kit"
         title="IronBuddy press kit"
         updated={pages.press.modified}
-        lead={`Everything you need to write about IronBuddy, the offline workout tracker for Android: a fact sheet, ready-to-use descriptions, the app icon and screenshots. ${pressUsage}`}
+        lead={`Everything you need to write about IronBuddy, the offline workout tracker for ${onIphone("Android and iPhone", "Android")}: a fact sheet, ready-to-use descriptions, the app icon and screenshots. ${pressUsage}`}
       >
         <div className="flex flex-col items-start gap-3">
           <a
