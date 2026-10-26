@@ -1,6 +1,7 @@
 import type { Faq } from "@/lib/content";
 import { appScreenshots as screenshots } from "@/lib/content";
 import type { PageDef } from "@/lib/pages";
+import { appStoreUrl, iphoneListingLive, onIphone } from "@/lib/iphone";
 import { absoluteUrl, fullTitle, ogImage } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -97,7 +98,7 @@ function appNode(): JsonLdNode {
     url: absoluteUrl("/"),
     applicationCategory: "HealthApplication",
     applicationSubCategory: "Workout tracker",
-    operatingSystem: "Android",
+    operatingSystem: onIphone("Android, iOS", "Android"),
     inLanguage: "en-US",
     image: ogImage.url,
     screenshot: screenshots.map((shot) => ({
@@ -114,7 +115,7 @@ function appNode(): JsonLdNode {
       ? {
           downloadUrl: siteConfig.playStoreUrl,
           installUrl: siteConfig.playStoreUrl,
-          sameAs: [siteConfig.playStoreUrl],
+          sameAs: iphoneListingLive && appStoreUrl ? [siteConfig.playStoreUrl, appStoreUrl] : [siteConfig.playStoreUrl],
         }
       : {}),
     // The download is free, but after the trial a one-time purchase is required to keep logging and editing. No `price`
@@ -124,7 +125,7 @@ function appNode(): JsonLdNode {
     offers: {
       "@type": "Offer",
       category: "Free trial, then one-time purchase",
-      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase through Google Play keeps everything unlocked and is required to keep logging and editing. No subscription.`,
+      description: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase through ${onIphone("Google Play or the App Store", "Google Play")} keeps everything unlocked and is required to keep logging and editing. No subscription.`,
     },
     author: { "@id": ids.organization },
     publisher: { "@id": ids.organization },
