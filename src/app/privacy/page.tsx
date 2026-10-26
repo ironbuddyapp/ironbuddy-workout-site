@@ -17,7 +17,7 @@ import { pageGraph, trail } from "@/lib/structured-data";
 export const metadata: Metadata = pageMetadata(pages.privacy);
 
 /*
- * This page IS IronBuddy's privacy policy: the app links here (Settings → Help & About) and Play Console uses
+ * This page IS IronBuddy's privacy policy: the app links here (Settings → About → Privacy Policy) and Play Console uses
  * this URL. Change the wording here and bump `pages.privacy.modified` in src/lib/pages.ts. (The old GitHub repo
  * ironbuddyapp/ironbuddy-privacy-policy was a workaround from before this website and is no longer used.)
  *
@@ -236,6 +236,11 @@ export default function PrivacyPage() {
             prompts off in Settings → App Store. IronBuddy does not receive or store whether you saw,
             completed, or dismissed the prompt, nor any rating or review you submit.
           </p>
+          <p>
+            The iPhone App also has an “Enjoying IronBuddy?” card in Settings. Tapping it opens the App’s
+            Write a Review page on the App Store; it is a plain link, not the rating prompt. IronBuddy does not receive or store whether you opened it, nor any rating or review
+            you submit.
+          </p>
         </ContentSection>
 
         <ContentSection id="not-collected" title="6. Data we do not collect">
@@ -360,6 +365,12 @@ export default function PrivacyPage() {
             image, iOS asks once for permission to add pictures to your Photos; the App can only add, and
             never reads your photos. It does not access your contacts, location, microphone, or camera.
           </p>
+          <p>
+            The iPhone App makes no network requests of its own; only Apple’s StoreKit talks to the App
+            Store, for the purchase and the free-trial item. The links you can open from the App (the
+            open-source credits, this privacy policy, and the App’s Write a Review page on the App Store)
+            open outside the App, in your browser or the App Store.
+          </p>
         </ContentSection>
 
         <ContentSection id="deleting-data" title="10. How you can delete data">
@@ -416,6 +427,13 @@ export default function PrivacyPage() {
             through other apps, make a purchase through Google Play or the App Store, or use Android’s backup or iCloud, those
             services are governed by their own terms and privacy policies. IronBuddy does not
             control them.
+          </p>
+          <p>
+            <Strong>Bundled data and libraries:</Strong> the exercise names, instructions, demonstration
+            images and muscles come from free-exercise-db (public domain), and the body drawing from
+            react-native-body-highlighter (MIT license). They are built into the App together with the
+            open-source libraries it uses, so they work offline and nothing is downloaded from them or
+            sent to them. The full list is in the App under Settings → About → Credits &amp; Licenses.
           </p>
           <p>
             <Strong>Website analytics:</Strong> this website, workout.ironbuddy.fit, uses GoatCounter to count

@@ -105,7 +105,7 @@ export default function ExerciseLibraryPage() {
               connection.
             </li>
             <li>
-              The credits are in the app under Settings → About.
+              The credits are in the app under Settings → About → Credits &amp; Licenses.
             </li>
           </BulletList>
         </ContentSection>

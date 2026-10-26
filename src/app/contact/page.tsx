@@ -44,7 +44,7 @@ export default function ContactPage() {
             <li>
               What you are writing about: a problem, a suggestion, or a question about your data
             </li>
-            <li>Your phone model and Android version</li>
+            <li>Your phone model and Android version, or your iPhone model and iOS version</li>
             <li>The IronBuddy version you have installed</li>
             <li>What you expected, what happened, and the steps that led to it</li>
           </BulletList>
@@ -58,13 +58,14 @@ export default function ContactPage() {
           <BulletList>
             <li>
               <Strong>Lost workouts:</Strong> IronBuddy keeps no copy of your workouts on any
-              IronBuddy server, so we cannot restore a lost log. A backup file, or Android&apos;s own
-              backup if it was turned on, is how a log comes back. See{" "}
+              IronBuddy server, so we cannot restore a lost log. A backup file, or your phone&apos;s
+              own backup if it was turned on (Android&apos;s backup to your Google account, or iCloud
+              Backup on iPhone), is how a log comes back. See{" "}
               <TextLink href={`${pages.offline.path}#backups`}>how backups work</TextLink>.
             </li>
             <li>
-              <Strong>Payments:</Strong> Google Play processes the purchase and holds your payment
-              details. IronBuddy never receives your card or billing details. See the{" "}
+              <Strong>Payments:</Strong> Google Play (on Android) or Apple (on iPhone) processes the
+              purchase and holds your payment details. IronBuddy never receives your card or billing details. See the{" "}
               <TextLink href={`${pages.privacy.path}#purchases`}>purchases section</TextLink> of the
               privacy policy.
             </li>
