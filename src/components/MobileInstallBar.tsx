@@ -15,8 +15,8 @@ export function MobileInstallBar() {
           showAppStoreBadge && "items-center gap-3",
         )}
       >
-        <GooglePlayButton />
-        <AppStoreBadge />
+        <GooglePlayButton compact={showAppStoreBadge} />
+        <AppStoreBadge compact />
       </div>
     </div>
   );

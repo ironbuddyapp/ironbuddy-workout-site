@@ -155,8 +155,8 @@ export function Header({
               {item.label}
             </NavLink>
           ))}
-          <div className={appStoreBadgeMenu ? "flex flex-wrap items-center justify-center gap-3 px-4 pt-4" : "flex justify-center px-4 pt-4"}>
-            <GooglePlayButton lazy />
+          <div className={appStoreBadgeMenu ? "flex items-center justify-center gap-3 px-4 pt-4" : "flex justify-center px-4 pt-4"}>
+            <GooglePlayButton lazy compact={!!appStoreBadgeMenu} />
             {appStoreBadgeMenu}
           </div>
         </Container>
