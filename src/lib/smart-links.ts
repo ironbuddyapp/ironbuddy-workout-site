@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
  *   Android         → the tagged Google Play URL, exactly like the older forward pages /play, /play-fb, /play-ig
  *                     (public/play*), which stay as they are. Counted as the source's event before leaving.
  *   iPhone and iPad → /soon-iphone/ (no iOS app yet), which counts soon-iphone-workout.
- *   Everyone else   → a short page with the tagged Google Play badge and the "coming to iPhone" line; a click on
+ *   Everyone else   → a short page with the tagged Google Play badge and the "iPhone version is on its way" line; a click on
  *                     the badge counts the source's event.
  *
  * The pages are plain HTML, outside the site layout: noindex, not in the sitemap, linked from nowhere on the site.
@@ -33,17 +33,17 @@ export const smartLinks = {
 export type SmartLinkName = keyof typeof smartLinks;
 
 const soonEvent = "soon-iphone-workout";
-const playUrl = (utm: string) => `${siteConfig.playStoreUrl}&referrer=${encodeURIComponent(utm)}`;
-const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+export const playUrl = (utm: string) => `${siteConfig.playStoreUrl}&referrer=${encodeURIComponent(utm)}`;
+export const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 /** A JSON value that is safe inside an inline <script>. */
-const js = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
+export const js = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 
 const style = `@font-face{font-family:"Plus Jakarta Sans";font-weight:400 600;font-display:swap;src:url(/fonts/plus-jakarta-sans/latin.woff2) format("woff2")}
 body{margin:0;background:#050b14;color:#a8b0bd;font:16px "Plus Jakarta Sans",system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center}
 main{max-width:22rem;padding:2rem 1rem}h1{color:#fff;font-size:1.35rem;font-weight:600;margin:1rem 0 .75rem}p{line-height:1.5;margin:.75rem 0}a{color:#b7ff2a}
 .badge{display:inline-block;margin:.5rem 0}.badge img{display:block}.opening{display:none}.android .opening{display:block}.android .store{display:none}`;
 
-function page({ title, head = "", body, script }: { title: string; head?: string; body: string; script: string }) {
+export function page({ title, head = "", body, script }: { title: string; head?: string; body: string; script: string }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -76,7 +76,7 @@ ${script}
 `;
 }
 
-function html(markup: string) {
+export function html(markup: string) {
   return new Response(markup, { headers: { "content-type": "text/html; charset=utf-8" } });
 }
 
@@ -98,7 +98,7 @@ export function smartLinkPage(name: SmartLinkName) {
 <p class="opening">Opening Google Play&hellip; <a href="${escapeHtml(target)}">Tap here if nothing happens</a></p>
 <div class="store">
 <a class="badge" href="${escapeHtml(target)}"><img src="/badges/google-play-badge.svg" alt="Get it on Google Play" width="180" height="53"></a>
-<p>IronBuddy is coming to iPhone.</p>
+<p>Available on Google Play for Android. The iPhone version is on its way.</p>
 </div>`;
   // Android: count, then leave (the same timings as /play). Others: count a click on the badge (count.js sends
   // with sendBeacon, so the click is recorded as the link leaves the page).
