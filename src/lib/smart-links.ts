@@ -1,3 +1,4 @@
+import { appStoreBadgeHtml, appleBadgeStyle, appleTrademarkHtml } from "@/lib/ios-links";
 import { siteConfig } from "@/lib/site";
 
 /*
@@ -33,17 +34,17 @@ export const smartLinks = {
 export type SmartLinkName = keyof typeof smartLinks;
 
 const soonEvent = "soon-iphone-workout";
-const playUrl = (utm: string) => `${siteConfig.playStoreUrl}&referrer=${encodeURIComponent(utm)}`;
-const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+export const playUrl = (utm: string) => `${siteConfig.playStoreUrl}&referrer=${encodeURIComponent(utm)}`;
+export const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 /** A JSON value that is safe inside an inline <script>. */
-const js = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
+export const js = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 
 const style = `@font-face{font-family:"Plus Jakarta Sans";font-weight:400 600;font-display:swap;src:url(/fonts/plus-jakarta-sans/latin.woff2) format("woff2")}
 body{margin:0;background:#050b14;color:#a8b0bd;font:16px "Plus Jakarta Sans",system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center}
 main{max-width:22rem;padding:2rem 1rem}h1{color:#fff;font-size:1.35rem;font-weight:600;margin:1rem 0 .75rem}p{line-height:1.5;margin:.75rem 0}a{color:#b7ff2a}
 .badge{display:inline-block;margin:.5rem 0}.badge img{display:block}.opening{display:none}.android .opening{display:block}.android .store{display:none}`;
 
-function page({ title, head = "", body, script }: { title: string; head?: string; body: string; script: string }) {
+export function page({ title, head = "", body, script }: { title: string; head?: string; body: string; script: string }) {
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -76,7 +77,7 @@ ${script}
 `;
 }
 
-function html(markup: string) {
+export function html(markup: string) {
   return new Response(markup, { headers: { "content-type": "text/html; charset=utf-8" } });
 }
 
@@ -118,17 +119,16 @@ export function smartLinkPage(name: SmartLinkName) {
 
 /** /soon-iphone/: where the smart links send iPhone and iPad visitors until the iOS app is live. */
 export function soonIphonePage() {
-  const fallback = siteConfig.playStoreLinkUrl;
-  const targets = Object.fromEntries(Object.entries(smartLinks).map(([name, link]) => [name, playUrl(link.utm)]));
+  const targets = smartLinks;
+  // Apple's badge only (Mike, 2026-10-27): Google Play has its own links. The badge is a plain image until the app is live.
   const body = `<h1>IronBuddy is coming to iPhone.</h1>
 <p>An iOS version is on our roadmap, and we&rsquo;ll share news about availability as soon as we can.</p>
-<p>On Android? Get ${escapeHtml(siteConfig.fullName)} on Google Play.</p>
-<a class="badge" href="${escapeHtml(fallback)}"><img src="/badges/google-play-badge.svg" alt="Get it on Google Play" width="180" height="53"></a>`;
-  // ?from=<smart link> keeps the source: the Play badge gets that link's tags and the event title names it.
+${appStoreBadgeHtml()}
+${appleTrademarkHtml}`;
+  // ?from=<smart link> keeps the source: the event title names it.
   const script = `  var from = new URLSearchParams(location.search).get("from");
-  var targets = ${js(targets)};
-  if (from && Object.prototype.hasOwnProperty.call(targets, from)) document.querySelector(".badge").href = targets[from];
-  else from = null;
+  var targets = ${js(Object.keys(targets))};
+  if (targets.indexOf(from) < 0) from = null;
   count({ event: true, path: ${js(soonEvent)}, title: "Soon on iPhone" + (from ? " (/" + from + ")" : "") });`;
-  return html(page({ title: `${siteConfig.name} on iPhone`, body, script }));
+  return html(page({ title: `${siteConfig.name} on iPhone`, head: appleBadgeStyle, body, script }));
 }
