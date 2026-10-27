@@ -1,3 +1,4 @@
+import { showAppStoreBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 
 /*
@@ -35,13 +36,27 @@ export type SmartLinkName = keyof typeof smartLinks;
 const soonEvent = "soon-iphone-workout";
 const playUrl = (utm: string) => `${siteConfig.playStoreUrl}&referrer=${encodeURIComponent(utm)}`;
 const escapeHtml = (value: string) => value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const googleBadge = (target: string) =>
+  `<a class="badge" href="${escapeHtml(target)}"><img src="/badges/google-play-badge.svg" alt="Get it on Google Play" width="180" height="53"></a>`;
+/**
+ * The store badges. While the App Store badge shows (badge-only switch), Apple's badge sits beside Google Play at
+ * the same height, as a plain image with no link. It is not inside a `.badge` link, so the click count and the
+ * Google Play address do not change; the Google Play link stays the first `.badge` on the page (the scripts use it).
+ */
+const storeBadges = (target: string) =>
+  showAppStoreBadge
+    ? `<div class="badges">${googleBadge(target)}<img src="/badges/app-store-badge.svg" alt="IronBuddy: Workout Tracker on the App Store" width="159" height="53"></div>`
+    : googleBadge(target);
+const appleTrademark = showAppStoreBadge
+  ? `\n<p class="tm">Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.</p>`
+  : "";
 /** A JSON value that is safe inside an inline <script>. */
 const js = (value: unknown) => JSON.stringify(value).replace(/</g, "\\u003c");
 
 const style = `@font-face{font-family:"Plus Jakarta Sans";font-weight:400 600;font-display:swap;src:url(/fonts/plus-jakarta-sans/latin.woff2) format("woff2")}
 body{margin:0;background:#050b14;color:#a8b0bd;font:16px "Plus Jakarta Sans",system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center;text-align:center}
 main{max-width:22rem;padding:2rem 1rem}h1{color:#fff;font-size:1.35rem;font-weight:600;margin:1rem 0 .75rem}p{line-height:1.5;margin:.75rem 0}a{color:#b7ff2a}
-.badge{display:inline-block;margin:.5rem 0}.badge img{display:block}.opening{display:none}.android .opening{display:block}.android .store{display:none}`;
+.badge{display:inline-block;margin:.5rem 0}.badge img{display:block}.badges{display:flex;justify-content:center;align-items:center;gap:.75rem;margin:.5rem 0}.badges .badge{margin:0}.badges img{height:40px;width:auto}.tm{font-size:.75rem;color:#7c8594}.opening{display:none}.android .opening{display:block}.android .store{display:none}`;
 
 function page({ title, head = "", body, script }: { title: string; head?: string; body: string; script: string }) {
   return `<!doctype html>
@@ -97,8 +112,8 @@ export function smartLinkPage(name: SmartLinkName) {
   const body = `<h1>${escapeHtml(siteConfig.fullName)}</h1>
 <p class="opening">Opening Google Play&hellip; <a href="${escapeHtml(target)}">Tap here if nothing happens</a></p>
 <div class="store">
-<a class="badge" href="${escapeHtml(target)}"><img src="/badges/google-play-badge.svg" alt="Get it on Google Play" width="180" height="53"></a>
-<p>IronBuddy is coming to iPhone.</p>
+${storeBadges(target)}
+<p>IronBuddy is coming to iPhone.</p>${appleTrademark}
 </div>`;
   // Android: count, then leave (the same timings as /play). Others: count a click on the badge (count.js sends
   // with sendBeacon, so the click is recorded as the link leaves the page).
@@ -123,7 +138,7 @@ export function soonIphonePage() {
   const body = `<h1>IronBuddy is coming to iPhone.</h1>
 <p>An iOS version is on our roadmap, and we&rsquo;ll share news about availability as soon as we can.</p>
 <p>On Android? Get ${escapeHtml(siteConfig.fullName)} on Google Play.</p>
-<a class="badge" href="${escapeHtml(fallback)}"><img src="/badges/google-play-badge.svg" alt="Get it on Google Play" width="180" height="53"></a>`;
+${storeBadges(fallback)}${appleTrademark}`;
   // ?from=<smart link> keeps the source: the Play badge gets that link's tags and the event title names it.
   const script = `  var from = new URLSearchParams(location.search).get("from");
   var targets = ${js(targets)};
