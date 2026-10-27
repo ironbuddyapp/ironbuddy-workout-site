@@ -199,7 +199,8 @@ for (const p of indexable) {
     const app = nodes.find((n) => [].concat(n["@type"]).includes("MobileApplication"));
     if (urlPath === "/") {
       need(app && [].concat(app["@type"]).includes("SoftwareApplication"), "MobileApplication+SoftwareApplication");
-      need(app?.operatingSystem === "Android" && app?.applicationCategory === "HealthApplication", "app OS/category");
+      // "Android, iOS" once the iPhone switch (src/lib/iphone.ts) is on.
+      need(["Android", "Android, iOS"].includes(app?.operatingSystem) && app?.applicationCategory === "HealthApplication", "app OS/category");
       need(app?.offers?.description, "offers.description");
       // No price: Google Play sets it per country (owner's rule). Never "0" either, which would say the app is free.
       need(app?.offers && app.offers.price == null && app.offers.priceCurrency == null, "offers must not state a price: Google Play sets it per country");

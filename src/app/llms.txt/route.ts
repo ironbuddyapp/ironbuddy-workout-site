@@ -1,4 +1,5 @@
 import { trialDetails } from "@/lib/content";
+import { appStoreUrl, iphoneListingLive, onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import type { PageDef } from "@/lib/pages";
 import { absoluteUrl } from "@/lib/seo";
@@ -17,20 +18,25 @@ export function GET() {
   const body = [
     `# ${siteConfig.fullName}`,
     "",
-    `> IronBuddy: Workout Tracker is an offline workout tracker for Android. It logs sets, reps and weight, supports training splits, charts training volume and 1RM (one-rep max), calculated with the Epley formula, and tracks body weight and body fat percentage. Muscle Balance counts weekly sets per muscle group, and the full version adds a customizable Home (cards you move, resize, add and remove), share cards and accent colours. There is no account, no ads and no subscription: the app is free to download with a ${siteConfig.freeTrialDays}-day free trial, and after the trial a one-time in-app purchase through Google Play is required to keep logging and editing. Workout data is stored on the device and is not sent to IronBuddy servers.`,
+    `> IronBuddy: Workout Tracker is an offline workout tracker for ${onIphone("Android and iPhone", "Android")}. It logs sets, reps and weight, supports training splits, charts training volume and 1RM (one-rep max), calculated with the Epley formula, and tracks body weight and body fat percentage. Muscle Balance counts weekly sets per muscle group, and the full version adds a customizable Home (cards you move, resize, add and remove), share cards and accent colours. There is no account, no ads and no subscription: the app is free to download with a ${siteConfig.freeTrialDays}-day free trial, and after the trial a one-time in-app purchase through ${onIphone("Google Play or the App Store", "Google Play")} is required to keep logging and editing. Workout data is stored on the device and is not sent to IronBuddy servers.`,
     "",
     "Key facts:",
     "",
-    "- Platform: Android, on Google Play. Not available on iPhone yet.",
+    onIphone(
+      "- Platform: Android, on Google Play, and iPhone, on the App Store.",
+      "- Platform: Android, on Google Play. Not available on iPhone yet.",
+    ),
     `- Android package: ${siteConfig.playStoreId}`,
+    ...onIphone(["- iPhone bundle ID: com.ironbuddy.app"], []),
     ...(siteConfig.playListingLive ? [`- Google Play: ${siteConfig.playStoreUrl}`] : []),
+    ...(iphoneListingLive && appStoreUrl ? [`- App Store: ${appStoreUrl}`] : []),
     `- YouTube: ${siteConfig.youtubeUrl} (two-minute tour: ${siteConfig.promoVideo.url})`,
     "- Works offline: yes (logging, history and the exercise library need no connection)",
     "- Account required: no",
     "- Ads: none",
     "- Subscription: none",
     `- Free trial: ${trialDetails.includes} ${trialDetails.unlocks} ${trialDetails.afterTrial}`,
-    `- Pricing: a one-time purchase after the ${siteConfig.freeTrialDays}-day free trial, no subscription (Google Play shows the price for your country)`,
+    `- Pricing: a one-time purchase after the ${siteConfig.freeTrialDays}-day free trial, no subscription (${onIphone("the store", "Google Play")} shows the price for your country)`,
     `- Contact: ${siteConfig.contactEmail}`,
     "",
     "## Product",

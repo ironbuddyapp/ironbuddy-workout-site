@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { GoatCounter } from "@/components/GoatCounter";
 import { Header } from "@/components/Header";
 import { ogImage } from "@/lib/seo";
+import { appStoreUrl, iphoneListingLive } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 import "./fonts.css";
 import "./globals.css";
@@ -64,6 +65,9 @@ export const metadata: Metadata = {
             app_name: siteConfig.fullName,
             url: siteConfig.playStoreUrl,
           },
+          ...(iphoneListingLive && appStoreUrl
+            ? { ios: { app_store_id: "6827257978", app_name: siteConfig.fullName, url: appStoreUrl } }
+            : {}),
         },
       }
     : {}),

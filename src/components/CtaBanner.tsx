@@ -1,9 +1,11 @@
+import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
+import { onIphone, withBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 
 /** Closing call to action for content pages. Same visual language as the home page's download card. */
 export function CtaBanner({
-  title = "Get IronBuddy on Google Play",
+  title = onIphone("Get IronBuddy for Android and iPhone", "Get IronBuddy on Google Play"),
   children,
 }: {
   title?: string;
@@ -26,8 +28,9 @@ export function CtaBanner({
           {children ??
             `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, make a one-time purchase to keep it all unlocked. No account, no ads, no subscription.`}
         </p>
-        <div className="mt-7 flex justify-center">
+        <div className={withBadge("mt-7 flex flex-wrap items-center justify-center gap-3", "mt-7 flex justify-center")}>
           <GooglePlayButton lazy />
+          <AppStoreBadge lazy />
         </div>
       </div>
     </section>
@@ -38,7 +41,13 @@ export function CtaBanner({
 export function HeroCta() {
   return (
     <div className="flex flex-col items-start gap-3">
-      <GooglePlayButton />
+      {withBadge(
+        <div className="flex flex-wrap items-center gap-3">
+          <GooglePlayButton />
+          <AppStoreBadge />
+        </div>,
+        <GooglePlayButton />,
+      )}
       <p className="text-xs text-muted">
         {siteConfig.freeTrialDays}-day free trial, then a one-time purchase · No subscription
       </p>

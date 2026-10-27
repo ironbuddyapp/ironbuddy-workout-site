@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import type { Faq } from "@/lib/content";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -29,9 +30,11 @@ const faqs: Faq[] = [
   },
   {
     id: "widgets",
-    question: "Are these Android home screen widgets?",
-    answer:
+    question: onIphone("Are these home screen widgets for my phone?", "Are these Android home screen widgets?"),
+    answer: onIphone(
+      "No. IronBuddy's widgets live on its own Home screen, the first tab inside the app. They are arranged on three swipeable pages that always fit your screen, so there is nothing to scroll and nothing to install on your phone's home screen, on Android or iPhone.",
       "No. IronBuddy's widgets live on its own Home screen, the first tab inside the app. They are arranged on three swipeable pages that always fit your screen, so there is nothing to scroll and nothing to install on the Android launcher.",
+    ),
   },
 ];
 
@@ -152,9 +155,11 @@ export default function CustomizableHomePage() {
 
         <ContentSection id="full-version" title="Part of the full version">
           <p>
-            The {siteConfig.freeTrialDays}-day free trial includes the whole workout tracker with
-            the default Home. The one-time purchase on Google Play adds
-            arranging Home&apos;s widgets, the eight accent colours,{" "}
+            The {siteConfig.freeTrialDays}
+            {onIphone(
+              "-day free trial includes the whole workout tracker with the default Home. The one-time purchase on Google Play or the App Store adds arranging Home's widgets, the eight accent colours,",
+              "-day free trial includes the whole workout tracker with the default Home. The one-time purchase on Google Play adds arranging Home's widgets, the eight accent colours,",
+            )}{" "}
             <TextLink href={pages.shareCards.path}>share cards</TextLink>, and export and import of
             your data. There is no subscription. Read{" "}
             <TextLink href={pages.noSubscription.path}>how the trial and the purchase work</TextLink>.

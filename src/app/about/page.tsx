@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { KeyFacts } from "@/components/KeyFacts";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -26,7 +27,10 @@ export default function AboutPage() {
         eyebrow="About"
         title="About IronBuddy: Workout Tracker"
         updated={pages.about.modified}
-        lead="IronBuddy: Workout Tracker is an Android app for planning and logging gym workouts. It is designed around one idea: your training data belongs to you."
+        lead={onIphone(
+          "IronBuddy: Workout Tracker is an app for Android and iPhone for planning and logging gym workouts. It is designed around one idea: your training data belongs to you.",
+          "IronBuddy: Workout Tracker is an Android app for planning and logging gym workouts. It is designed around one idea: your training data belongs to you.",
+        )}
       >
         <HeroCta />
       </PageHero>
@@ -37,8 +41,15 @@ export default function AboutPage() {
           title="IronBuddy at a glance"
           items={[
             { term: "What it is", detail: "A local workout planning and logging app." },
-            { term: "Platform", detail: "Android, distributed on Google Play. Not available on iPhone yet." },
+            {
+              term: "Platform",
+              detail: onIphone(
+                "Android, distributed on Google Play, and iPhone, distributed on the App Store.",
+                "Android, distributed on Google Play. Not available on iPhone yet.",
+              ),
+            },
             { term: "Android package", detail: <Code>{siteConfig.playStoreId}</Code> },
+            ...onIphone([{ term: "iPhone bundle ID", detail: <Code>com.ironbuddy.app</Code> }], []),
             {
               term: "Pricing",
               detail: `Free to download with a ${siteConfig.freeTrialDays}-day free trial of the whole workout tracker: logging, every split and exercise, progress charts and body metrics. The full version adds export and import, a local copy of your data, share cards, a customizable Home (arrange and resize your cards) and accent colors. After the trial, a one-time in-app purchase keeps everything unlocked and is required to keep logging and editing. No subscription.`,
@@ -80,10 +91,10 @@ export default function AboutPage() {
 
         <ContentSection id="how-it-handles-data" title="How IronBuddy handles your data">
           <p>
-            Your workouts, body metrics, notes, and settings are stored on your device. IronBuddy
-            has no account system and does not operate a cloud sync service, so your training data
-            is not sent to IronBuddy servers. Copies can exist only in ways you control or Android
-            provides: Android Auto Backup if you have Google backup turned on and, in the full version, an automatic backup file and files you export or share.
+            {onIphone(
+              "Your workouts, body metrics, notes, and settings are stored on your device. IronBuddy has no account system and does not operate a cloud sync service, so your training data is not sent to IronBuddy servers. Copies can exist only in ways you control or your phone provides: Android Auto Backup if you have Google backup turned on, iCloud Backup on iPhone if it is turned on and, in the full version, an automatic backup file and files you export or share.",
+              "Your workouts, body metrics, notes, and settings are stored on your device. IronBuddy has no account system and does not operate a cloud sync service, so your training data is not sent to IronBuddy servers. Copies can exist only in ways you control or Android provides: Android Auto Backup if you have Google backup turned on and, in the full version, an automatic backup file and files you export or share.",
+            )}
           </p>
           <p>
             Read the plain-language overview,{" "}
@@ -94,8 +105,10 @@ export default function AboutPage() {
 
         <ContentSection id="how-it-is-paid-for" title="How IronBuddy is priced">
           <p>
-            IronBuddy has no ads and no subscriptions. It is free to download with a free trial,
-            and after the trial a one-time in-app purchase through Google Play is required to keep logging and editing after the trial. Details are on the{" "}
+            {onIphone(
+              "IronBuddy has no ads and no subscriptions. It is free to download with a free trial, and after the trial a one-time in-app purchase through Google Play or the App Store is required to keep logging and editing after the trial. Details are on the",
+              "IronBuddy has no ads and no subscriptions. It is free to download with a free trial, and after the trial a one-time in-app purchase through Google Play is required to keep logging and editing after the trial. Details are on the",
+            )}{" "}
             <TextLink href={pages.noSubscription.path}>no subscription, no ads</TextLink> page.
           </p>
         </ContentSection>

@@ -4,6 +4,7 @@ import { CtaBanner } from "@/components/CtaBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { collectionPageGraph, trail } from "@/lib/structured-data";
@@ -55,10 +56,10 @@ export default function GuidesPage() {
 
         <ContentSection id="about-these-guides" title="About these guides">
           <p>
-            The guides explain general training and logging ideas, then show how to apply them in
-            IronBuddy, an offline workout tracker for Android. They are general information, not
-            medical advice. If you have an injury or a health condition, speak to a qualified
-            professional before changing your training.
+            {onIphone(
+              "The guides explain general training and logging ideas, then show how to apply them in IronBuddy, an offline workout tracker for Android and iPhone. They are general information, not medical advice. If you have an injury or a health condition, speak to a qualified professional before changing your training.",
+              "The guides explain general training and logging ideas, then show how to apply them in IronBuddy, an offline workout tracker for Android. They are general information, not medical advice. If you have an injury or a health condition, speak to a qualified professional before changing your training.",
+            )}
           </p>
           <p>
             Looking for what the app does? See the{" "}

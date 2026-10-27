@@ -6,6 +6,7 @@ import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import { alternativeFaqs, alternatives } from "@/lib/alternatives";
 import type { Alternative } from "@/lib/alternatives";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { siteConfig } from "@/lib/site";
 import { pageGraph, trail } from "@/lib/structured-data";
@@ -53,8 +54,11 @@ export function AlternativePage({ alt }: { alt: Alternative }) {
 
         <ContentSection id="compare" title={`Compare IronBuddy and ${alt.name} yourself`}>
           <p>
-            In short, IronBuddy is Android-only, works offline, has no account and no ads, and is a
-            one-time purchase after a {siteConfig.freeTrialDays}-day free trial. This page
+            {onIphone(
+              "In short, IronBuddy is for Android and iPhone, works offline, has no account and no ads, and is a one-time purchase after a ",
+              "In short, IronBuddy is Android-only, works offline, has no account and no ads, and is a one-time purchase after a ",
+            )}
+            {siteConfig.freeTrialDays}-day free trial. This page
             does not describe {alt.name}&apos;s prices, features or policies, because they change
             often. To compare the two on offline use, accounts, ads, pricing and data, use the{" "}
             <TextLink href={`${pages.alternatives.path}#criteria`}>six-question checklist</TextLink>{" "}

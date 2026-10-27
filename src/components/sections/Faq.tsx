@@ -5,6 +5,7 @@ import { Icon } from "@/components/icons";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { homeFaqs } from "@/lib/content";
+import { withIphoneFaqs } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 
 export function Faq() {
@@ -19,7 +20,7 @@ export function Faq() {
           />
         </Reveal>
         <Reveal delay={80} className="mx-auto mt-4 w-full max-w-3xl lg:mt-12">
-          <FaqAccordion items={homeFaqs} />
+          <FaqAccordion items={withIphoneFaqs(homeFaqs)} />
           <div className="mt-2 text-center sm:mt-6">
             <Link
               href={pages.faq.path}

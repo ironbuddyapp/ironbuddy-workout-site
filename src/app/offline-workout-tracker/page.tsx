@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
 import type { Faq } from "@/lib/content";
+import { onIphone } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { pageGraph, trail } from "@/lib/structured-data";
@@ -17,7 +18,10 @@ const faqs: Faq[] = [
     id: "buy-or-restore",
     question: "Do I need internet to buy or restore IronBuddy?",
     answer:
-      "Getting the app, updating it, and completing or restoring the one-time purchase all go through Google Play, so those steps need a connection. IronBuddy stores your purchase and trial status on your device. Logging workouts does not need a connection.",
+      onIphone(
+        "Getting the app, updating it, and completing or restoring the one-time purchase all go through Google Play on Android or the App Store on iPhone, so those steps need a connection. IronBuddy stores your purchase and trial status on your device. Logging workouts does not need a connection.",
+        "Getting the app, updating it, and completing or restoring the one-time purchase all go through Google Play, so those steps need a connection. IronBuddy stores your purchase and trial status on your device. Logging workouts does not need a connection.",
+      ),
   },
   {
     id: "sync",
@@ -42,9 +46,12 @@ export default function OfflineWorkoutTrackerPage() {
       <PageHero
         trail={crumbs}
         eyebrow="Offline workout app"
-        title="Offline workout tracker for Android: no signal, no Wi-Fi, no login"
+        title={onIphone(
+          "Offline workout tracker for Android and iPhone: no signal, no Wi-Fi, no login",
+          "Offline workout tracker for Android: no signal, no Wi-Fi, no login",
+        )}
         updated={pages.offline.modified}
-        lead="IronBuddy is an offline workout tracker for Android, built offline-first. You can log sets, reps, and weight, review your history, and browse the exercise library with no signal, no Wi-Fi, and no login, because your training log is stored on your phone rather than on a server."
+        lead={`IronBuddy is an offline workout tracker for ${onIphone("Android and iPhone", "Android")}, built offline-first. You can log sets, reps, and weight, review your history, and browse the exercise library with no signal, no Wi-Fi, and no login, because your training log is stored on your phone rather than on a server.`}
       >
         <HeroCta />
       </PageHero>
@@ -72,18 +79,19 @@ export default function OfflineWorkoutTrackerPage() {
         </ContentSection>
 
         <ContentSection id="needs-internet" title="What does need an internet connection">
-          <p>A few steps go through Google Play or the web, not through IronBuddy:</p>
+          <p>{onIphone("A few steps go through Google Play, the App Store or the web, not through IronBuddy:", "A few steps go through Google Play or the web, not through IronBuddy:")}</p>
           <BulletList>
-            <li>Downloading and updating the app from Google Play</li>
+            <li>{onIphone("Downloading and updating the app from Google Play or the App Store", "Downloading and updating the app from Google Play")}</li>
             <li>
               Completing the one-time purchase, and checking or restoring it after a reinstall
             </li>
             <li>Opening an external link from the app, such as the open-source credits</li>
           </BulletList>
           <p>
-            IronBuddy declares Android&apos;s internet permission for those cases. According to its
-            privacy policy, the app does not use it to upload your workout, body, or personal data.
-            The details are in the{" "}
+            {onIphone(
+              "On Android, IronBuddy declares Android's internet permission for those cases; on iPhone, the app makes no network requests of its own. According to its privacy policy, the app does not use the connection to upload your workout, body, or personal data. The details are in the",
+              "IronBuddy declares Android's internet permission for those cases. According to its privacy policy, the app does not use it to upload your workout, body, or personal data. The details are in the",
+            )}{" "}
             <TextLink href={`${pages.privacy.path}#permissions`}>permissions section of the policy</TextLink>.
           </p>
         </ContentSection>
@@ -125,28 +133,41 @@ export default function OfflineWorkoutTrackerPage() {
 
         <ContentSection id="backups" title="Keep your offline log safe">
           <p>
-            Because your workouts are stored on your device, backups matter. IronBuddy gives you three layers (the first and third are part of the full version):
+            {onIphone(
+              "Because your workouts are stored on your device, backups matter. IronBuddy gives you these layers (the backup file and manual export are part of the full version):",
+              "Because your workouts are stored on your device, backups matter. IronBuddy gives you three layers (the first and third are part of the full version):",
+            )}
           </p>
           <BulletList>
             <li>
-              <Strong>An automatic backup file:</Strong> each time your data changes, IronBuddy saves
-              an up-to-date JSON copy in your Downloads folder
-              (Download/IronBuddy/ironbuddy-backup.json). You can turn this off in Settings, under
-              Data → Backup.
+              <Strong>An automatic backup file:</Strong>
+              {onIphone(
+                " each time your data changes, IronBuddy saves an up-to-date JSON copy: on Android in your Downloads folder (Download/IronBuddy/ironbuddy-backup.json), on iPhone in the Files app (On My iPhone → IronBuddy, or an iCloud Drive folder you choose). You can turn this off in Settings, under Data → Backup on Android or Backup on iPhone.",
+                " each time your data changes, IronBuddy saves an up-to-date JSON copy in your Downloads folder (Download/IronBuddy/ironbuddy-backup.json). You can turn this off in Settings, under Data → Backup.",
+              )}
             </li>
             <li>
               <Strong>Android Auto Backup:</Strong> if Google backup is turned on for your phone,
               Android may back up certain app data to your Google account. Google and Android manage
               this, not IronBuddy.
             </li>
+            {onIphone(
+              <li>
+                <Strong>iCloud Backup:</Strong> on iPhone, if iCloud Backup is turned on, iOS includes
+                the app&apos;s data in your iPhone&apos;s backup. Apple manages this, not IronBuddy.
+              </li>,
+              null,
+            )}
             <li>
               <Strong>Manual export:</Strong> share a JSON copy of your data, or a PDF of your active
               split, wherever you choose. To move to a new phone you own, import a backup file there.
             </li>
           </BulletList>
           <p>
-            Uninstalling the app removes its private storage, but not files already saved in
-            Downloads or a backup in your Google account. Read the full{" "}
+            {onIphone(
+              "Uninstalling the app removes its private storage, but not files already saved in Downloads or in a folder you chose such as iCloud Drive, or a backup in your Google account or iCloud. Read the full",
+              "Uninstalling the app removes its private storage, but not files already saved in Downloads or a backup in your Google account. Read the full",
+            )}{" "}
             <TextLink href={`${pages.privacy.path}#backups`}>backups and exports section</TextLink>{" "}
             of the privacy policy.
           </p>
