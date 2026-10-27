@@ -5,7 +5,7 @@ import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Icon } from "@/components/icons";
 import { heroBullets, heroHighlights, screenshotSrc } from "@/lib/content";
-import { onIphone, withBadge } from "@/lib/iphone";
+import { onIphone, showAppStoreBadge, withBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 import { preload } from "react-dom";
 
@@ -69,8 +69,8 @@ export function Hero() {
 
           <div className="mt-4 flex flex-col gap-3 lg:mt-10 lg:flex-row lg:items-center">
             <div className={withBadge("hidden lg:flex lg:items-center lg:gap-3", "hidden lg:block")}>
-              <GooglePlayButton />
-              <AppStoreBadge />
+              <GooglePlayButton compact={showAppStoreBadge} />
+              <AppStoreBadge compact />
             </div>
             <ExploreIronBuddyButton />
             <a

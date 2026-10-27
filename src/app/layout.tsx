@@ -95,7 +95,10 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Header appStoreBadge={showAppStoreBadge ? <AppStoreBadge compact /> : null} />
+        <Header
+          appStoreBadge={showAppStoreBadge ? <AppStoreBadge compact /> : null}
+          appStoreBadgeMenu={showAppStoreBadge ? <AppStoreBadge lazy compact /> : null}
+        />
         {children}
         <Footer />
         <GoatCounter />

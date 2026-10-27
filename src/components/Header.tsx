@@ -45,7 +45,13 @@ function NavLink({
   );
 }
 
-export function Header({ appStoreBadge = null }: { appStoreBadge?: React.ReactNode }) {
+export function Header({
+  appStoreBadge = null,
+  appStoreBadgeMenu = null,
+}: {
+  appStoreBadge?: React.ReactNode;
+  appStoreBadgeMenu?: React.ReactNode;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -149,8 +155,9 @@ export function Header({ appStoreBadge = null }: { appStoreBadge?: React.ReactNo
               {item.label}
             </NavLink>
           ))}
-          <div className="flex justify-center px-4 pt-4">
-            <GooglePlayButton lazy />
+          <div className={appStoreBadgeMenu ? "flex items-center justify-center gap-3 px-4 pt-4" : "flex justify-center px-4 pt-4"}>
+            <GooglePlayButton lazy compact={!!appStoreBadgeMenu} />
+            {appStoreBadgeMenu}
           </div>
         </Container>
       </div>
