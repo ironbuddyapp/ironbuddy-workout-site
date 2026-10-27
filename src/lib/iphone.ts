@@ -21,7 +21,7 @@ export const appStoreUrl = "" as string;
  * home Download card, the CTA banner and the top-of-page CTA) and adds Apple's trademark line to the footer, while
  * every other text stays as today. The full iPhone switch above turns the badge on as well.
  */
-export const appStoreBadgeOnly = false as boolean;
+export const appStoreBadgeOnly = true as boolean;
 
 /** True when the App Store badge shows: with the badge-only switch or the full iPhone switch. */
 export const showAppStoreBadge = iphoneListingLive || appStoreBadgeOnly;
