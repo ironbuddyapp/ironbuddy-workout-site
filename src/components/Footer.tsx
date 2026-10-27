@@ -3,7 +3,7 @@ import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
 import { SocialLinks } from "@/components/SocialLinks";
 import { footerGroups } from "@/lib/content";
-import { appStoreUrl, iphoneListingLive, onIphone } from "@/lib/iphone";
+import { appStoreUrl, iphoneListingLive, withBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 
 const linkClass = "inline-block py-1.5 transition hover:text-white";
@@ -82,7 +82,7 @@ export function Footer() {
           © {new Date().getFullYear()} IronBuddy. All rights reserved.
         </p>
         <p className="text-xs text-muted">
-          {onIphone(
+          {withBadge(
             "Google Play and the Google Play logo are trademarks of Google LLC. Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc., registered in the U.S. and other countries.",
             "Google Play and the Google Play logo are trademarks of Google LLC.",
           )}

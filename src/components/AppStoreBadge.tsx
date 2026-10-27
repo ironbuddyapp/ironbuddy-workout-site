@@ -1,9 +1,9 @@
 import { cn } from "@/lib/cn";
-import { appStoreUrl, iphoneListingLive } from "@/lib/iphone";
+import { appStoreUrl, iphoneListingLive, showAppStoreBadge } from "@/lib/iphone";
 
 /**
- * Apple's "Download on the App Store" badge, next to the Google Play badge. Renders nothing while the iPhone
- * switch is off. With the switch on and no App Store address yet, it is a plain image: no link, no pointer, no
+ * Apple's "Download on the App Store" badge, next to the Google Play badge. Renders nothing while both the iPhone
+ * switch and the badge-only switch are off. With the switch on and no App Store address yet, it is a plain image: no link, no pointer, no
  * focus stop, so it never looks like a button that does nothing. Use Apple's own artwork only
  * (public/badges/app-store-badge.svg, from Apple's marketing tools), never a redrawn badge.
  */
@@ -17,7 +17,7 @@ export function AppStoreBadge({
   /** Set for instances below the fold so the badge does not compete with the hero image. */
   lazy?: boolean;
 }) {
-  if (!iphoneListingLive) return null;
+  if (!showAppStoreBadge) return null;
 
   const size = compact ? "h-10" : "h-12 sm:h-[53px]";
   const badge = (alt: string) => (
@@ -32,7 +32,7 @@ export function AppStoreBadge({
     />
   );
 
-  if (!appStoreUrl) {
+  if (!iphoneListingLive || !appStoreUrl) {
     return (
       <span className={cn("inline-flex items-center justify-center", size, className)}>
         {badge("IronBuddy: Workout Tracker on the App Store")}

@@ -16,6 +16,21 @@ export const iphoneListingLive = false as boolean;
  */
 export const appStoreUrl = "" as string;
 
+/**
+ * BADGE-ONLY SWITCH (Mike, 2026-10-27): shows the App Store badge, without a link, in the badge spots (home hero,
+ * home Download card, the CTA banner and the top-of-page CTA) and adds Apple's trademark line to the footer, while
+ * every other text stays as today. The full iPhone switch above turns the badge on as well.
+ */
+export const appStoreBadgeOnly = false as boolean;
+
+/** True when the App Store badge shows: with the badge-only switch or the full iPhone switch. */
+export const showAppStoreBadge = iphoneListingLive || appStoreBadgeOnly;
+
+/** The layout with the App Store badge while it shows, today's layout otherwise. */
+export function withBadge<T>(badge: T, today: T): T {
+  return showAppStoreBadge ? badge : today;
+}
+
 /** The iPhone wording while the switch is on, today's wording otherwise. */
 export function onIphone<T>(iphone: T, today: T): T {
   return iphoneListingLive ? iphone : today;

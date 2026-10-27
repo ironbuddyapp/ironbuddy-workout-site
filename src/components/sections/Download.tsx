@@ -5,7 +5,7 @@ import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Reveal } from "@/components/Reveal";
 import { SocialLinks } from "@/components/SocialLinks";
 import { VideoCard } from "@/components/VideoCard";
-import { onIphone } from "@/lib/iphone";
+import { withBadge } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { siteConfig } from "@/lib/site";
 
@@ -28,7 +28,7 @@ export function Download() {
                 purchase keeps it all unlocked, with no subscription. Your
                 workouts are stored on your phone, ready every time you walk into the gym.
               </p>
-              <div className={onIphone("mt-8 flex flex-wrap items-center justify-center gap-3", "mt-8 flex justify-center")}>
+              <div className={withBadge("mt-8 flex flex-wrap items-center justify-center gap-3", "mt-8 flex justify-center")}>
                 <GooglePlayButton lazy />
                 <AppStoreBadge lazy />
               </div>
