@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { preload } from "react-dom";
+import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { Footer } from "@/components/Footer";
 import { GoatCounter } from "@/components/GoatCounter";
 import { Header } from "@/components/Header";
 import { ogImage } from "@/lib/seo";
-import { appStoreUrl, iphoneListingLive } from "@/lib/iphone";
+import { appStoreUrl, iphoneListingLive, showAppStoreBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 import "./fonts.css";
 import "./globals.css";
@@ -94,7 +95,7 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <Header />
+        <Header appStoreBadge={showAppStoreBadge ? <AppStoreBadge compact /> : null} />
         {children}
         <Footer />
         <GoatCounter />

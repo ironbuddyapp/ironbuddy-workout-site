@@ -45,7 +45,7 @@ function NavLink({
   );
 }
 
-export function Header() {
+export function Header({ appStoreBadge = null }: { appStoreBadge?: React.ReactNode }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -113,8 +113,9 @@ export function Header() {
             })}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className={appStoreBadge ? "hidden lg:flex lg:items-center lg:gap-3" : "hidden lg:block"}>
           <GooglePlayButton compact />
+          {appStoreBadge}
         </div>
 
         <button
