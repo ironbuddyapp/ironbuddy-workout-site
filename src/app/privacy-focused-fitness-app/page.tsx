@@ -23,7 +23,7 @@ const faqs: Faq[] = [
     id: "internet-permission",
     question: "Why does IronBuddy declare an internet permission?",
     answer:
-      "The policy says the permission is used by Android's networking stack, for example when you open an external link such as the open-source credits. The app does not use it to upload your workout, body, or personal data.",
+      "On Android, the policy says the permission is used by Android's networking stack, for example when you open an external link such as the open-source credits. The app does not use it to upload your workout, body, or personal data. On iPhone, the app makes no network requests of its own; only Apple's StoreKit talks to the App Store, and links open outside the app.",
   },
 ];
 
@@ -69,7 +69,8 @@ export default function PrivacyFocusedPage() {
             </li>
             <li>
               <Strong>Purchase and trial status:</Strong> when your free trial started and whether
-              you unlocked the full app, using a purchase token from Google Play Billing. IronBuddy
+              you unlocked the full app, using a purchase token from Google Play Billing on Android, or
+              the App Store&apos;s record of your free-trial item and purchase on iPhone. IronBuddy
               does not receive or store your payment details.
             </li>
           </BulletList>
@@ -88,24 +89,28 @@ export default function PrivacyFocusedPage() {
             <li>Collect data onto IronBuddy-operated servers</li>
             <li>Use advertising SDKs or sell personal data</li>
             <li>Use third-party analytics or crash SDKs that report your workouts to us</li>
-            <li>Receive your payment card or billing details, which stay with Google Play</li>
+            <li>Receive your payment card or billing details, which stay with Google Play or the App Store</li>
             <li>Access your contacts, precise location, microphone, or camera</li>
           </BulletList>
         </ContentSection>
 
         <ContentSection id="copies" title="Where copies of your data can exist">
           <p>
-            Your data lives on your device, but copies can exist in three ways, all under your
-            control or Android&apos;s:
+            Your data lives on your device, but copies can exist in a few ways, all under your
+            control or your phone&apos;s:
           </p>
           <BulletList>
             <li>
-              <Strong>An automatic backup file</Strong> in your Downloads folder, updated whenever your data changes (full version only). You can turn it off in Settings.
+              <Strong>An automatic backup file,</Strong> updated whenever your data changes (full version only): in your Downloads folder on Android, or in the Files app on iPhone (On My iPhone → IronBuddy, or an iCloud Drive folder you choose). You can turn it off in Settings.
             </li>
             <li>
               <Strong>Android Auto Backup</Strong> to your Google account, if Google backup is on
               for your phone. Google and Android manage it; IronBuddy does not receive or access
               these backups.
+            </li>
+            <li>
+              <Strong>iCloud Backup</Strong> on iPhone, if it is turned on. Apple and iOS manage it;
+              IronBuddy does not receive or access it.
             </li>
             <li>
               <Strong>Files you export or share,</Strong> such as a JSON copy of your data or a PDF
@@ -114,8 +119,8 @@ export default function PrivacyFocusedPage() {
           </BulletList>
           <p>
             Once a file is saved or shared, the destination is outside IronBuddy&apos;s control.
-            Uninstalling the app does not delete files already saved in Downloads or a backup in
-            your Google account. See{" "}
+            Uninstalling the app does not delete files already saved in Downloads or in a folder you
+            chose such as iCloud Drive, or a backup in your Google account or iCloud. See{" "}
             <TextLink href={policy("backups")}>section 7 of the policy</TextLink>.
           </p>
         </ContentSection>
@@ -125,15 +130,22 @@ export default function PrivacyFocusedPage() {
             <li>
               <Strong>Internet / network,</Strong> used by Android&apos;s networking stack, for
               example when you open an external link. Not used to upload your workout, body, or
-              personal data.
+              personal data. On iPhone the app makes no network requests of its own, and links open
+              outside the app.
             </li>
             <li>
-              <Strong>Google Play Billing,</Strong> to complete the in-app purchase.
+              <Strong>Google Play Billing</Strong> on Android, or Apple&apos;s StoreKit on iPhone, to
+              complete the in-app purchase.
             </li>
             <li>
               <Strong>Storage / media access,</Strong> to save the backup file and exports in
               Downloads and to read files you choose to import. If you pick a folder with
               Android&apos;s folder picker, the app can access only that folder.
+            </li>
+            <li>
+              <Strong>On iPhone, no special permissions.</Strong> The app reaches files only through
+              the Files pickers you use (to import a backup, or to choose a folder for the backup
+              file). Save to Photos asks once to add pictures, and the app never reads your photos.
             </li>
           </BulletList>
           <p>
@@ -149,16 +161,21 @@ export default function PrivacyFocusedPage() {
               stores on the device.
             </li>
             <li>
-              <Strong>Uninstall:</Strong> removes the app&apos;s private storage.
+              <Strong>Uninstall:</Strong> removes the app&apos;s private storage (on iPhone, also its
+              On My iPhone → IronBuddy folder).
             </li>
             <li>
               <Strong>Files you saved:</Strong> the automatic backup file and any JSON or PDF files
-              in Downloads are not removed by uninstalling or by Reset All Data. Delete them
-              manually if you no longer want those copies.
+              in Downloads, or in a folder you chose on iPhone, are not removed by uninstalling or by
+              Reset All Data. Delete them manually if you no longer want those copies.
             </li>
             <li>
               <Strong>Google backup:</Strong> delete it in your phone&apos;s Google backup settings
               or from your Google account.
+            </li>
+            <li>
+              <Strong>iCloud Backup:</Strong> manage it on your iPhone in Settings → your name →
+              iCloud → Manage Account Storage → Backups.
             </li>
           </BulletList>
           <p>

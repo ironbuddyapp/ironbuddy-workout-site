@@ -77,6 +77,8 @@ const screenshotImages = [
 
 /** Keyword map applied: titles, H1s, descriptions and intros name each page's main keyword. */
 const KEYWORD_MAP = "2026-10-21";
+/** iPhone details in the privacy policy, its plain-language page and the contact page; one name for the credits. */
+const IPHONE_PRIVACY = "2026-10-27";
 
 export const pages = {
   home: {
@@ -179,7 +181,7 @@ export const pages = {
     summary: "800+ exercises with form demos, muscle and equipment filters, and an exercise page with your last workout and records.",
     keywords: { main: "exercise library app", supporting: ["800+ exercises", "exercise database"] },
     published: RELEASE_203,
-    modified: KEYWORD_MAP,
+    modified: IPHONE_PRIVACY,
     images: ["/screenshots/ironbuddy-exercise-library.webp", "/screenshots/ironbuddy-exercise-filters.webp", "/screenshots/ironbuddy-exercise-page.webp"],
   },
   trainingSplits: {
@@ -254,7 +256,7 @@ export const pages = {
     summary: "What IronBuddy stores, where copies can exist, which permissions it uses, and how to delete your data.",
     keywords: { main: "privacy-focused fitness app", supporting: ["no account", "local data"] },
     published: UPDATED,
-    modified: KEYWORD_MAP,
+    modified: IPHONE_PRIVACY,
   },
   alternatives: {
     path: "/alternatives/",
@@ -569,7 +571,7 @@ export const pages = {
     summary: "How to reach IronBuddy for support, feedback or privacy questions, and what to include.",
     keywords: null,
     published: CONTACT_ADDED,
-    modified: KEYWORD_MAP,
+    modified: IPHONE_PRIVACY,
   },
   privacy: {
     path: "/privacy/",
@@ -584,7 +586,7 @@ export const pages = {
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
     // it adds the website-only GoatCounter note, which is not part of the app policy. Moved to workout.ironbuddy.fit
     // on 18 October 2026.
-    modified: KEYWORD_MAP,
+    modified: IPHONE_PRIVACY,
   },
 } as const satisfies Record<string, PageDef>;
 
