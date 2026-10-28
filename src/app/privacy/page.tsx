@@ -134,8 +134,8 @@ export default function PrivacyPage() {
             <li>
               Copies of your data can exist outside the App’s private storage, all explained in section 7. On
               Android: an automatic backup file in Download/IronBuddy (full version only), and Android’s own
-              backup to your Google account, if Google backup is turned on. On iPhone: your iPhone’s iCloud
-              Backup, if it is turned on, and, in the full version, an automatic backup file in the Files app
+              backup to your Google account, if Google backup is turned on. On iPhone: an iCloud copy of your data
+              in your own iCloud account (see section 7), your iPhone’s iCloud Backup, if it is turned on, and, in the full version, an automatic backup file in the Files app
               (On My iPhone → IronBuddy, or an iCloud Drive folder you choose). On both, in the full version:
               files you choose to export or share.
             </li>
@@ -185,7 +185,8 @@ export default function PrivacyPage() {
               whether you have unlocked the full app. On Android this includes a purchase verification
               token provided by Google Play Billing; on iPhone, the App Store transaction identifier and
               the date of your free trial item. These let the App verify and restore your entitlement.
-              They are stored on your device. The App does not receive or store your payment details.
+              They are stored on your device (on iPhone, the two trial dates are also kept in the iCloud copy,
+              see section 7). The App does not receive or store your payment details.
             </li>
           </BulletList>
           <p>
@@ -291,6 +292,23 @@ export default function PrivacyPage() {
               server. You can turn the file off, or move it back to the iPhone, in Settings → Backup.
             </li>
             <li>
+              <Strong>iCloud copy (iPhone only):</Strong> on iPhone, in the App Store version, IronBuddy keeps
+              one up-to-date copy of your data in your own iCloud account, using Apple’s CloudKit. A few
+              seconds after you change something, and when you leave the App, the App replaces that copy with
+              your current data: the same workout, split, body-stat and settings data the App holds on your
+              device, plus the date your free trial started and the latest time the App has seen. The copy
+              sits in the private area of your iCloud that only you can open with your Apple ID. It is stored
+              and managed by Apple; IronBuddy has no servers and does not receive, read or access it. Deleting
+              the App does not delete the copy. If you reinstall the App, or open it on a new iPhone signed in
+              to the same Apple ID, the App finds the copy and offers to bring your data back or to start
+              fresh; if you start fresh, the old copy is replaced once you finish setting up. Because the copy
+              carries the trial dates, restoring it does not restart or extend your free trial. “Reset all
+              data” in the App does not delete the copy either; it is replaced with your new data once you
+              finish setting up again. The copy needs you to be signed in to iCloud on the iPhone; if you are
+              not, the App simply does not make one. This applies to the iPhone app only; the Android app has
+              no iCloud copy.
+            </li>
+            <li>
               <Strong>iCloud Backup (iPhone):</Strong> if iCloud Backup is turned on, iOS includes the
               App’s data in your iPhone’s backup in your iCloud account, and can restore it when you set up
               a new iPhone from that backup. This backup is made and managed entirely by Apple and iOS;
@@ -317,7 +335,8 @@ export default function PrivacyPage() {
             destination (Downloads folder, email, Drive, messaging apps, etc.) is outside
             IronBuddy’s control and subject to that destination’s policies. Uninstalling the App
             does not automatically delete files already saved in Downloads (Android) or in a folder you chose
-            such as iCloud Drive (iPhone), or a backup stored in your Google account or iCloud.
+            such as iCloud Drive (iPhone), a backup stored in your Google account or in iCloud Backup, or the iCloud copy
+            (iPhone).
           </p>
           <p>The backup file (Download → IronBuddy on Android, Files → IronBuddy on iPhone) and export of your data are available in the full version. During the free trial, your data is protected only by Android’s own backup or, on iPhone, by iCloud Backup, if you turn it on.</p>
         </ContentSection>
@@ -326,7 +345,8 @@ export default function PrivacyPage() {
           <p>
             IronBuddy does not transmit workout logs, body measurements, exercise history, notes, or
             other fitness information to IronBuddy-operated servers. All such information remains on
-            your device unless you explicitly export, share, or back up your data using Android’s or Apple’s backup services or another destination you choose.
+            your device unless you export or share your data, or it is saved to your own iCloud account by the iPhone’s iCloud features
+            (the iCloud copy, iCloud Backup, an iCloud Drive folder you choose), or you use Android’s backup or another destination you choose.
           </p>
         </ContentSection>
 
@@ -393,7 +413,8 @@ export default function PrivacyPage() {
             </li>
             <li>
               <Strong>iPhone:</Strong> deleting the App removes its data and its On My iPhone → IronBuddy
-              folder. A backup file in a folder you chose (such as iCloud Drive) stays until you delete it
+              folder. The iCloud copy is not removed when you delete the App. You can remove the copy in your
+              iPhone’s iCloud storage settings. A backup file in a folder you chose (such as iCloud Drive) stays until you delete it
               in the Files app. An iCloud Backup can be managed in Settings → your name → iCloud → Manage
               Account Storage → Backups. Images saved to Photos stay there until you delete them.
             </li>
