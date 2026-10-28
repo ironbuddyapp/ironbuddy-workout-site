@@ -338,7 +338,7 @@ export default function PrivacyPage() {
             such as iCloud Drive (iPhone), a backup stored in your Google account or in iCloud Backup, or the iCloud copy
             (iPhone).
           </p>
-          <p>The backup file (Download → IronBuddy on Android, Files → IronBuddy on iPhone) and export of your data are available in the full version. During the free trial, your data is protected only by Android’s own backup or, on iPhone, by iCloud Backup, if you turn it on.</p>
+          <p>The backup file (Download → IronBuddy on Android, Files → IronBuddy on iPhone) and export of your data are available in the full version. During the free trial, your data is protected only by Android’s own backup or, on iPhone, by the iCloud copy and by iCloud Backup, if you turn it on.</p>
         </ContentSection>
 
         <ContentSection id="transmission" title="8. Data handling and transmission">
