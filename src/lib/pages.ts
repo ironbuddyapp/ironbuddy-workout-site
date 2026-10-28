@@ -586,7 +586,7 @@ export const pages = {
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
     // it adds the website-only GoatCounter note, which is not part of the app policy. Moved to workout.ironbuddy.fit
     // on 18 October 2026.
-    modified: IPHONE_PRIVACY,
+    modified: "2026-10-28",
   },
 } as const satisfies Record<string, PageDef>;
 
