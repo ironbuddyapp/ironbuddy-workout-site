@@ -41,6 +41,7 @@ export default function ExerciseLibraryPage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.exerciseLibrary, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="library"
         trail={crumbs}
         eyebrow="Exercise library"
         title="Exercise library app: 800+ exercises with demos, filters and your records"
@@ -51,7 +52,7 @@ export default function ExerciseLibraryPage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="library" title="Search, Recent, and sort" shot="library">
+        <FeatureBlock id="library" title="Search, Recent, and sort">
           <p>
             The library opens on a <Strong>Recent</Strong> section with the exercises you did
             lately and when (&ldquo;Yesterday&rdquo;, &ldquo;3 days ago&rdquo;), then the full

@@ -41,6 +41,7 @@ export default function ProgressChartsPage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.progressCharts, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="strength"
         trail={crumbs}
         eyebrow="Progress charts"
         title="Progressive overload tracker: best weight, 1RM, volume and reps"
@@ -51,7 +52,7 @@ export default function ProgressChartsPage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="exercises" title="Five charts for every exercise" shot="strength">
+        <FeatureBlock id="exercises" title="Five charts for every exercise">
           <p>
             Pick any exercise you have logged and switch between <Strong>Best weight</Strong>,{" "}
             <Strong>1RM</Strong>, <Strong>Weight vs Reps</Strong> (two lines on one chart),{" "}

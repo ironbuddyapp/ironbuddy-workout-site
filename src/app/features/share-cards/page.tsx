@@ -45,6 +45,7 @@ export default function ShareCardsPage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.shareCards, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="share"
         trail={crumbs}
         eyebrow="Share cards · full version"
         title="Share workout on Instagram: PRs, charts and workouts as images"
@@ -55,7 +56,7 @@ export default function ShareCardsPage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="pr-card" title="The personal record card" shot="share">
+        <FeatureBlock id="pr-card" title="The personal record card">
           <p>
             Open a workout in History and tap <Strong>Share</Strong>. A workout with records lets
             you switch between the workout card and a card for each PR: the exercise, the set that

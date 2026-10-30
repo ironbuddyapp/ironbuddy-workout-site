@@ -45,6 +45,7 @@ export default function CustomizableHomePage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.customizableHome, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="dashboard"
         trail={crumbs}
         eyebrow="Customizable Home · full version"
         title="A workout calendar app with a Home you arrange yourself"
@@ -55,7 +56,7 @@ export default function CustomizableHomePage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="cards" title="Nine widgets, three pages" shot="dashboard">
+        <FeatureBlock id="cards" title="Nine widgets, three pages">
           <p>
             Every page of Home is a two-column grid that fills the space under the calendar. Out
             of the box, page 1 shows <Strong>Muscles worked</Strong> this week on a body map, your{" "}
