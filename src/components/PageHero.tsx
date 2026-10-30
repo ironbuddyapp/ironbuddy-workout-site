@@ -58,7 +58,7 @@ export function PageHero({
               </div>
             ) : null}
             <div className={cn(shot && "lg:col-start-1 lg:row-start-2")}>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
                 {lead}
               </p>
               {updated ? (

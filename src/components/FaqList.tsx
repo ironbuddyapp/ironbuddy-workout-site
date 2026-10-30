@@ -13,7 +13,7 @@ export function FaqList({ items }: { items: Faq[] }) {
           <h3 className="text-base font-medium tracking-tight text-white sm:text-lg">
             {item.question}
           </h3>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+          <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted sm:text-base">
             {item.answer}
           </p>
           {item.more ? (

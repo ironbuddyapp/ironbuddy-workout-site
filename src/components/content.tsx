@@ -115,7 +115,7 @@ export function ContentSection({
       >
         {title}
       </h2>
-      <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-muted sm:text-base">
+      <div className="mt-4 space-y-4 text-[15px] leading-relaxed text-muted sm:text-base [&>p]:max-w-xl">
         {children}
       </div>
     </section>
@@ -126,7 +126,7 @@ export function ContentSection({
 export function TrialNote({ children }: { children?: React.ReactNode }) {
   const facts = [trialDetails.includes, ...trialDetails.unlocks.split(/(?<=\.) /)];
   return (
-    <div className="rounded-2xl border border-white/8 bg-surface p-5">
+    <div className="max-w-xl rounded-2xl border border-white/8 bg-surface p-5">
       <p className="text-sm font-semibold text-white">Free trial and full version</p>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm marker:text-primary/70">
         {facts.map((fact) => (
@@ -143,12 +143,12 @@ export function SubHeading({ children }: { children: React.ReactNode }) {
 }
 
 export function BulletList({ children }: { children: React.ReactNode }) {
-  return <ul className="list-disc space-y-2 pl-5 marker:text-primary/70">{children}</ul>;
+  return <ul className="max-w-xl list-disc space-y-2 pl-5 marker:text-primary/70">{children}</ul>;
 }
 
 export function NumberedList({ children }: { children: React.ReactNode }) {
   return (
-    <ol className="list-decimal space-y-2 pl-5 marker:font-semibold marker:text-primary">
+    <ol className="max-w-xl list-decimal space-y-2 pl-5 marker:font-semibold marker:text-primary">
       {children}
     </ol>
   );
@@ -171,7 +171,7 @@ export function Callout({ title, children }: { title: string; children: React.Re
   return (
     <div className="rounded-2xl border border-primary/20 bg-primary/[0.06] p-5 sm:p-6">
       <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{title}</p>
-      <div className="mt-2 space-y-3 text-[15px] leading-relaxed text-white/85 sm:text-base">
+      <div className="mt-2 space-y-3 text-[15px] leading-relaxed text-white/85 sm:text-base [&>p]:max-w-xl">
         {children}
       </div>
     </div>
