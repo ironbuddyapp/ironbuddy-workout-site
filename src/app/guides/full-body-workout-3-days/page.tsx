@@ -110,7 +110,7 @@ export default function FullBodyGuidePage() {
         lead="A full body workout 3 days a week trains every major muscle in each session, with a day of rest between. It is the plan most coaches hand to a beginner, and for good reason: the sessions are short, every movement gets practised often, and progress is easy to see from week to week."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>Three sessions a week, each with a leg exercise, a press, a pull and a little isolation work.</li>

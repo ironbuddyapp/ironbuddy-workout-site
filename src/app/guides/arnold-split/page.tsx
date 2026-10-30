@@ -144,7 +144,7 @@ export default function ArnoldSplitGuidePage() {
         lead="The Arnold split groups the body into three days, chest with back, shoulders with arms, and legs, and runs each twice a week for six sessions. It is a high-frequency, high-volume bodybuilding split named after the routine Arnold Schwarzenegger trained on in the 1970s. Done at a sane volume, it is a strong option for experienced lifters with six days to spare."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>Three pairings: chest &amp; back, shoulders &amp; arms, legs. Each twice a week, six sessions.</li>

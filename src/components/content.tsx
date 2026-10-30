@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { Children, isValidElement } from "react";
 import { Container } from "@/components/Container";
 import { cn } from "@/lib/cn";
+import { trialDetails } from "@/lib/content";
 
 const linkClass =
   "rounded-sm font-medium text-primary underline decoration-primary/40 underline-offset-4 transition hover:decoration-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary";
@@ -41,11 +43,54 @@ export function TextLink({
   );
 }
 
-/** Reading-width column used by every content page below the hero. */
-export function PageBody({ children }: { children: React.ReactNode }) {
+/** The ContentSection children of a page body, in order, for the "On this page" list. */
+function sectionLinks(children: React.ReactNode) {
+  return Children.toArray(children).flatMap((child) => {
+    if (!isValidElement(child) || child.type !== ContentSection) return [];
+    const { id, title } = child.props as { id: string; title: string };
+    return [{ id, title }];
+  });
+}
+
+/** Links to the sections of a long page. Put on a page with PageBody's `toc` prop. */
+function OnThisPage({ items }: { items: Array<{ id: string; title: string }> }) {
+  return (
+    <nav aria-labelledby="on-this-page" className="rounded-2xl border border-white/8 bg-surface p-5 sm:p-6">
+      <p id="on-this-page" className="text-xs font-semibold uppercase tracking-[0.18em] text-muted">
+        On this page
+      </p>
+      <ol className="mt-3 grid list-decimal gap-x-8 pl-5 text-[15px] marker:font-semibold marker:text-primary sm:grid-cols-2">
+        {items.map((item) => (
+          <li key={item.id} className="py-0.5">
+            <a
+              href={`#${item.id}`}
+              className="inline-block rounded-sm py-1 text-white/85 transition hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              {item.title}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
+/**
+ * Reading-width column used by every content page below the hero. `toc` adds an "On this page" list of the
+ * page's ContentSections (right after a leading Callout such as Key takeaways); use it on long pages.
+ */
+export function PageBody({ children, toc = false }: { children: React.ReactNode; toc?: boolean }) {
+  const nodes = Children.toArray(children);
+  const links = toc ? sectionLinks(children) : [];
+  const first = nodes[0];
+  const leading = links.length >= 4 && isValidElement(first) && first.type !== ContentSection ? 1 : 0;
   return (
     <Container>
-      <div className="mx-auto max-w-3xl space-y-12 pb-20 sm:space-y-14 sm:pb-24">{children}</div>
+      <div className="mx-auto max-w-3xl space-y-12 pb-20 sm:space-y-14 sm:pb-24">
+        {nodes.slice(0, leading)}
+        {links.length >= 4 ? <OnThisPage items={links} /> : null}
+        {nodes.slice(leading)}
+      </div>
     </Container>
   );
 }
@@ -74,6 +119,22 @@ export function ContentSection({
         {children}
       </div>
     </section>
+  );
+}
+
+/** What the free trial and the full version include, one fact per line (the same text as the FAQ and llms.txt). */
+export function TrialNote({ children }: { children?: React.ReactNode }) {
+  const facts = [trialDetails.includes, ...trialDetails.unlocks.split(/(?<=\.) /)];
+  return (
+    <div className="rounded-2xl border border-white/8 bg-surface p-5">
+      <p className="text-sm font-semibold text-white">Free trial and full version</p>
+      <ul className="mt-3 list-disc space-y-2 pl-5 text-sm marker:text-primary/70">
+        {facts.map((fact) => (
+          <li key={fact}>{fact}</li>
+        ))}
+      </ul>
+      {children ? <p className="mt-3 text-sm">{children}</p> : null}
+    </div>
   );
 }
 

@@ -1,5 +1,4 @@
-import { NumberedList, Strong, TextLink } from "@/components/content";
-import { trialDetails } from "@/lib/content";
+import { NumberedList, Strong, TextLink, TrialNote } from "@/components/content";
 import { pages } from "@/lib/pages";
 
 export type SplitDay = {
@@ -93,11 +92,10 @@ export function RunInIronBuddy({ preset, note }: { preset: string; note?: React.
           <Strong>Muscle Balance</Strong> on Home for your weekly sets per muscle group.
         </li>
       </NumberedList>
-      <p>
-        {trialDetails.includes} {trialDetails.unlocks} See{" "}
-        <TextLink href={pages.trainingSplits.path}>training splits in IronBuddy</TextLink> for
+      <TrialNote>
+        See <TextLink href={pages.trainingSplits.path}>training splits in IronBuddy</TextLink> for
         screenshots of the presets, filters and week editor.
-      </p>
+      </TrialNote>
     </>
   );
 }

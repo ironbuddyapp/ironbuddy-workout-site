@@ -126,7 +126,7 @@ export default function BroSplitGuidePage() {
         lead="A bro split gives every major body part its own day: chest on Monday, back on Tuesday, shoulders, legs, arms. It is the split most gyms were built around, it is easy to follow, and it lets you do a lot of work for one muscle while it is fresh. It also has trade-offs worth knowing before you pick it."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>Five days, five body parts: chest, back, shoulders, legs, arms.</li>

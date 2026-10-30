@@ -41,7 +41,7 @@ export default function ProgressiveOverloadGuidePage() {
         lead="Progressive overload means gradually asking your body to do more over time, and tracking it means recording enough of each workout to see that you are. The simplest answer to how to track progressive overload is to log weight, reps, and sets for every exercise, then compare this week with the last few."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>

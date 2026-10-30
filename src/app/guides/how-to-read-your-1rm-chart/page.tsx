@@ -56,7 +56,7 @@ export default function OneRmChartGuidePage() {
         lead="A one-rep max, or 1RM, is the most you could lift once. You almost never test it, so a workout tracker estimates it from the sets you actually do. That estimate turns every session into one number per exercise, and the estimated 1RM chart plots it over months. This guide explains where the number comes from, why it moves the way it does, how to use it to pick your next weight, and when to ignore it."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>Your estimated 1RM comes from the best set of each workout: weight × (1 + reps ÷ 30), the Epley formula.</li>

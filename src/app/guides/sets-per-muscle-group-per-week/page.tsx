@@ -64,7 +64,7 @@ export default function SetsPerWeekGuidePage() {
         lead="How many sets per muscle group per week you do is the number that decides most of what a programme does. Too few and nothing changes; too many and you stop recovering. The research gives a useful range, and a workout log tells you where you actually are. This guide covers what counts as a set, how many you need, how to spread them over the week, and how to check your own numbers."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>A working set is one taken to within a few reps of failure. Warm-ups don&apos;t count.</li>
