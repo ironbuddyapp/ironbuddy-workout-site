@@ -169,3 +169,10 @@ body:has(#mobile-nav.block) [data-mobile-install-bar] {
     touch-action: pan-x pan-y;
   }
 }
+
+/* Pages with the fixed install bar (feature pages, guides): keep the end of the footer clear of it on a phone. */
+@media (max-width: 1023px) {
+  body:has([data-mobile-install-bar]) footer {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
