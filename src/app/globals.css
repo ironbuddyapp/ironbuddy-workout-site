@@ -23,6 +23,11 @@ body {
   font-family: var(--font-sans);
 }
 
+p,
+li {
+  text-wrap: pretty;
+}
+
 ::selection {
   background: color-mix(in srgb, var(--color-primary) 35%, transparent);
   color: var(--color-white);
