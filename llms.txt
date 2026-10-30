@@ -1,0 +1,70 @@
+# IronBuddy: Workout Tracker
+
+> IronBuddy: Workout Tracker is an offline workout tracker for Android. It logs sets, reps and weight, supports training splits, charts training volume and 1RM (one-rep max), calculated with the Epley formula, and tracks body weight and body fat percentage. Muscle Balance counts weekly sets per muscle group, and the full version adds a customizable Home (cards you move, resize, add and remove), share cards and accent colours. There is no account, no ads and no subscription: the app is free to download with a 7-day free trial, and after the trial a one-time in-app purchase through Google Play is required to keep logging and editing. Workout data is stored on the device and is not sent to IronBuddy servers.
+
+Key facts:
+
+- Platform: Android, on Google Play. Not available on iPhone yet.
+- Android package: com.ironbuddy.app
+- Google Play: https://play.google.com/store/apps/details?id=com.ironbuddy.app
+- YouTube: https://www.youtube.com/@IronBuddyApp (two-minute tour: https://youtu.be/JAVDVynLZ6Y)
+- Works offline: yes (logging, history and the exercise library need no connection)
+- Account required: no
+- Ads: none
+- Subscription: none
+- Free trial: The 7-day free trial includes the whole workout tracker: workout logging, progress charts, body metrics, the full library of 800+ exercises, every split and your own custom splits. Buying IronBuddy (a one-time purchase) keeps everything unlocked after the trial, and adds export and import of your data, a local copy of your data kept on your phone, share cards, a customizable Home, your calendar look and accent colors. In both the trial and the full version, Android's own backup protects your data if Google backup is turned on. If you don't buy, the app becomes read-only when the trial ends: nothing is deleted and your data stays visible on your phone, but logging and editing need the purchase.
+- Pricing: a one-time purchase after the 7-day free trial, no subscription (Google Play shows the price for your country)
+- Contact: iron.buddy.app@gmail.com
+
+## Product
+
+- [Home](https://workout.ironbuddy.fit/): Offline Android workout tracker with no account, ads, or subscription.
+- [Features](https://workout.ironbuddy.fit/features/): Workout logging, training splits, Muscle Balance, progress charts, share cards, the exercise library and a customizable Home.
+- [What's new](https://workout.ironbuddy.fit/whats-new/): Release notes for every IronBuddy version, newest first.
+- [Offline workout app](https://workout.ironbuddy.fit/offline-workout-tracker/): What works without a signal, what needs the internet, and how to keep an offline log safe.
+- [No subscription, no ads](https://workout.ironbuddy.fit/workout-app-no-subscription/): How the free trial and one-time purchase work, and how to check any workout app for ads and subscriptions.
+- [Privacy-focused fitness app](https://workout.ironbuddy.fit/privacy-focused-fitness-app/): What IronBuddy stores, where copies can exist, which permissions it uses, and how to delete your data.
+- [Workout app alternatives](https://workout.ironbuddy.fit/alternatives/): Who IronBuddy fits, who it does not, and a checklist for comparing any workout tracker.
+- [Strong alternative](https://workout.ironbuddy.fit/alternatives/strong/): IronBuddy for lifters coming from Strong: strength tracking, switching steps, and how to compare.
+- [Hevy alternative](https://workout.ironbuddy.fit/alternatives/hevy/): IronBuddy for lifters coming from Hevy: planning splits, switching steps, and how to compare.
+- [FitNotes alternative](https://workout.ironbuddy.fit/alternatives/fitnotes/): IronBuddy for lifters coming from FitNotes: backups and exports, switching steps, and how to compare.
+- [JEFIT alternative](https://workout.ironbuddy.fit/alternatives/jefit/): IronBuddy for lifters coming from JEFIT: the exercise library, switching steps, and how to compare.
+- [Boostcamp alternative](https://workout.ironbuddy.fit/alternatives/boostcamp/): IronBuddy for lifters coming from Boostcamp: set-by-set logging, switching steps, and how to compare.
+- [Caliber alternative](https://workout.ironbuddy.fit/alternatives/caliber/): IronBuddy for lifters coming from Caliber: body weight and body fat tracking, switching steps, and how to compare.
+- [App comparison](https://workout.ironbuddy.fit/workout-tracker-app-comparison/): IronBuddy and six popular Android workout trackers compared on Google Play facts and published prices, with sources and dates.
+
+## Features
+
+- [Customizable Home](https://workout.ironbuddy.fit/features/customizable-home/): Pick your calendar look, and drag, resize, add and remove the widgets on IronBuddy's Home, on three pages that fit your screen.
+- [Muscle Balance](https://workout.ironbuddy.fit/features/muscle-balance/): Working sets per body area this week against last week, what you skipped, and the muscles you trained on a body map.
+- [Workout summary](https://workout.ironbuddy.fit/features/workout-summary/): Every exercise against your last session, new records marked, the muscles worked and volume per muscle.
+- [Progress charts](https://workout.ironbuddy.fit/features/progress-charts/): Best weight, estimated 1RM, weight vs reps, volume and reps per exercise, workout volume, body weight and body fat.
+- [Share cards](https://workout.ironbuddy.fit/features/share-cards/): A workout, a personal record or a chart as an image, made on your phone and shared or saved (full version).
+- [Exercise library](https://workout.ironbuddy.fit/features/exercise-library/): 800+ exercises with form demos, muscle and equipment filters, and an exercise page with your last workout and records.
+- [Training splits](https://workout.ironbuddy.fit/features/training-splits/): Ten preset splits with rep ranges and rest times, filters by days a week and level, and your own custom splits.
+- [Set techniques](https://workout.ironbuddy.fit/features/set-techniques/): Eight set techniques logged with their own reps and weight, so every drop and every pause counts in your volume.
+
+## Guides
+
+- [Guides](https://workout.ironbuddy.fit/guides/): Plain-language guides to progressive overload, workout logging and training splits.
+- [How to track progressive overload](https://workout.ironbuddy.fit/guides/how-to-track-progressive-overload/): A simple method for tracking progressive overload with sets, reps, weight, volume and 1RM.
+- [How to log your workouts](https://workout.ironbuddy.fit/guides/how-to-log-workouts/): The numbers worth recording in a gym log, and how to keep the habit going.
+- [Sets per muscle group per week](https://workout.ironbuddy.fit/guides/sets-per-muscle-group-per-week/): What the research suggests for weekly sets per muscle, what counts as a set, and how to check your own week.
+- [Drop sets, supersets and rest-pause](https://workout.ironbuddy.fit/guides/drop-sets-supersets-rest-pause/): How to do drop sets, supersets and rest-pause sets, when to use them, and how to log them properly.
+- [Reading your 1RM chart](https://workout.ironbuddy.fit/guides/how-to-read-your-1rm-chart/): What an estimated 1RM is, how the Epley formula works, how to read the trend, and when the number misleads.
+- [Push Pull Legs split](https://workout.ironbuddy.fit/guides/push-pull-legs-split/): Three-day and six-day Push Pull Legs layouts, what goes on each day, and how to track a PPL split.
+- [Upper Lower split](https://workout.ironbuddy.fit/guides/upper-lower-split/): Two upper and two lower sessions a week: what goes on each day, weekly layouts, and how to track an Upper Lower split.
+- [Full body workout, 3 days a week](https://workout.ironbuddy.fit/guides/full-body-workout-3-days/): Three full-body sessions a week: the exercises on each day, why it suits beginners, and how to track it.
+- [PHUL split](https://workout.ironbuddy.fit/guides/phul-workout/): The four-day Power Hypertrophy Upper Lower split: what each day trains, who it suits, and how to run and track it.
+- [PHAT split](https://workout.ironbuddy.fit/guides/phat-workout/): The five-day Power Hypertrophy Adaptive Training split: what each day trains, who it suits, and how to track it.
+- [Bro split](https://workout.ironbuddy.fit/guides/bro-split/): One body part a day, Monday to Friday: what each day trains, the trade-offs, and how to track a bro split.
+- [Arnold split](https://workout.ironbuddy.fit/guides/arnold-split/): Chest and back, shoulders and arms, legs, each twice a week: what goes on each day and how to track the Arnold split.
+- [5/3/1 Boring But Big](https://workout.ironbuddy.fit/guides/531-boring-but-big/): A three-day take on 5/3/1 Boring But Big: a main lift then 5×10 of it, how it differs from the original, and how to track it.
+
+## Answers and policies
+
+- [FAQ](https://workout.ironbuddy.fit/faq/): Answers about offline use, pricing, ads, accounts, data storage and progress tracking.
+- [About](https://workout.ironbuddy.fit/about/): What IronBuddy is, how it is priced, how it handles data, and how to contact us.
+- [Press kit](https://workout.ironbuddy.fit/press/): Fact sheet, ready-to-use descriptions, the app icon and screenshots for writing about IronBuddy.
+- [Contact](https://workout.ironbuddy.fit/contact/): How to reach IronBuddy for support, feedback or privacy questions, and what to include.
+- [Privacy Policy](https://workout.ironbuddy.fit/privacy/): How IronBuddy handles data, backups, permissions and purchases.
