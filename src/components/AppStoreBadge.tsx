@@ -4,7 +4,8 @@ import { appStoreUrl, iphoneListingLive, showAppStoreBadge } from "@/lib/iphone"
 /**
  * Apple's "Download on the App Store" badge, next to the Google Play badge. Renders nothing while both the iPhone
  * switch and the badge-only switch are off. With the switch on and no App Store address yet, it is a plain image: no link, no pointer, no
- * focus stop, so it never looks like a button that does nothing. Use Apple's own artwork only
+ * focus stop, with a visible "Coming soon" line under it so it never looks like a button that does nothing. The rows
+ * that hold it are top-aligned (items-start) so the Google Play badge next to it stays level. Use Apple's own artwork only
  * (public/badges/app-store-badge.svg, from Apple's marketing tools), never a redrawn badge.
  */
 export function AppStoreBadge({
@@ -34,8 +35,11 @@ export function AppStoreBadge({
 
   if (!iphoneListingLive || !appStoreUrl) {
     return (
-      <span className={cn("inline-flex items-center justify-center", size, className)}>
-        {badge("IronBuddy: Workout Tracker on the App Store")}
+      <span className={cn("inline-flex flex-col items-center", className)}>
+        <span className={cn("inline-flex items-center justify-center", size)}>
+          {badge("IronBuddy: Workout Tracker on the App Store")}
+        </span>
+        <span className="mt-0.5 text-xs leading-4 text-muted">Coming soon</span>
       </span>
     );
   }

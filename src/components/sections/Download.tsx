@@ -28,7 +28,7 @@ export function Download() {
                 purchase keeps it all unlocked, with no subscription. Your
                 workouts are stored on your phone, ready every time you walk into the gym.
               </p>
-              <div className={withBadge("mt-8 flex items-center justify-center gap-3", "mt-8 flex justify-center")}>
+              <div className={withBadge("mt-8 flex items-start justify-center gap-3", "mt-8 flex justify-center")}>
                 <GooglePlayButton lazy compact={showAppStoreBadge} />
                 <AppStoreBadge lazy compact />
               </div>

@@ -12,7 +12,7 @@ export function MobileInstallBar() {
       <div
         className={cn(
           "pointer-events-auto flex justify-center border-t border-white/8 bg-background/90 px-4 pt-3 backdrop-blur-xl pb-[max(0.75rem,env(safe-area-inset-bottom))]",
-          showAppStoreBadge && "items-center gap-3",
+          showAppStoreBadge && "items-start gap-3",
         )}
       >
         <GooglePlayButton compact={showAppStoreBadge} />
