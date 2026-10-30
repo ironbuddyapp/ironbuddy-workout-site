@@ -119,7 +119,7 @@ export function Header({
             })}
         </nav>
 
-        <div className={appStoreBadge ? "hidden lg:flex lg:items-center lg:gap-3" : "hidden lg:block"}>
+        <div className={appStoreBadge ? "hidden lg:flex lg:items-start lg:gap-3" : "hidden lg:block"}>
           <GooglePlayButton compact />
           {appStoreBadge}
         </div>
@@ -155,7 +155,7 @@ export function Header({
               {item.label}
             </NavLink>
           ))}
-          <div className={appStoreBadgeMenu ? "flex items-center justify-center gap-3 px-4 pt-4" : "flex justify-center px-4 pt-4"}>
+          <div className={appStoreBadgeMenu ? "flex items-start justify-center gap-3 px-4 pt-4" : "flex justify-center px-4 pt-4"}>
             <GooglePlayButton lazy compact={!!appStoreBadgeMenu} />
             {appStoreBadgeMenu}
           </div>

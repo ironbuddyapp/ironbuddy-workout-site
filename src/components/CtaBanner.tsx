@@ -1,6 +1,6 @@
 import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
-import { onIphone, showAppStoreBadge, withBadge } from "@/lib/iphone";
+import { iphoneListingLive, iphoneSoonText, onIphone, showAppStoreBadge, withBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 
 /** Closing call to action for content pages. Same visual language as the home page's download card. */
@@ -28,10 +28,11 @@ export function CtaBanner({
           {children ??
             `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, make a one-time purchase to keep it all unlocked. No account, no ads, no subscription.`}
         </p>
-        <div className={withBadge("mt-7 flex items-center justify-center gap-3", "mt-7 flex justify-center")}>
+        <div className={withBadge("mt-7 flex items-start justify-center gap-3", "mt-7 flex justify-center")}>
           <GooglePlayButton lazy compact={showAppStoreBadge} />
           <AppStoreBadge lazy compact />
         </div>
+        {iphoneListingLive ? null : <p className="mt-3 text-xs text-muted">{iphoneSoonText}</p>}
       </div>
     </section>
   );
@@ -42,7 +43,7 @@ export function HeroCta() {
   return (
     <div className="flex flex-col items-start gap-3">
       {withBadge(
-        <div className="flex items-center gap-3">
+        <div className="flex items-start gap-3">
           <GooglePlayButton compact={showAppStoreBadge} />
           <AppStoreBadge compact />
         </div>,
@@ -50,6 +51,7 @@ export function HeroCta() {
       )}
       <p className="text-xs text-muted">
         {siteConfig.freeTrialDays}-day free trial, then a one-time purchase · No subscription
+        {iphoneListingLive ? null : ` · ${iphoneSoonText}`}
       </p>
     </div>
   );

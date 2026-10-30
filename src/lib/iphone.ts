@@ -20,8 +20,13 @@ export const appStoreUrl = "" as string;
  * BADGE-ONLY SWITCH (Mike, 2026-10-27): shows the App Store badge, without a link, in the badge spots (home hero,
  * home Download card, the CTA banner and the top-of-page CTA) and adds Apple's trademark line to the footer, while
  * every other text stays as today. The full iPhone switch above turns the badge on as well.
+ * Off since 2026-10-30 (J-20261030-1): Apple's badge licence covers only an app that is live on the App Store, so
+ * until then the badge spots show Google Play alone and `iphoneSoonText` says the iPhone app is coming.
  */
-export const appStoreBadgeOnly = true as boolean;
+export const appStoreBadgeOnly = false as boolean;
+
+/** Plain text under the Google Play badge while the iPhone app is not live yet; never a badge or a date. */
+export const iphoneSoonText = "iPhone app coming soon";
 
 /** True when the App Store badge shows: with the badge-only switch or the full iPhone switch. */
 export const showAppStoreBadge = iphoneListingLive || appStoreBadgeOnly;
