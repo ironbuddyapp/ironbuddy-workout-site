@@ -41,6 +41,7 @@ export default function ProgressChartsPage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.progressCharts, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="strength"
         trail={crumbs}
         eyebrow="Progress charts"
         title="Progressive overload tracker: best weight, 1RM, volume and reps"
@@ -51,12 +52,12 @@ export default function ProgressChartsPage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="exercises" title="Five charts for every exercise" shot="strength">
+        <FeatureBlock id="exercises" title="Five charts for every exercise">
           <p>
             Pick any exercise you have logged and switch between <Strong>Best weight</Strong>,{" "}
             <Strong>1RM</Strong>, <Strong>Weight vs Reps</Strong> (two lines on one chart),{" "}
             <Strong>Volume</Strong> and <Strong>Reps</Strong>. The headline says where you are now
-            and how far you have come: &ldquo;105 kg, ▲ +25 kg since you started&rdquo;.
+            and how far you have come: &ldquo;147&nbsp;kg, ▲&nbsp;+35&nbsp;kg since you started&rdquo;.
           </p>
           <p>
             The estimated 1RM uses the Epley formula on the best set of each workout, so it moves

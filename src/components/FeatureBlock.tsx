@@ -14,7 +14,8 @@ export function FeatureBlock({
 }: {
   id: string;
   title: string;
-  shot: ScreenshotId;
+  /** Omit when the page's hero already shows the screen: the text then takes the whole column. */
+  shot?: ScreenshotId;
   flip?: boolean;
   /** A page that goes deeper, shown as a link under the text. */
   more?: { href: string; label: string };
@@ -25,7 +26,7 @@ export function FeatureBlock({
     <section
       id={id}
       aria-labelledby={headingId}
-      className="grid scroll-mt-24 items-center gap-8 lg:grid-cols-[1fr_292px] lg:gap-16"
+      className={cn("grid scroll-mt-24 items-center gap-8", shot && "lg:grid-cols-[1fr_292px] lg:gap-16")}
     >
       <div className={cn(flip && "lg:order-2")}>
         <h2
@@ -47,9 +48,11 @@ export function FeatureBlock({
           </Link>
         )}
       </div>
-      <PhoneMockup className={cn(flip && "lg:order-1")}>
-        <AppScreen id={shot} />
-      </PhoneMockup>
+      {shot ? (
+        <PhoneMockup className={cn(flip && "lg:order-1")}>
+          <AppScreen id={shot} />
+        </PhoneMockup>
+      ) : null}
     </section>
   );
 }

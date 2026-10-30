@@ -121,7 +121,7 @@ export default function UpperLowerGuidePage() {
         lead="An Upper Lower split divides the body in two: upper-body days for chest, back, shoulders and arms, lower-body days for legs and core. Run it four days a week and every muscle gets trained twice, with the whole weekend free. It is one of the simplest splits to plan and one of the easiest to keep up."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>Two upper days and two lower days a week; every muscle twice a week.</li>

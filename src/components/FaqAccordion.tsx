@@ -54,7 +54,7 @@ export function FaqAccordion({
               hidden={!isOpen}
               className="px-4 pb-4 sm:px-7 sm:pb-5"
             >
-              <p className="max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+              <p className="max-w-xl text-sm leading-relaxed text-muted sm:text-base">
                 {item.answer}
               </p>
               {item.more ? (

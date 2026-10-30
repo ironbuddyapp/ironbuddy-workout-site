@@ -41,6 +41,7 @@ export default function WorkoutSummaryPage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.workoutSummary, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="summary"
         trail={crumbs}
         eyebrow="Workout summary"
         title="Workout summary: see what improved since last time"
@@ -51,7 +52,7 @@ export default function WorkoutSummaryPage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="vs-last-time" title="Every exercise against your last session" shot="summary">
+        <FeatureBlock id="vs-last-time" title="Every exercise against your last session">
           <p>
             Open a workout in History and each exercise shows how it compares with the previous
             time you did it: <Strong>+2.5 kg</Strong> or <Strong>+2 reps</Strong> on your best set,{" "}

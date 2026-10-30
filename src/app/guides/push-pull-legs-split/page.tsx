@@ -7,12 +7,12 @@ import {
   PageBody,
   Strong,
   TextLink,
+  TrialNote,
 } from "@/components/content";
 import { CtaBanner } from "@/components/CtaBanner";
 import { JsonLd } from "@/components/JsonLd";
 import { PageHero } from "@/components/PageHero";
 import { RelatedLinks } from "@/components/RelatedLinks";
-import { trialDetails } from "@/lib/content";
 import { pages } from "@/lib/pages";
 import { pageMetadata } from "@/lib/seo";
 import { pageGraph, trail } from "@/lib/structured-data";
@@ -73,7 +73,7 @@ export default function PushPullLegsGuidePage() {
         lead="A Push Pull Legs split, or PPL, groups your training by movement: pushing muscles one day, pulling muscles the next, then legs. It is simple to plan, easy to repeat, and works at three or six days a week."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>Push trains chest, shoulders and triceps. Pull trains back and biceps. Legs trains the lower body.</li>
@@ -204,11 +204,10 @@ export default function PushPullLegsGuidePage() {
             <li>Open each day from the home screen, enter your reps and weight, and tap Log workout.</li>
             <li>Check Progress to follow volume and 1RM (one-rep max), calculated with the Epley formula, for each lift over time.</li>
           </NumberedList>
-          <p>
-            {trialDetails.includes} {trialDetails.unlocks} See{" "}
-            <TextLink href={pages.trainingSplits.path}>training splits in IronBuddy</TextLink>{" "}
+          <TrialNote>
+            See <TextLink href={pages.trainingSplits.path}>training splits in IronBuddy</TextLink>{" "}
             for screenshots.
-          </p>
+          </TrialNote>
         </ContentSection>
 
         <Callout title="A note on safety">

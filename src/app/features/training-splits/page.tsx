@@ -55,6 +55,7 @@ export default function TrainingSplitsPage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.trainingSplits, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="presets"
         trail={crumbs}
         eyebrow="Training splits"
         title="Workout split app: ten ready-made splits, or build your own"
@@ -65,7 +66,7 @@ export default function TrainingSplitsPage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="presets" title="The ten presets" shot="presets">
+        <FeatureBlock id="presets" title="The ten presets">
           <p>
             Every preset is written with machines and dumbbells, in the 10–15 rep range for most
             work. Each exercise carries its rep range and

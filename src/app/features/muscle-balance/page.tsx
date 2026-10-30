@@ -41,6 +41,7 @@ export default function MuscleBalancePage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.muscleBalance, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="balance"
         trail={crumbs}
         eyebrow="Muscle Balance"
         title="Muscle group tracker: sets per muscle each week, and what you skipped"
@@ -51,7 +52,7 @@ export default function MuscleBalancePage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="chart" title="Six areas, this week against last week" shot="balance">
+        <FeatureBlock id="chart" title="Six areas, this week against last week">
           <p>
             The chart has six points: <Strong>Chest, Shoulders, Arms, Core, Legs and Back</Strong>.
             This week is the green shape, last week the dashed outline, so a dent shows an area

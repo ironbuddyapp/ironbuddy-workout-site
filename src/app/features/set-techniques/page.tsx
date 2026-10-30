@@ -52,6 +52,7 @@ export default function SetTechniquesPage() {
     <main id="main">
       <JsonLd data={pageGraph(pages.setTechniques, { trail: crumbs, about: "app", faqs })} />
       <PageHero
+        shot="logging"
         trail={crumbs}
         eyebrow="Workout logging"
         title="How to log drop sets, supersets, rest-pause and more"
@@ -62,7 +63,7 @@ export default function SetTechniquesPage() {
       </PageHero>
 
       <PageBody>
-        <FeatureBlock id="logging" title="Every set: reps and weight, quickly" shot="logging">
+        <FeatureBlock id="logging" title="Every set: reps and weight, quickly">
           <p>
             Open a day from Home with its <Strong>Log</Strong> button, tap an exercise, and each set
             has reps and weight with <Strong>+</Strong> and <Strong>−</Strong> buttons. Add or

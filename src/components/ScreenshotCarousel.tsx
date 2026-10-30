@@ -68,13 +68,16 @@ export function ScreenshotCarousel() {
       <div className="mt-3 flex items-center justify-center gap-4 lg:mt-6">
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
           aria-label="Previous screenshot"
           onClick={() => scrollTo(Math.max(active - 1, 0))}
         >
           <Icon name="chevronLeft" className="h-5 w-5" />
         </button>
-        <div className="flex" role="tablist" aria-label="Screenshot slides">
+        <p className="min-w-16 text-center text-sm font-medium tabular-nums text-white sm:hidden" aria-live="polite">
+          {active + 1} / {screenshots.length}
+        </p>
+        <div className="flex max-sm:hidden" role="tablist" aria-label="Screenshot slides">
           {screenshots.map((shot, index) => (
             <button
               key={shot.id}
@@ -98,7 +101,7 @@ export function ScreenshotCarousel() {
         </div>
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-white/12 text-white transition hover:border-primary/40 hover:text-primary"
           aria-label="Next screenshot"
           onClick={() => scrollTo(Math.min(active + 1, screenshots.length - 1))}
         >

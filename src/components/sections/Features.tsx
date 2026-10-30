@@ -7,6 +7,9 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { features } from "@/lib/content";
 import { pages } from "@/lib/pages";
 
+/** The first three features (log, splits, progress) are the core of the app and get the large cards. */
+const coreFeatures = 3;
+
 export function Features() {
   return (
     <section id="features" className="max-lg:scroll-mt-0 max-lg:py-0 lg:scroll-mt-24 lg:py-20 sm:py-28">
@@ -18,9 +21,16 @@ export function Features() {
             description="IronBuddy is a workout tracker built around logging, programming, progress, and privacy, all working offline with no account."
           />
         </Reveal>
-        <div className="mt-4 grid grid-cols-2 gap-2 sm:mt-12 sm:gap-4 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <Reveal key={feature.title} delay={index * 70}>
+        <div className="mt-4 grid gap-2 sm:mt-12 sm:grid-cols-3 sm:gap-4">
+          {features.slice(0, coreFeatures).map((feature, index) => (
+            <Reveal key={feature.title} delay={index * 70} className="h-full">
+              <FeatureCard {...feature} featured />
+            </Reveal>
+          ))}
+        </div>
+        <div className="mt-2 grid grid-cols-2 gap-2 sm:mt-4 sm:grid-cols-3 sm:gap-4">
+          {features.slice(coreFeatures).map((feature, index) => (
+            <Reveal key={feature.title} delay={(coreFeatures + index) * 70} className="h-full">
               <FeatureCard {...feature} />
             </Reveal>
           ))}

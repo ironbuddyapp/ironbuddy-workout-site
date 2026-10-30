@@ -23,6 +23,11 @@ body {
   font-family: var(--font-sans);
 }
 
+p,
+li {
+  text-wrap: pretty;
+}
+
 ::selection {
   background: color-mix(in srgb, var(--color-primary) 35%, transparent);
   color: var(--color-white);
@@ -167,5 +172,12 @@ body:has(#mobile-nav.block) [data-mobile-install-bar] {
   .app-deck [data-screenshot-scroller],
   .app-deck [data-screenshot-scroller] * {
     touch-action: pan-x pan-y;
+  }
+}
+
+/* Pages with the fixed install bar (feature pages, guides): keep the end of the footer clear of it on a phone. */
+@media (max-width: 1023px) {
+  body:has([data-mobile-install-bar]) footer {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px));
   }
 }

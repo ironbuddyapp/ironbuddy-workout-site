@@ -1,6 +1,8 @@
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Container } from "@/components/Container";
+import { AppScreen, PhoneMockup } from "@/components/PhoneMockup";
 import { cn } from "@/lib/cn";
+import type { ScreenshotId } from "@/lib/content";
 import { formatDate } from "@/lib/format";
 import type { Crumb } from "@/lib/structured-data";
 
@@ -11,6 +13,7 @@ export function PageHero({
   lead,
   updated,
   wide = false,
+  shot,
   children,
 }: {
   trail: Crumb[];
@@ -22,6 +25,8 @@ export function PageHero({
   updated?: string;
   /** Align with a wider content column (used by the features page's two-column blocks). */
   wide?: boolean;
+  /** The app screen the page is about: beside the text on desktop, the top of the phone under the title on a phone. */
+  shot?: ScreenshotId;
   children?: React.ReactNode;
 }) {
   return (
@@ -29,22 +34,41 @@ export function PageHero({
       <div className="pointer-events-none absolute -left-24 -top-16 h-72 w-72 rounded-full bg-primary/8 blur-3xl" />
       <Container className="relative pb-10 pt-4 sm:pb-14 sm:pt-8">
         <div className={cn("mx-auto", wide ? "max-w-5xl" : "max-w-3xl")}>
-          <Breadcrumbs trail={trail} />
-          <p className="mt-6 text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:mt-8">
-            {eyebrow}
-          </p>
-          <h1 className="mt-3 max-w-3xl text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-[2.75rem]">
-            {title}
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/80 sm:text-lg">
-            {lead}
-          </p>
-          {updated ? (
-            <p className="mt-5 text-xs text-muted">
-              Last updated <time dateTime={updated}>{formatDate(updated)}</time>
-            </p>
-          ) : null}
-          {children ? <div className="mt-8">{children}</div> : null}
+          <div className={cn(shot && "lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:grid-rows-[auto_1fr] lg:gap-x-12")}>
+            <div className={cn(shot && "lg:col-start-1 lg:row-start-1")}>
+              <Breadcrumbs trail={trail} />
+              <p className="mt-6 text-xs font-semibold uppercase tracking-[0.22em] text-primary sm:mt-8">
+                {eyebrow}
+              </p>
+              <h1
+                className={cn(
+                  "mt-3 max-w-3xl text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl",
+                  shot ? "lg:text-4xl" : "lg:text-[2.75rem]",
+                )}
+              >
+                {title}
+              </h1>
+            </div>
+            {shot ? (
+              <div className="relative mt-6 h-44 overflow-hidden lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:h-auto lg:self-center lg:overflow-visible">
+                <PhoneMockup className="w-[220px]! lg:w-[240px]!">
+                  <AppScreen id={shot} priority />
+                </PhoneMockup>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-background to-transparent lg:hidden" />
+              </div>
+            ) : null}
+            <div className={cn(shot && "lg:col-start-1 lg:row-start-2")}>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+                {lead}
+              </p>
+              {updated ? (
+                <p className="mt-5 text-xs text-muted">
+                  Last updated <time dateTime={updated}>{formatDate(updated)}</time>
+                </p>
+              ) : null}
+              {children ? <div className="mt-8">{children}</div> : null}
+            </div>
+          </div>
         </div>
       </Container>
     </header>

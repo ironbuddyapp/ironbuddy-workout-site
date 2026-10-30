@@ -132,7 +132,7 @@ export default function PhatGuidePage() {
         lead="The PHAT workout, short for Power Hypertrophy Adaptive Training, is a five-day split by Layne Norton. Two heavy days early in the week train the upper and lower body for strength; three higher-rep days later in the week train back and shoulders, legs, and chest and arms for size. It is demanding, and for people who recover from it, it covers everything."
       />
 
-      <PageBody>
+      <PageBody toc>
         <Callout title="Key takeaways">
           <BulletList>
             <li>Five days: Upper Power, Lower Power, then Back &amp; Shoulders, Lower and Chest &amp; Arms hypertrophy days.</li>
