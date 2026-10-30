@@ -1,6 +1,6 @@
 import { AppStoreBadge } from "@/components/AppStoreBadge";
 import { GooglePlayButton } from "@/components/GooglePlayButton";
-import { onIphone, showAppStoreBadge, withBadge } from "@/lib/iphone";
+import { iphoneListingLive, iphoneSoonText, onIphone, showAppStoreBadge, withBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 
 /** Closing call to action for content pages. Same visual language as the home page's download card. */
@@ -32,6 +32,7 @@ export function CtaBanner({
           <GooglePlayButton lazy compact={showAppStoreBadge} />
           <AppStoreBadge lazy compact />
         </div>
+        {iphoneListingLive ? null : <p className="mt-3 text-xs text-muted">{iphoneSoonText}</p>}
       </div>
     </section>
   );
@@ -50,6 +51,7 @@ export function HeroCta() {
       )}
       <p className="text-xs text-muted">
         {siteConfig.freeTrialDays}-day free trial, then a one-time purchase · No subscription
+        {iphoneListingLive ? null : ` · ${iphoneSoonText}`}
       </p>
     </div>
   );

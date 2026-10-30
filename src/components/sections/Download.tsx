@@ -5,7 +5,7 @@ import { GooglePlayButton } from "@/components/GooglePlayButton";
 import { Reveal } from "@/components/Reveal";
 import { SocialLinks } from "@/components/SocialLinks";
 import { VideoCard } from "@/components/VideoCard";
-import { showAppStoreBadge, withBadge } from "@/lib/iphone";
+import { iphoneListingLive, iphoneSoonText, showAppStoreBadge, withBadge } from "@/lib/iphone";
 import { pages } from "@/lib/pages";
 import { siteConfig } from "@/lib/site";
 
@@ -32,6 +32,7 @@ export function Download() {
                 <GooglePlayButton lazy compact={showAppStoreBadge} />
                 <AppStoreBadge lazy compact />
               </div>
+              {iphoneListingLive ? null : <p className="mt-3 text-xs text-muted sm:text-sm">{iphoneSoonText}</p>}
               <div className="mx-auto mt-6 max-w-md sm:mt-8">
                 <VideoCard variant="compact" />
               </div>
