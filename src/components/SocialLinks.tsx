@@ -48,7 +48,7 @@ export function SocialLinks({ className }: { className?: string }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={name}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/85 transition hover:border-white/25 hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white/85 transition hover:border-white/25 hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           <Icon className="h-5 w-5" />
         </a>
