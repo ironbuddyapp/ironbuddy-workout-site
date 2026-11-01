@@ -17,7 +17,7 @@ export function Breadcrumbs({ trail }: { trail: Crumb[] }) {
                 <>
                   <Link
                     href={crumb.path}
-                    className="inline-block py-2 transition hover:text-white focus-visible:text-white focus-visible:outline-none"
+                    className="inline-flex min-h-11 items-center transition hover:text-white focus-visible:text-white focus-visible:outline-none"
                   >
                     {crumb.name}
                   </Link>

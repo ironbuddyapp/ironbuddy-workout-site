@@ -49,7 +49,7 @@ export function AppStoreBadge({
       href={appStoreUrl}
       rel="noopener noreferrer"
       className={cn(
-        "inline-flex items-center justify-center rounded-[10px] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        "inline-flex items-center justify-center press rounded-[10px] transition duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         size,
         className,
       )}

@@ -75,7 +75,7 @@ export function Hero() {
             <ExploreIronBuddyButton />
             <a
               href="#features"
-              className="hidden h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:inline-flex"
+              className="press hidden h-12 items-center justify-center rounded-full border border-white/12 px-6 text-sm font-semibold text-white transition hover:border-white/30 hover:bg-white/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary lg:inline-flex"
             >
               View Features
             </a>

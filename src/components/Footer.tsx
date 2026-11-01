@@ -6,7 +6,7 @@ import { footerGroups } from "@/lib/content";
 import { appStoreUrl, iphoneListingLive, withBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 
-const linkClass = "inline-block py-1.5 transition hover:text-white";
+const linkClass = "inline-block py-3 transition hover:text-white sm:py-1.5";
 
 export function Footer() {
   return (
