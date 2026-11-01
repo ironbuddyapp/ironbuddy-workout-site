@@ -129,7 +129,7 @@ export const pages = {
     description:
       "IronBuddy's muscle group tracker shows your working sets per body area this week against last week, the areas you skipped, and every muscle on a body map.",
     summary: "Working sets per body area this week against last week, what you skipped, and the muscles you trained on a body map.",
-    keywords: { main: "muscle group tracker", supporting: ["sets per muscle group", "weekly volume"] },
+    keywords: { main: "muscle group tracker", supporting: ["sets per muscle group", "weekly volume", "muscle balance"] },
     published: RELEASE_203,
     modified: KEYWORD_MAP,
     images: ["/screenshots/ironbuddy-muscle-balance.webp", "/screenshots/ironbuddy-muscle-balance-explained.webp"],
@@ -294,7 +294,7 @@ export const pages = {
     description:
       "Looking for a Hevy app alternative? IronBuddy plans your week with 10 built-in splits or your own and works offline on Android. No account, ads or subscription.",
     summary: "IronBuddy for lifters coming from Hevy: planning splits, switching steps, and how to compare.",
-    keywords: { main: "Hevy app alternative", supporting: ["offline", "split"] },
+    keywords: { main: "Hevy app alternative", supporting: ["offline", "split", "Hevy alternative"] },
     published: ALTERNATIVES_SPLIT,
     modified: KEYWORD_MAP,
   },
@@ -487,7 +487,7 @@ export const pages = {
     description:
       "The PHUL workout explained: a four-day upper/lower split with two power and two hypertrophy days, the exercises on each day, who it suits, and how to track it.",
     summary: "The four-day Power Hypertrophy Upper Lower split: what each day trains, who it suits, and how to run and track it.",
-    keywords: { main: "PHUL workout", supporting: ["PHUL program", "PHUL 4 day split", "PHUL progression"] },
+    keywords: { main: "PHUL workout", supporting: ["PHUL program", "PHUL 4 day split", "PHUL progression", "PHUL results", "is PHUL a good program"] },
     published: SPLIT_GUIDES,
     modified: KEYWORD_MAP,
   },
@@ -535,7 +535,7 @@ export const pages = {
     description:
       "The Arnold split explained: chest and back, shoulders and arms, then legs, each twice a week. The exercises on each day, who it suits, and how to track it.",
     summary: "Chest and back, shoulders and arms, legs, each twice a week: what goes on each day and how to track the Arnold split.",
-    keywords: { main: "Arnold split", supporting: ["Arnold split workout", "what is the Arnold split"] },
+    keywords: { main: "Arnold split", supporting: ["Arnold split workout", "what is the Arnold split", "Arnold split workout plan"] },
     published: SPLIT_GUIDES,
     modified: SPLIT_GUIDES,
   },
