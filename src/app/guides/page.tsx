@@ -27,6 +27,8 @@ const splitGuides = [
   pages.broSplit,
   pages.arnoldSplit,
   pages.fiveThreeOne,
+  pages.arnoldVsPpl,
+  pages.phulVsPhat,
 ];
 
 export default function GuidesPage() {

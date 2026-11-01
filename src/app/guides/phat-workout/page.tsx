@@ -245,7 +245,7 @@ export default function PhatGuidePage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.phul, pages.upperLower, pages.broSplit, pages.trainingSplits]} />
+        <RelatedLinks items={[pages.phulVsPhat, pages.phul, pages.upperLower, pages.trainingSplits]} />
       </PageBody>
     </main>
   );

@@ -169,6 +169,10 @@ export default function AlternativesPage() {
               <TextLink href={pages.caliberAlternative.path}>Caliber alternative</TextLink>: tracking
               body weight and body fat alongside your lifts
             </li>
+            <li>
+              <TextLink href={pages.strongliftsAlternative.path}>StrongLifts alternative</TextLink>:
+              running a three-day full body plan and adding weight each session
+            </li>
           </BulletList>
           <p>
             Want the facts side by side? The{" "}
@@ -177,7 +181,7 @@ export default function AlternativesPage() {
             official pricing page.
           </p>
           <p>
-            Strong, Hevy, FitNotes, JEFIT, Boostcamp, and Caliber are trademarks of their respective owners. IronBuddy is
+            Strong, Hevy, FitNotes, JEFIT, Boostcamp, Caliber, and StrongLifts are trademarks of their respective owners. IronBuddy is
             not affiliated with or endorsed by them.
           </p>
         </ContentSection>

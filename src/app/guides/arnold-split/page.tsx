@@ -253,7 +253,7 @@ export default function ArnoldSplitGuidePage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.pushPullLegs, pages.broSplit, pages.setTechniques, pages.trainingSplits]} />
+        <RelatedLinks items={[pages.arnoldVsPpl, pages.pushPullLegs, pages.broSplit, pages.trainingSplits]} />
       </PageBody>
     </main>
   );
