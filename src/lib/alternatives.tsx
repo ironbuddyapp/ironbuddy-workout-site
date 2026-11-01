@@ -537,6 +537,98 @@ export const alternatives = {
         "No. You enter your body fat % yourself, from whichever method you use, and IronBuddy charts it over time alongside your body weight. It tracks what you enter; it does not estimate body fat.",
     },
   },
+  stronglifts: {
+    name: "StrongLifts",
+    page: pages.strongliftsAlternative,
+    heading: "Looking for a StrongLifts app alternative? Run a simple full body plan offline with IronBuddy",
+    lead: "As a StrongLifts app alternative, IronBuddy gives you a three-day full body plan on your Android phone, shows every lift against last time when you log, and keeps your records, with no connection, no account, no ads and no subscription. Keep your barbell lifts and your sets, or run the machine-based preset as it comes.",
+    focus: {
+      id: "full-body-plan",
+      title: "How IronBuddy runs a full body plan",
+      body: (
+        <>
+          <p>
+            IronBuddy&apos;s Full Body 3× preset is three sessions a week, set to Monday, Wednesday and
+            Friday and listed as Beginner. Each day has seven exercises: a leg press or squat, a press,
+            a row or pulldown, a hip hinge and a few smaller lifts, at 2 or 3 sets of 10–12 or 12–15
+            reps.
+          </p>
+          <BulletList>
+            <li>
+              <Strong>Your lifts, your sets:</Strong> edit any day. Swap the leg press for Barbell
+              Squat, the machine press for Barbell Bench Press, the row for Bent Over Barbell Row, and
+              set 5 sets of 5 on the per-set rows. The first edit saves your version under My splits
+              and leaves the preset as it was.
+            </li>
+            <li>
+              <Strong>The week on Home:</Strong> tap Set active and Home shows Monday, Wednesday and
+              Friday with their status, a Today block with a Log button, and a chip that moves a
+              missed day to the next free one.
+            </li>
+            <li>
+              <Strong>Weight in one tap:</Strong> in the log, + steps the weight by 2.5 kg or 5 lb and
+              the reps by 1. On an empty set it starts from the previous set&apos;s value.
+            </li>
+            <li>
+              <Strong>Against last time:</Strong> when you log, the summary compares every exercise
+              with its previous session: &ldquo;+2.5 kg&rdquo;, &ldquo;+2 reps&rdquo;, &ldquo;Same as
+              last time&rdquo; or &ldquo;First time&rdquo;.
+            </li>
+            <li>
+              <Strong>Records:</Strong> every exercise keeps its heaviest weight, most reps in a set,
+              best session volume and best estimated 1RM (one-rep max), calculated with the Epley
+              formula, each with its date.
+            </li>
+          </BulletList>
+        </>
+      ),
+    },
+    howTo: {
+      id: "adding-weight",
+      title: "Adding weight every session without stalling",
+      body: (
+        <>
+          <BulletList>
+            <li>
+              <Strong>Add the smallest step your gym allows.</Strong> Linear progression works for as
+              long as each session adds a little; big jumps end it early.
+            </li>
+            <li>
+              <Strong>Miss twice, then back off.</Strong> When a lift misses its reps two sessions in
+              a row, repeat the weight once more. If it misses again, take about 10% off and climb
+              back up over the next few sessions.
+            </li>
+            <li>
+              <Strong>Switch to double progression when the jumps stop.</Strong> Keep the weight,
+              take the reps from the bottom of a range to the top, then add weight and start again.
+            </li>
+            <li>
+              <Strong>Write down what changed.</Strong> A new bar, a different rack height or a short
+              night explains a stalled number a month later.
+            </li>
+          </BulletList>
+          <p>
+            For the full method, read{" "}
+            <TextLink href={pages.progressiveOverload.path}>how to track progressive overload</TextLink>.
+          </p>
+        </>
+      ),
+    },
+    switching: [
+      "Export your StrongLifts history first if the app offers an export, and keep the file as an archive.",
+      "Write down your current working weight for each lift. That is where your IronBuddy log starts.",
+      "Install IronBuddy, open Full Body 3×, edit the days to your lifts and sets, and tap Set active.",
+      "Log your first session. From the second one on, the summary shows every lift against last time.",
+    ],
+    freshStart:
+      "Start a fresh log at your current working weights; from the second session on, every lift is compared with last time and your records build from there.",
+    faq: {
+      id: "five-by-five",
+      question: "Does IronBuddy have a 5×5 program?",
+      answer:
+        "No preset is called 5×5. IronBuddy's full body presets use 2 or 3 sets of 10–12 reps on machines and dumbbells. You can edit any day's exercises and the reps of every set, so a 5×5 of squat, bench press and row takes a few taps, and IronBuddy saves your version under My splits. The app does not add weight for you: you choose the next load, and the summary shows what you did last time.",
+    },
+  },
 } as const satisfies Record<string, Alternative>;
 
 export type AlternativeKey = keyof typeof alternatives;

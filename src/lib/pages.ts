@@ -79,6 +79,8 @@ const screenshotImages = [
 const KEYWORD_MAP = "2026-10-21";
 /** iPhone details in the privacy policy, its plain-language page and the contact page; one name for the credits. */
 const IPHONE_PRIVACY = "2026-10-27";
+/** Monthly SEO pages of November 2026: two split comparison guides and the StrongLifts alternative. */
+const MONTHLY_2026_11 = "2026-11-01";
 
 export const pages = {
   home: {
@@ -344,6 +346,18 @@ export const pages = {
     published: MORE_ALTERNATIVES,
     modified: KEYWORD_MAP,
   },
+  strongliftsAlternative: {
+    path: "/alternatives/stronglifts/",
+    kind: "product",
+    label: "StrongLifts alternative",
+    title: "StrongLifts App Alternative: Full Body Log",
+    description:
+      "Looking for a StrongLifts app alternative? IronBuddy runs a full body plan and compares each lift with last time, offline on Android. No account, no ads.",
+    summary: "IronBuddy for lifters coming from StrongLifts: a full body plan, adding weight each session, switching steps, and how to compare.",
+    keywords: { main: "StrongLifts app alternative", supporting: ["StrongLifts 5x5 app alternative", "full body"] },
+    published: MONTHLY_2026_11,
+    modified: MONTHLY_2026_11,
+  },
   comparison: {
     path: "/workout-tracker-app-comparison/",
     kind: "product",
@@ -489,6 +503,18 @@ export const pages = {
     published: SPLIT_GUIDES,
     modified: KEYWORD_MAP,
   },
+  phulVsPhat: {
+    path: "/guides/phul-vs-phat/",
+    kind: "guide",
+    label: "PHUL vs PHAT",
+    title: "PHUL vs PHAT: Four Days or Five, Who It Suits",
+    description:
+      "PHUL vs PHAT: both pair heavy power days with higher-rep hypertrophy days, in four sessions or five. How they differ, who each suits, and how to track them.",
+    summary: "PHUL and PHAT side by side: the shared power days, the extra hypertrophy day, who each suits, and how to track them.",
+    keywords: { main: "PHUL vs PHAT", supporting: ["PHUL or PHAT", "PHUL vs PHAT vs PPL"] },
+    published: MONTHLY_2026_11,
+    modified: MONTHLY_2026_11,
+  },
   broSplit: {
     path: "/guides/bro-split/",
     kind: "guide",
@@ -512,6 +538,18 @@ export const pages = {
     keywords: { main: "Arnold split", supporting: ["Arnold split workout", "what is the Arnold split"] },
     published: SPLIT_GUIDES,
     modified: SPLIT_GUIDES,
+  },
+  arnoldVsPpl: {
+    path: "/guides/arnold-split-vs-ppl/",
+    kind: "guide",
+    label: "Arnold split vs PPL",
+    title: "Arnold Split vs PPL: Which Six-Day Split?",
+    description:
+      "Arnold split vs PPL: both run six days with every muscle twice, grouped by body part or by movement. How they differ, the PPL x Arnold hybrid, who each suits.",
+    summary: "The Arnold split and Push Pull Legs side by side: grouping, session length, the hybrid, and how to track either.",
+    keywords: { main: "Arnold split vs PPL", supporting: ["PPL x Arnold split", "Arnold split or PPL"] },
+    published: MONTHLY_2026_11,
+    modified: MONTHLY_2026_11,
   },
   fiveThreeOne: {
     path: "/guides/531-boring-but-big/",

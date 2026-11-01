@@ -234,7 +234,7 @@ export default function PhulGuidePage() {
 
         <CtaBanner />
 
-        <RelatedLinks items={[pages.phat, pages.upperLower, pages.progressiveOverload, pages.trainingSplits]} />
+        <RelatedLinks items={[pages.phulVsPhat, pages.phat, pages.upperLower, pages.trainingSplits]} />
       </PageBody>
     </main>
   );
