@@ -22,10 +22,10 @@ Update `src/lib/site.ts` before launch:
 
 ```bash
 npm install
-npm run dev
+npm run dev -- -p 8083
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:8083](http://localhost:8083).
 
 ## Build
 
