@@ -81,6 +81,7 @@ const KEYWORD_MAP = "2026-10-21";
 const IPHONE_PRIVACY = "2026-10-27";
 /** Monthly SEO pages of November 2026: two split comparison guides and the StrongLifts alternative. */
 const MONTHLY_2026_11 = "2026-11-01";
+const COMPARISON_FACTS_RECHECK = "2026-11-06";
 
 export const pages = {
   home: {
@@ -368,7 +369,7 @@ export const pages = {
     summary: "IronBuddy and six popular Android workout trackers compared on Google Play facts and published prices, with sources and dates.",
     keywords: { main: "workout app comparison", supporting: ["android", "compared"] },
     published: COMPARISON_ADDED,
-    modified: KEYWORD_MAP,
+    modified: COMPARISON_FACTS_RECHECK,
   },
   faq: {
     path: "/faq/",

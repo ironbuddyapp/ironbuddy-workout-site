@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
  * English Google Play pages. Re-check them, and bump `checkedOn` and the page's `modified` date, before changing
  * any of them. Leave a fact out rather than guess it.
  */
-export const checkedOn = "2026-10-06";
+export const checkedOn = "2026-11-06";
 
 const play = (id: string) => `https://play.google.com/store/apps/details?id=${id}`;
 
@@ -45,7 +45,7 @@ export const comparedApps: ComparedApp[] = [
       adsLabel: "None",
       dataCollected: "No data collected",
       dataShared: "No data shared",
-      lastUpdated: "30 Sep 2026",
+      lastUpdated: "2 Nov 2026",
     },
     pricing: {
       text: `Free to download with a ${siteConfig.freeTrialDays}-day free trial. After the trial, a one-time purchase is required to keep logging and editing. No subscription.`,
@@ -55,7 +55,7 @@ export const comparedApps: ComparedApp[] = [
   {
     id: "hevy",
     name: "Hevy",
-    developer: "Hevy",
+    developer: "Hevy Gym Workout Tracker",
     playUrl: play("com.hevy"),
     page: pages.hevyAlternative.path,
     play: {
@@ -63,7 +63,7 @@ export const comparedApps: ComparedApp[] = [
       adsLabel: "None",
       dataCollected: "Personal info, photos and videos, and 4 others",
       dataShared: "No data shared",
-      lastUpdated: "1 Oct 2026",
+      lastUpdated: "27 Oct 2026",
     },
     pricing: {
       text: "Hevy describes itself as a free workout tracker for iOS and Android. Google Play lists in-app purchases. Its Pro prices are not shown here.",
@@ -84,7 +84,7 @@ export const comparedApps: ComparedApp[] = [
       adsLabel: "None",
       dataCollected: "Personal info, health and fitness, and 3 others",
       dataShared: "No data shared",
-      lastUpdated: "30 Sep 2026",
+      lastUpdated: "4 Nov 2026",
     },
     pricing: {
       text: "Strong PRO is bought through in-app purchase on Google Play. Strong's help center says prices vary between regions and does not list them.",
@@ -123,7 +123,7 @@ export const comparedApps: ComparedApp[] = [
       adsLabel: "None",
       dataCollected: "Location, personal info, and 5 others",
       dataShared: "No data shared",
-      lastUpdated: "30 Sep 2026",
+      lastUpdated: "4 Nov 2026",
     },
     pricing: {
       text: "A free plan, and a paid JEFIT Elite subscription, monthly or yearly.",
@@ -141,10 +141,10 @@ export const comparedApps: ComparedApp[] = [
       adsLabel: "None",
       dataCollected: "No data collected",
       dataShared: "May share personal info",
-      lastUpdated: "1 Oct 2026",
+      lastUpdated: "28 Oct 2026",
     },
     pricing: {
-      text: "The app and its programs are free. Boostcamp Pro is a paid subscription, yearly or monthly, with a free trial.",
+      text: "The app and its 14,000+ program library are free. Boostcamp Pro is a paid subscription, yearly with a free trial or monthly without one.",
       sources: [{ label: "boostcamp.app/pro", href: "https://www.boostcamp.app/pro" }],
     },
   },
@@ -159,10 +159,10 @@ export const comparedApps: ComparedApp[] = [
       adsLabel: "None",
       dataCollected: "Personal info, health and fitness, and 5 others",
       dataShared: "No data shared",
-      lastUpdated: "4 Sep 2026",
+      lastUpdated: "30 Oct 2026",
     },
     pricing: {
-      text: "Caliber calls its workout app free and offers paid 1-on-1 coaching. The page does not show coaching prices.",
+      text: "Caliber calls its workout app free and offers an upgrade to 1-on-1 coaching. The page does not show coaching prices.",
       sources: [{ label: "caliberstrong.com", href: "https://caliberstrong.com/workout-app/" }],
     },
   },
