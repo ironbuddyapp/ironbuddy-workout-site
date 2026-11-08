@@ -274,8 +274,9 @@ export default function PrivacyPage() {
             <li>
               <Strong>Android Auto Backup (Google account):</Strong> IronBuddy allows Android’s
               built-in Auto Backup feature. If backup is enabled on your Android device, the Android
-              operating system may create an encrypted backup of certain App data and store it in
-              your Google account. This backup is managed entirely by Google and Android. IronBuddy
+              operating system may create a backup of certain App data and store it in a private
+              folder of your Google Drive account. Android’s documentation says this backup is
+              end-to-end encrypted on Android 9 and later when the phone has a screen lock. This backup is managed entirely by Google and Android. IronBuddy
               does not receive, access, view, process, or control these backups. Android may use the
               backup to restore your data when reinstalling the App or setting up a new device. You
               can disable Android backups or remove existing backups through your device’s Google
@@ -386,8 +387,9 @@ export default function PrivacyPage() {
             never reads your photos. It does not access your contacts, location, microphone, or camera.
           </p>
           <p>
-            The iPhone App makes no network requests of its own; only Apple’s StoreKit talks to the App
-            Store, for the purchase and the free-trial item. The links you can open from the App (the
+            The iPhone App sends nothing to IronBuddy or to any server we run. Apple’s own services make the
+            network connections: StoreKit with the App Store, for the purchase and the free-trial item, and
+            CloudKit with your iCloud account, for the iCloud copy (section 7). The links you can open from the App (the
             open-source credits, this privacy policy, and the App’s Write a Review page on the App Store)
             open outside the App, in your browser or the App Store.
           </p>
