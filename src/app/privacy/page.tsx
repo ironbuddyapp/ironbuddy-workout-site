@@ -125,7 +125,8 @@ export default function PrivacyPage() {
             <li>The App does not include ads or third-party analytics SDKs.</li>
             <li>
               This website, workout.ironbuddy.fit (not the App), uses GoatCounter to count page views and
-              referrers, without cookies and without storing IP addresses (see section 13).
+              referrers, without cookies and without storing IP addresses (see section 13). The social media rows in
+              Settings open a page on the website that counts the tap (section 13).
             </li>
             <li>
               IronBuddy is free to download and includes a 7-day free trial. During the trial you can log, plan and track everything. These come with the full version: exporting and importing your data, the backup file (Download/IronBuddy on Android, the Files app on iPhone), share images, and customizations (arranging and resizing your Home widgets, and choosing an accent color). Choosing how the Home calendar looks works in both the trial and the full version. Android’s own backup (and iCloud Backup on iPhone) works in both the trial and the full version. After the trial your data stays visible, and a one-time in-app purchase is required to keep logging and editing. The purchase is handled entirely by
@@ -256,7 +257,8 @@ export default function PrivacyPage() {
           </BulletList>
           <p>
             This list is about the App. The website workout.ironbuddy.fit uses GoatCounter to count page
-            views and referrers, as described in section 13.
+            views and referrers, as described in section 13. The social media rows in Settings open a page on the
+            website that counts the tap (section 13).
           </p>
         </ContentSection>
 
@@ -472,6 +474,16 @@ export default function PrivacyPage() {
             details such as browser, operating system, screen width and country. This applies to the
             website only: the App contains no analytics. See{" "}
             <TextLink href="https://www.goatcounter.com/help/privacy">GoatCounter&apos;s privacy policy</TextLink>.
+          </p>
+          <p>
+            <Strong>Links to our social media pages:</Strong> Settings → About has a row, Follow IronBuddy, that opens
+            a list of Instagram, TikTok, YouTube and Facebook. A tap on one of them opens a page on this website,
+            workout.ironbuddy.fit (for example /from-workout-ig), in your phone&apos;s browser. That page uses
+            GoatCounter to count the visit as one event named after the network you tapped, then forwards you to our
+            page on that network. GoatCounter records what the Website analytics paragraph above lists; it does not
+            record your name, an account or anything from your workouts, and the App itself sends nothing. Nothing is
+            counted until you tap a network. After the forward, that network&apos;s own privacy policy applies. We
+            count taps, not follows.
           </p>
         </ContentSection>
 
