@@ -47,6 +47,18 @@ const faqs: Faq[] = [
       "Neither is a beginner plan, but PHUL is the closer of the two. IronBuddy lists PHUL as Intermediate and PHAT as Advanced. A beginner gets more from a three-day full body plan or an Upper Lower split, then moves to PHUL once the lifts are learned and four sessions a week feel normal.",
   },
   {
+    id: "faq-phul-phat-size",
+    question: "Is PHUL or PHAT better for size?",
+    answer:
+      "PHAT gives the upper body more hypertrophy work, because its extra day splits back and shoulders from chest and arms. That only helps if you recover from five sessions. If the extra day leaves your power days weaker each week, PHUL with its three rest days will build more over months.",
+  },
+  {
+    id: "faq-phul-phat-strength",
+    question: "Is PHUL or PHAT better for strength?",
+    answer:
+      "Neither has an edge on paper: both open the week with the same two heavy days, Upper Power and Lower Power. The difference is recovery. PHUL leaves more rest around the heavy days, which many lifters find makes it easier to keep adding weight.",
+  },
+  {
     id: "faq-phul-phat-ppl",
     question: "What about PHUL vs PHAT vs PPL?",
     answer:
@@ -83,6 +95,28 @@ export default function PhulVsPhatPage() {
             <li>Track both the same way: power days by weight and estimated 1RM, hypertrophy days by reps and volume.</li>
           </BulletList>
         </Callout>
+
+        <ContentSection id="at-a-glance" title="PHUL vs PHAT at a glance">
+          <BulletList>
+            <li>
+              <Strong>Training days:</Strong> PHUL four, PHAT five.
+            </li>
+            <li>
+              <Strong>Power days:</Strong> two in both, Upper Power and Lower Power at the start of
+              the week.
+            </li>
+            <li>
+              <Strong>Hypertrophy days:</Strong> PHUL two (upper, lower); PHAT three (back and
+              shoulders, lower, chest and arms).
+            </li>
+            <li>
+              <Strong>Rest days:</Strong> PHUL three, PHAT two.
+            </li>
+            <li>
+              <Strong>Level in IronBuddy:</Strong> PHUL Intermediate, PHAT Advanced.
+            </li>
+          </BulletList>
+        </ContentSection>
 
         <ContentSection id="shared-idea" title="What the two programs share">
           <p>

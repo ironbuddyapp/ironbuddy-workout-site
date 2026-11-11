@@ -82,6 +82,8 @@ const IPHONE_PRIVACY = "2026-10-27";
 /** Monthly SEO pages of November 2026: two split comparison guides and the StrongLifts alternative. */
 const MONTHLY_2026_11 = "2026-11-01";
 const COMPARISON_FACTS_RECHECK = "2026-11-06";
+/** Pages close to Google's first page strengthened, with comparison sections and links (HQ job J-20261111-9). */
+const NEAR_PAGE_ONE = "2026-11-11";
 
 export const pages = {
   home: {
@@ -106,7 +108,7 @@ export const pages = {
     summary: "Workout logging, training splits, Muscle Balance, progress charts, share cards, the exercise library and a customizable Home.",
     keywords: { main: "gym log app", supporting: ["workout log", "training splits", "progress charts"] },
     published: UPDATED,
-    modified: KEYWORD_MAP,
+    modified: NEAR_PAGE_ONE,
     images: screenshotImages,
   },
   customizableHome: {
@@ -132,7 +134,7 @@ export const pages = {
     summary: "Working sets per body area this week against last week, what you skipped, and the muscles you trained on a body map.",
     keywords: { main: "muscle group tracker", supporting: ["sets per muscle group", "weekly volume", "muscle balance"] },
     published: RELEASE_203,
-    modified: KEYWORD_MAP,
+    modified: NEAR_PAGE_ONE,
     images: ["/screenshots/ironbuddy-muscle-balance.webp", "/screenshots/ironbuddy-muscle-balance-explained.webp"],
   },
   workoutSummary: {
@@ -514,7 +516,7 @@ export const pages = {
     summary: "PHUL and PHAT side by side: the shared power days, the extra hypertrophy day, who each suits, and how to track them.",
     keywords: { main: "PHUL vs PHAT", supporting: ["PHUL or PHAT", "PHUL vs PHAT vs PPL"] },
     published: MONTHLY_2026_11,
-    modified: MONTHLY_2026_11,
+    modified: NEAR_PAGE_ONE,
   },
   broSplit: {
     path: "/guides/bro-split/",
@@ -526,7 +528,7 @@ export const pages = {
     summary: "One body part a day, Monday to Friday: what each day trains, the trade-offs, and how to track a bro split.",
     keywords: { main: "bro split", supporting: ["bro split workout", "5-day bro split"] },
     published: SPLIT_GUIDES,
-    modified: SPLIT_GUIDES,
+    modified: NEAR_PAGE_ONE,
   },
   arnoldSplit: {
     path: "/guides/arnold-split/",
@@ -538,7 +540,7 @@ export const pages = {
     summary: "Chest and back, shoulders and arms, legs, each twice a week: what goes on each day and how to track the Arnold split.",
     keywords: { main: "Arnold split", supporting: ["Arnold split workout", "what is the Arnold split", "Arnold split workout plan"] },
     published: SPLIT_GUIDES,
-    modified: SPLIT_GUIDES,
+    modified: NEAR_PAGE_ONE,
   },
   arnoldVsPpl: {
     path: "/guides/arnold-split-vs-ppl/",
@@ -550,7 +552,7 @@ export const pages = {
     summary: "The Arnold split and Push Pull Legs side by side: grouping, session length, the hybrid, and how to track either.",
     keywords: { main: "Arnold split vs PPL", supporting: ["PPL x Arnold split", "Arnold split or PPL"] },
     published: MONTHLY_2026_11,
-    modified: MONTHLY_2026_11,
+    modified: NEAR_PAGE_ONE,
   },
   fiveThreeOne: {
     path: "/guides/531-boring-but-big/",

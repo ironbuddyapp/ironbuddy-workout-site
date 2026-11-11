@@ -103,6 +103,11 @@ const layouts: WeekLayout[] = [
     fits: "The same six days with a rest after every three. The cycle takes eight days, so it does not line up with the calendar.",
   },
   {
+    name: "Five days a week",
+    week: "Chest & Back, Shoulders & Arms, Legs, Chest & Back, Shoulders & Arms, rest, rest; the next week starts where you left off",
+    fits: "For five training days. The six days keep rotating, so each pairing comes round a little less than twice a week. In IronBuddy, Change Day moves the next session when the week shifts.",
+  },
+  {
     name: "Three days a week",
     week: "Chest & Back A, Shoulders & Arms A, Legs A one week; the B days the next",
     fits: "The Arnold grouping at a normal frequency: each muscle once a week, like a bro split, but with chest and back paired.",
@@ -121,6 +126,12 @@ const faqs: Faq[] = [
     question: "Is this what Arnold actually did?",
     answer:
       "Not exactly. Arnold's own routines ran six days a week with far more sets, sometimes two sessions a day, and heavy barbell work. The grouping (chest and back, shoulders and arms, legs, each twice a week) is the part that survives. IronBuddy's preset is that grouping on machines and dumbbells at a volume a normal person can recover from.",
+  },
+  {
+    id: "faq-arnold-five-days",
+    question: "Can I run it five days a week?",
+    answer:
+      "Yes. Train five days, rest two, and carry on the next week from the day you stopped at. Each pairing then comes round a little less often than twice a week, which many people recover from better than six straight days. The weekly layouts above show it next to the six-day and three-day versions.",
   },
   {
     id: "faq-arnold-beginner",
@@ -168,7 +179,7 @@ export default function ArnoldSplitGuidePage() {
           </p>
         </ContentSection>
 
-        <ContentSection id="each-day" title="What goes on each day">
+        <ContentSection id="each-day" title="The Arnold split workout, day by day">
           <p>
             These are the six days of IronBuddy&apos;s Arnold Split (6×) preset. The A and B days train
             the same muscles with different exercises and angles. Rest about 2 minutes after the main
@@ -183,7 +194,7 @@ export default function ArnoldSplitGuidePage() {
           </p>
         </ContentSection>
 
-        <ContentSection id="weekly-layouts" title="How to lay out the week">
+        <ContentSection id="weekly-layouts" title="Arnold split workout plan: four ways to lay out the week">
           <WeekLayouts layouts={layouts} />
         </ContentSection>
 
@@ -202,6 +213,27 @@ export default function ArnoldSplitGuidePage() {
               <TextLink href={pages.upperLower.path}>Upper Lower split</TextLink> gets the same
               frequency in four days, and a <TextLink href={pages.broSplit.path}>bro split</TextLink>{" "}
               gives the same one-area focus at five.
+            </li>
+          </BulletList>
+        </ContentSection>
+
+        <ContentSection id="compared" title="How it compares with PPL, the bro split and Upper Lower">
+          <BulletList>
+            <li>
+              <Strong>Push Pull Legs</Strong> also runs six days with every muscle twice, but groups by
+              movement instead of body part, so its sessions are shorter. The{" "}
+              <TextLink href={pages.arnoldVsPpl.path}>PPL comparison guide</TextLink> sets the two
+              side by side, including the hybrid week.
+            </li>
+            <li>
+              <Strong>A bro split</Strong> gives every body part its own day, once a week, over five
+              days. The Arnold grouping trains each area twice and pairs chest with back. See{" "}
+              <TextLink href={pages.broSplit.path}>the bro split</TextLink>.
+            </li>
+            <li>
+              <Strong>Upper Lower</Strong> reaches the same twice-a-week frequency in four sessions, so
+              it is the usual choice when six days is too many. See{" "}
+              <TextLink href={pages.upperLower.path}>the Upper Lower split</TextLink>.
             </li>
           </BulletList>
         </ContentSection>

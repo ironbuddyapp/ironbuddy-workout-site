@@ -27,6 +27,12 @@ const faqs: Faq[] = [
       "The current calendar week, the same one the calendar on Home shows, against the week before it. Every workout you logged counts, planned or not, so an extra session on a rest day is included.",
   },
   {
+    id: "per-muscle",
+    question: "Can I see sets per muscle, not only per body area?",
+    answer:
+      "Yes. The Volume per muscle widget on Home lists your working sets for each muscle this week as bars. Muscle Balance groups them into six areas so a gap stands out at a glance.",
+  },
+  {
     id: "vs-muscles-worked",
     question: "What is the difference between Muscles worked and Muscle Balance?",
     answer:
@@ -81,6 +87,29 @@ export default function MuscleBalancePage() {
             for what the research suggests and how to count.
           </p>
         </FeatureBlock>
+
+        <ContentSection id="low-area" title="When an area comes up short">
+          <p>
+            A muscle group tracker is only useful if you act on it. When Muscle Balance shows a dent
+            or names an area as not trained yet, these are the usual fixes:
+          </p>
+          <BulletList>
+            <li>
+              <Strong>Check it against last week first.</Strong> One short week is noise. If the same
+              area is low two or three weeks running, the plan is the cause, not the week.
+            </li>
+            <li>
+              <Strong>Add a set before an exercise.</Strong> One more set on an exercise that already
+              trains the area is the smallest change, and the chart shows it next week.
+            </li>
+            <li>
+              <Strong>Look at the split.</Strong> Some layouts give an area less by design, such as a
+              bro split that trains arms once. The{" "}
+              <TextLink href={pages.trainingSplits.path}>training splits</TextLink> page shows the ten
+              presets, so you can pick one that trains the area more often.
+            </li>
+          </BulletList>
+        </ContentSection>
 
         <FeatureBlock id="muscles-worked" title="Muscles worked: every muscle you trained, on a body map" shot="dashboard">
           <p>
