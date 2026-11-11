@@ -93,6 +93,12 @@ const layouts: WeekLayout[] = [
 
 const faqs: Faq[] = [
   {
+    id: "faq-bro-split-meaning",
+    question: "What does bro split mean?",
+    answer:
+      "It is gym slang for a body-part split: each training day is given to one area, such as chest on Monday and back on Tuesday. The name comes from how common the layout is in commercial gyms. The program itself is a classic bodybuilding week, usually five days.",
+  },
+  {
     id: "faq-bro-split-once-a-week",
     question: "Is training each muscle once a week enough?",
     answer:
@@ -123,7 +129,7 @@ export default function BroSplitGuidePage() {
         eyebrow="Guide · training splits"
         title="The bro split: one body part a day, Monday to Friday"
         updated={pages.broSplit.modified}
-        lead="A bro split gives every major body part its own day: chest on Monday, back on Tuesday, shoulders, legs, arms. It is the split most gyms were built around, it is easy to follow, and it lets you do a lot of work for one muscle while it is fresh. It also has trade-offs worth knowing before you pick it."
+        lead="A bro split gives every major body part its own day: chest on Monday, back on Tuesday, shoulders, legs, arms. It is the split most gyms were built around, it is easy to follow, and it lets you do a lot of work for one muscle while it is fresh. It also has trade-offs worth knowing before you pick it. Below: the five-day workout day by day, how it compares with PPL and Upper Lower, and how to track it."
       />
 
       <PageBody toc>
@@ -151,7 +157,7 @@ export default function BroSplitGuidePage() {
           </p>
         </ContentSection>
 
-        <ContentSection id="each-day" title="What goes on each day">
+        <ContentSection id="each-day" title="The 5-day bro split workout, day by day">
           <p>
             These are the five days of IronBuddy&apos;s Bro Split (5×) preset, Monday to Friday.
             Every day starts with the heaviest compound for that body part and finishes with isolation
@@ -191,6 +197,31 @@ export default function BroSplitGuidePage() {
             <li>
               <Strong>Trade-off: tired sets.</Strong> The last five sets of a fifteen-set chest day are
               not as good as the first five. Spreading them across two days usually gives better reps.
+            </li>
+          </BulletList>
+        </ContentSection>
+
+        <ContentSection id="compared" title="How it compares: vs PPL, Upper Lower, full body and the Arnold split">
+          <BulletList>
+            <li>
+              <Strong>Push Pull Legs</Strong> groups by movement, not body part. Run six days, it
+              trains every muscle twice a week; run three, once. See{" "}
+              <TextLink href={pages.pushPullLegs.path}>the Push Pull Legs split</TextLink>.
+            </li>
+            <li>
+              <Strong>Upper Lower</Strong> trains every muscle twice in four days, with shorter
+              sessions per muscle. It is the common next step from a body-part week. See{" "}
+              <TextLink href={pages.upperLower.path}>the Upper Lower split</TextLink>.
+            </li>
+            <li>
+              <Strong>Full body</Strong> trains everything in each of three sessions, a few sets per
+              muscle each time. It suits beginners and short weeks. See{" "}
+              <TextLink href={pages.fullBody.path}>the three-day full body plan</TextLink>.
+            </li>
+            <li>
+              <Strong>The Arnold split</Strong> keeps whole-day focus on body parts but pairs them
+              (chest with back, shoulders with arms) and runs each twice a week over six days. See{" "}
+              <TextLink href={pages.arnoldSplit.path}>the Arnold split</TextLink>.
             </li>
           </BulletList>
         </ContentSection>

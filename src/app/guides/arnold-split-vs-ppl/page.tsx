@@ -58,6 +58,12 @@ const faqs: Faq[] = [
       "A hybrid week: Push, Pull and Legs in the first three sessions, then Chest & Back, Shoulders & Arms and Legs in the next three. Each muscle is trained twice with two different pairings, so the shoulders and arms get one direct day and one day inside Push and Pull. It is a way to keep the Arnold chest-and-back day without running it twice a week.",
   },
   {
+    id: "faq-arnold-vs-bro-split",
+    question: "And the Arnold split vs a bro split?",
+    answer:
+      "Both group the week by body part. A bro split gives each area its own day once a week over five days; the Arnold split pairs chest with back and shoulders with arms, and runs each pairing twice a week over six. The bro split guide covers the five-day week.",
+  },
+  {
     id: "faq-arnold-ppl-four-days",
     question: "I only have four days. Which should I pick?",
     answer:
@@ -164,6 +170,27 @@ export default function ArnoldSplitVsPplPage() {
               <TextLink href={pages.upperLower.path}>Upper Lower split</TextLink> and{" "}
               <TextLink href={pages.phul.path}>PHUL</TextLink> get the same twice-a-week frequency in
               four sessions.
+            </li>
+          </BulletList>
+        </ContentSection>
+
+        <ContentSection id="vs-upper-lower" title="Arnold split vs PPL vs Upper Lower">
+          <BulletList>
+            <li>
+              <Strong>Days a week:</Strong> the Arnold split six; PPL three or six; Upper Lower four.
+            </li>
+            <li>
+              <Strong>Each muscle per week:</Strong> twice on the Arnold split and six-day PPL, once on
+              three-day PPL, twice on Upper Lower.
+            </li>
+            <li>
+              <Strong>How the days are grouped:</Strong> by body part (Arnold), by movement (PPL), or
+              by upper and lower body (Upper Lower).
+            </li>
+            <li>
+              <Strong>Best fit:</Strong> Upper Lower when you have four days, PPL when you want simple,
+              repeatable sessions, the Arnold split when you want a full day for shoulders and arms.
+              See <TextLink href={pages.upperLower.path}>the Upper Lower split</TextLink>.
             </li>
           </BulletList>
         </ContentSection>

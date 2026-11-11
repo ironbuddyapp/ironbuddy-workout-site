@@ -172,7 +172,9 @@ export default function FeaturesPage() {
               <TextLink href={pages.phul.path}>PHUL</TextLink>, <TextLink href={pages.phat.path}>PHAT</TextLink>,{" "}
               <TextLink href={pages.broSplit.path}>bro split</TextLink>,{" "}
               <TextLink href={pages.arnoldSplit.path}>Arnold split</TextLink> and{" "}
-              <TextLink href={pages.fiveThreeOne.path}>5/3/1 Boring But Big</TextLink>.
+              <TextLink href={pages.fiveThreeOne.path}>5/3/1 Boring But Big</TextLink>. Choosing between
+              two? Compare <TextLink href={pages.phulVsPhat.path}>PHUL vs PHAT</TextLink> and the{" "}
+              <TextLink href={pages.arnoldVsPpl.path}>Arnold split vs PPL</TextLink>.
             </p>
           </FeatureBlock>
 
