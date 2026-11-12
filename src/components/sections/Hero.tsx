@@ -19,7 +19,7 @@ export function Hero() {
       <div className="pointer-events-none absolute right-0 top-24 h-80 w-80 rounded-full bg-primary/8 blur-3xl" />
 
       <Container className="relative grid h-full min-h-0 flex-1 items-center gap-4 max-lg:grid-rows-[minmax(0,1fr)_auto] sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
-        <div className="animate-fade-up max-lg:order-2 max-lg:min-h-0">
+        <div className="hero-fade-up max-lg:order-2 max-lg:min-h-0">
           {/* The eyebrow is part of the H1 so the page's main heading names what the app is. */}
           <h1 className="max-w-xl">
             <span className="block text-xs font-semibold uppercase tracking-[0.22em] text-primary">
@@ -82,7 +82,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative flex min-h-0 items-center justify-center animate-fade-up max-lg:order-1">
+        <div className="relative flex min-h-0 items-center justify-center hero-fade-up max-lg:order-1">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-3xl" />
           {/* Width also shrinks on short screens (100svh minus header, install bar and text block) so the phone is never clipped. */}
           <PhoneMockup float className="relative max-lg:w-[min(200px,calc((100svh_-_25rem)_*_0.4615))]">

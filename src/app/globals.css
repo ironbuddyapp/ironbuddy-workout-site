@@ -75,6 +75,15 @@ li {
   animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* Home hero: fade in on wide screens only. On a phone the hero text and screenshot are the largest
+   first paint; starting them at opacity 0 kept them out of Largest Contentful Paint (LCP), so Google's
+   lab test fell back to the small Play badge and reported it about 2 s late. */
+@media (min-width: 1024px) {
+  .hero-fade-up {
+    animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
 .press {
   transition-property: transform, background-color, border-color, color, opacity;
 }
@@ -116,6 +125,7 @@ li {
   }
 
   .animate-fade-up,
+  .hero-fade-up,
   .animate-float,
   .reveal {
     animation: none !important;
