@@ -32,11 +32,16 @@ export function AppScreen({
   id,
   alt,
   priority = false,
+  srcSet,
+  sizes = "(min-width: 1024px) 292px, 240px",
 }: {
   id: ScreenshotId;
   /** Override the default alt text when a page describes the screen differently. */
   alt?: string;
   priority?: boolean;
+  /** Smaller copies for phones (the home hero only), so a phone does not download the 720 px file. */
+  srcSet?: string;
+  sizes?: string;
 }) {
   const shot = screenshots.find((item) => item.id === id);
   if (!shot) throw new Error(`Unknown screenshot: ${id}`);
@@ -47,7 +52,8 @@ export function AppScreen({
       alt={alt ?? shot.alt}
       width={shot.width}
       height={shot.height}
-      sizes="(min-width: 1024px) 292px, 240px"
+      srcSet={srcSet}
+      sizes={sizes}
       decoding="async"
       fetchPriority={priority ? "high" : "low"}
       loading={priority ? "eager" : "lazy"}
