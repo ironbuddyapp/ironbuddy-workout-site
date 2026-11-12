@@ -9,8 +9,17 @@ import { onIphone, showAppStoreBadge, withBadge } from "@/lib/iphone";
 import { siteConfig } from "@/lib/site";
 import { preload } from "react-dom";
 
+/**
+ * Phone-sized copies of the hero screenshot (made from the 720 px file). On a phone the hero is shown at most
+ * 200 px wide, so 400 px covers 2x screens and 540 px covers about 2.7x; 3x phones and desktop keep the 720 px file.
+ */
+const heroFull = screenshotSrc("dashboard");
+const heroSrcSet = `${heroFull.replace(".webp", "-400.webp")} 400w, ${heroFull.replace(".webp", "-540.webp")} 540w, ${heroFull} 720w`;
+const heroSizes = "(min-width: 1024px) 292px, 200px";
+
 export function Hero() {
-  preload(screenshotSrc("dashboard"), { as: "image", fetchPriority: "high" });
+  // The preload carries the same srcset and sizes, so the browser fetches only the copy the image will use.
+  preload(heroFull, { as: "image", fetchPriority: "high", imageSrcSet: heroSrcSet, imageSizes: heroSizes });
 
   return (
     <section id="home" className="relative overflow-hidden max-lg:scroll-mt-0 max-lg:py-0 sm:pb-24 sm:pt-16 lg:scroll-mt-24 lg:pb-28 lg:pt-20">
@@ -86,7 +95,7 @@ export function Hero() {
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/12 blur-3xl" />
           {/* Width also shrinks on short screens (100svh minus header, install bar and text block) so the phone is never clipped. */}
           <PhoneMockup float className="relative max-lg:w-[min(200px,calc((100svh_-_25rem)_*_0.4615))]">
-            <AppScreen id="dashboard" priority />
+            <AppScreen id="dashboard" priority srcSet={heroSrcSet} sizes={heroSizes} />
           </PhoneMockup>
         </div>
       </Container>
