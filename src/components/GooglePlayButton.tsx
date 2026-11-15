@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/cn";
+import { playIntentUrl, playLinkUrl } from "@/lib/play-campaign";
 import { siteConfig } from "@/lib/site";
 
 const IN_APP_BROWSER = /FBAN|FBAV|FB_IAB|Instagram|TikTok|Bytedance|musical_ly|Twitter|Pinterest|Snapchat|Line\/|GSA\//i;
@@ -18,11 +19,10 @@ export function GooglePlayButton({
 }) {
   const [href, setHref] = useState<string>(siteConfig.playStoreLinkUrl);
 
+  // After load: the visit's campaign tags (src/lib/play-campaign.ts), and the intent in Android in-app browsers.
   useEffect(() => {
     const ua = navigator.userAgent;
-    if (/Android/i.test(ua) && IN_APP_BROWSER.test(ua)) {
-      setHref(siteConfig.playStoreIntent);
-    }
+    setHref(/Android/i.test(ua) && IN_APP_BROWSER.test(ua) ? playIntentUrl() : playLinkUrl());
   }, []);
 
   const size = compact ? "h-10" : "h-12 sm:h-[53px]";

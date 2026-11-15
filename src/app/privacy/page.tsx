@@ -474,6 +474,10 @@ export default function PrivacyPage() {
             details such as browser, operating system, screen width and country. This applies to the
             website only: the App contains no analytics. See{" "}
             <TextLink href="https://www.goatcounter.com/help/privacy">GoatCounter&apos;s privacy policy</TextLink>.
+            The website&apos;s Google Play links carry campaign tags for Google Play: the source, medium and campaign of
+            the link that brought you to the website (utm_source, utm_medium and utm_campaign), or the website&apos;s own
+            tags if there were none. Play Console then shows us how many installs came from each campaign. The tags name
+            a campaign, not you; the website keeps them only in the open page and stores nothing in your browser.
           </p>
           <p>
             <Strong>Links to our social media pages:</Strong> Settings → About has a row, Follow IronBuddy, that opens

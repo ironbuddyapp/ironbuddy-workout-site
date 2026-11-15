@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { captureCampaign, retagPlayLink } from "@/lib/play-campaign";
 import { siteConfig } from "@/lib/site";
 
 declare global {
@@ -38,12 +39,17 @@ export function GoatCounter() {
     window.goatcounter?.count({ path: window.location.pathname });
   }, [pathname]);
 
-  // One listener for every Google Play badge and link on the site, so no button has to remember to count.
-  // count.js sends with sendBeacon, so the click is still recorded when the link leaves the page.
+  // One listener for every Google Play badge and link on the site, so no button has to remember to count or tag.
+  // count.js sends with sendBeacon, so the click is still recorded when the link leaves the page. Before the link
+  // opens, its referrer gets the visit's campaign tags (src/lib/play-campaign.ts), read on the first page of the visit.
   useEffect(() => {
+    captureCampaign();
     const onClick = (event: MouseEvent) => {
       const link = (event.target as Element | null)?.closest?.("a[href]");
-      if (link && isGooglePlayLink(link.getAttribute("href") ?? "")) {
+      const href = link?.getAttribute("href") ?? "";
+      if (link && isGooglePlayLink(href)) {
+        const tagged = retagPlayLink(href);
+        if (tagged && tagged !== href) link.setAttribute("href", tagged);
         window.goatcounter?.count({ event: true, path: "click-google-play" });
       }
     };

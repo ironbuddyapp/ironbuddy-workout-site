@@ -626,8 +626,8 @@ export const pages = {
     published: LAUNCH,
     // The app policy text matches the policy repo (last updated 11 October 2026). This page is a day newer because
     // it adds the website-only GoatCounter note, which is not part of the app policy. Moved to workout.ironbuddy.fit
-    // on 18 October 2026.
-    modified: "2026-11-09",
+    // on 18 October 2026. 15 November 2026: the website note on campaign tags in Google Play links (HQ job J-20261115-10).
+    modified: "2026-11-15",
   },
 } as const satisfies Record<string, PageDef>;
 

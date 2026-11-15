@@ -28,6 +28,8 @@ export const smartLinks = {
   get: { utm: "utm_source=instagram&utm_medium=bio&utm_campaign=bio", event: "bio-play", title: "Instagram bio to Google Play" },
   "get-fb": { utm: "utm_source=facebook&utm_medium=bio&utm_campaign=bio", event: "bio-play-fb", title: "Facebook bio to Google Play" },
   "get-ig": { utm: "utm_source=instagram&utm_medium=personal&utm_campaign=bio", event: "bio-play-personal", title: "Instagram personal to Google Play" },
+  /** For the TikTok bio once TikTok allows a link there (Marketing's table, D-6318 and D-9184, 2026-11-15). */
+  "get-tt": { utm: "utm_source=tiktok&utm_medium=bio&utm_campaign=tt_bio", event: "bio-play-tt", title: "TikTok bio to Google Play" },
 } satisfies Record<string, SmartLink>;
 
 export type SmartLinkName = keyof typeof smartLinks;
@@ -80,7 +82,7 @@ export function html(markup: string) {
   return new Response(markup, { headers: { "content-type": "text/html; charset=utf-8" } });
 }
 
-/** /get, /get-fb, /get-ig. */
+/** /get, /get-fb, /get-ig, /get-tt. */
 export function smartLinkPage(name: SmartLinkName) {
   const link = smartLinks[name];
   const target = playUrl(link.utm);
