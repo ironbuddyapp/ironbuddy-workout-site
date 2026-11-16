@@ -28,7 +28,7 @@ const faqs: Faq[] = [
   },
   {
     id: "past",
-    question: "Can I open the summary of an old workout?",
+    question: "Can I see my workout history and open an old workout?",
     answer:
       "Yes. Every workout you have ever logged is in History, newest first, with its exercises, volume and records. Open any of them for the full summary, or delete it there if you mis-logged.",
   },
@@ -96,12 +96,16 @@ export default function WorkoutSummaryPage() {
           </BulletList>
         </ContentSection>
 
-        <ContentSection id="history" title="History: every workout you've logged">
+        <ContentSection id="history" title="Your workout history: every session you've logged">
           <p>
             The History tab lists every session newest first, with its name, date, number of
-            exercises, volume and records. Logging a past date puts the workout where it belongs,
-            and the comparison uses the session before it. Nothing is ever sent anywhere: your
-            history is stored on your phone and works{" "}
+            exercises, volume and records. Open one and you get its full workout summary. Logging a past date puts the workout where it belongs,
+            and the comparison uses the session before it.
+          </p>
+          <p>
+            That makes IronBuddy a workout history app as much as a logger: months of training stay
+            one tap away, and every exercise page keeps its own records with their dates. Nothing is
+            ever sent anywhere: your workout history is stored on your phone and works{" "}
             <TextLink href={pages.offline.path}>offline</TextLink>.
           </p>
         </ContentSection>

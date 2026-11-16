@@ -91,7 +91,8 @@ export default function PhulVsPhatPage() {
           <BulletList>
             <li>Same idea: two power days early in the week, hypertrophy days after. PHUL takes four sessions, PHAT five.</li>
             <li>PHAT&apos;s extra day splits upper-body hypertrophy in two, so the back, shoulders, chest and arms each get more sets.</li>
-            <li>PHUL is the easier week to recover from; IronBuddy lists PHUL as Intermediate and PHAT as Advanced.</li>
+            <li>PHUL is the easier week to recover from; IronBuddy lists PHUL as Intermediate and PHAT as Advanced. For beginners, neither yet: PHUL comes first.</li>
+            <li>In IronBuddy&apos;s presets, PHAT adds 14 sets a week (82 against 68), almost all of it for the upper body.</li>
             <li>Track both the same way: power days by weight and estimated 1RM, hypertrophy days by reps and volume.</li>
           </BulletList>
         </Callout>
@@ -116,6 +117,37 @@ export default function PhulVsPhatPage() {
               <Strong>Level in IronBuddy:</Strong> PHUL Intermediate, PHAT Advanced.
             </li>
           </BulletList>
+        </ContentSection>
+
+        <ContentSection id="volume-and-time" title="Weekly volume and time: PHUL vs PHAT in sets">
+          <p>
+            Counted from IronBuddy&apos;s two presets, which share the same Upper Power and Lower
+            Power days (18 and 14 sets):
+          </p>
+          <BulletList>
+            <li>
+              <Strong>Sets per week:</Strong> PHUL 68 over four sessions, PHAT 82 over five. That is
+              14 more sets, about a fifth more work.
+            </li>
+            <li>
+              <Strong>Upper-body hypertrophy sets:</Strong> PHUL 18 in one session; PHAT 34 across
+              Back &amp; Shoulders (16) and Chest &amp; Arms (18). Nearly double, and this is where
+              the extra volume goes.
+            </li>
+            <li>
+              <Strong>Lower-body hypertrophy sets:</Strong> PHUL 18, PHAT 16. The legs get about the
+              same in both.
+            </li>
+            <li>
+              <Strong>Time in the gym:</Strong> every session in both presets has 14 to 18 sets, so a
+              PHAT day is not longer than a PHUL day. The extra time is the fifth session. Power days
+              rest 2 minutes between sets on the main lifts, hypertrophy days 60 to 90 seconds.
+            </li>
+          </BulletList>
+          <p>
+            The originals are heavier and, in PHAT&apos;s case, add speed work, so their numbers
+            differ. The shape is the same: PHAT buys more upper-body work with one more day.
+          </p>
         </ContentSection>
 
         <ContentSection id="shared-idea" title="What the two programs share">
@@ -151,9 +183,9 @@ export default function PhulVsPhatPage() {
               to keep up for months.
             </li>
             <li>
-              <Strong>Session length.</Strong> PHUL&apos;s Upper Hypertrophy day is long because it
-              carries the whole upper body. PHAT&apos;s hypertrophy days are shorter each, with more of
-              them.
+              <Strong>Session length.</Strong> PHUL&apos;s Upper Hypertrophy day fits the whole upper
+              body into 18 sets, so each muscle gets a few. PHAT gives the upper body two sessions of
+              16 and 18 sets: each session is about as long, and each muscle gets more.
             </li>
             <li>
               <Strong>Who they are for.</Strong> PHUL suits intermediates with four days who want both

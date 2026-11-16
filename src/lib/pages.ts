@@ -84,6 +84,8 @@ const MONTHLY_2026_11 = "2026-11-01";
 const COMPARISON_FACTS_RECHECK = "2026-11-06";
 /** Pages close to Google's first page strengthened, with comparison sections and links (HQ job J-20261111-9). */
 const NEAR_PAGE_ONE = "2026-11-11";
+/** Four-week keyword review: PHAT split, workout history, no-account page, PHUL vs PHAT volume (D-5942, D-4073, D-8361, D-1594). */
+const KEYWORD_REVIEW = "2026-11-16";
 
 export const pages = {
   home: {
@@ -145,9 +147,9 @@ export const pages = {
     description:
       "IronBuddy's workout summary shows each exercise against your last session (+2.5 kg, +2 reps), marks new personal records and sums the sets per muscle.",
     summary: "Every exercise against your last session, new records marked, the muscles worked and volume per muscle.",
-    keywords: { main: "workout summary", supporting: ["compare with last time", "volume"] },
+    keywords: { main: "workout summary", supporting: ["workout history", "workout history app", "compare with last time", "volume"] },
     published: RELEASE_203,
-    modified: KEYWORD_MAP,
+    modified: KEYWORD_REVIEW,
     images: ["/screenshots/ironbuddy-workout-summary.webp"],
   },
   progressCharts: {
@@ -254,14 +256,14 @@ export const pages = {
   privacyFocused: {
     path: "/privacy-focused-fitness-app/",
     kind: "product",
-    label: "Privacy-focused fitness app",
-    title: "Privacy-Focused Fitness App With Local Data",
+    label: "Workout app, no account",
+    title: "Workout App, No Account: Your Data Stays Local",
     description:
-      "IronBuddy is a privacy-focused fitness app: no account, no ads, no third-party analytics SDKs and no cloud sync. Your workout data is stored on your device.",
+      "IronBuddy is a workout app, no account needed: no sign-up, no ads, no third-party analytics SDKs and no cloud sync. Your workout data is stored on your device.",
     summary: "What IronBuddy stores, where copies can exist, which permissions it uses, and how to delete your data.",
-    keywords: { main: "privacy-focused fitness app", supporting: ["no account", "local data"] },
+    keywords: { main: "workout app no account", supporting: ["fitness app no account", "privacy-focused fitness app", "local data"] },
     published: UPDATED,
-    modified: IPHONE_PRIVACY,
+    modified: KEYWORD_REVIEW,
   },
   alternatives: {
     path: "/alternatives/",
@@ -502,9 +504,9 @@ export const pages = {
     description:
       "The PHAT workout explained: Layne Norton's five-day Power Hypertrophy Adaptive Training split, what each day trains, who it suits, and how to log it.",
     summary: "The five-day Power Hypertrophy Adaptive Training split: what each day trains, who it suits, and how to track it.",
-    keywords: { main: "PHAT workout", supporting: ["Layne Norton", "PHAT routine"] },
+    keywords: { main: "PHAT workout", supporting: ["PHAT split", "Layne Norton", "PHAT routine"] },
     published: SPLIT_GUIDES,
-    modified: KEYWORD_MAP,
+    modified: KEYWORD_REVIEW,
   },
   phulVsPhat: {
     path: "/guides/phul-vs-phat/",
@@ -516,7 +518,7 @@ export const pages = {
     summary: "PHUL and PHAT side by side: the shared power days, the extra hypertrophy day, who each suits, and how to track them.",
     keywords: { main: "PHUL vs PHAT", supporting: ["PHUL or PHAT", "PHUL vs PHAT vs PPL"] },
     published: MONTHLY_2026_11,
-    modified: NEAR_PAGE_ONE,
+    modified: KEYWORD_REVIEW,
   },
   broSplit: {
     path: "/guides/bro-split/",

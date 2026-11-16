@@ -36,15 +36,36 @@ export default function PrivacyFocusedPage() {
       <JsonLd data={pageGraph(pages.privacyFocused, { trail: crumbs, about: "app", faqs })} />
       <PageHero
         trail={crumbs}
-        eyebrow="Privacy-focused fitness app"
-        title="A privacy-focused fitness app that stores your data on your phone"
+        eyebrow="Workout app, no account"
+        title="A workout app, no account needed: your data stays on your phone"
         updated={pages.privacyFocused.modified}
-        lead="IronBuddy is a privacy-focused fitness app, built so your training log belongs to you. There is no account, no IronBuddy server holding your workouts, no ads, and no third-party analytics SDKs. Your sets, body metrics, and notes are stored on your device."
+        lead="IronBuddy is a workout app, no account required: you install it and start logging, with no sign-up, email or password. It is also a privacy-focused fitness app, built so your training log belongs to you. There is no IronBuddy server holding your workouts, no ads, and no third-party analytics SDKs. Your sets, body metrics, and notes are stored on your device."
       >
         <HeroCta />
       </PageHero>
 
       <PageBody>
+        <ContentSection id="no-account" title="What a fitness app with no account means day to day">
+          <BulletList>
+            <li>
+              <Strong>Nothing to sign in to.</Strong> No email to confirm and no password to reset.
+              The trial and the one-time purchase are tied to your Google Play or App Store account,
+              not to an IronBuddy one.
+            </li>
+            <li>
+              <Strong>No server between you and your log.</Strong> The app reads and writes your
+              workouts on the phone, so logging works{" "}
+              <TextLink href={pages.offline.path}>offline</TextLink>, in a basement gym as well as at
+              home.
+            </li>
+            <li>
+              <Strong>Moving to a new phone is up to you.</Strong> Without an account there is no
+              cloud copy to sign back into. Keep the automatic backup file on (full version), or
+              export a JSON copy, and import it on the new phone.
+            </li>
+          </BulletList>
+        </ContentSection>
+
         <ContentSection id="what-it-stores" title="What IronBuddy stores, and where">
           <p>
             According to the IronBuddy privacy policy, the app keeps the following in on-device

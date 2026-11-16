@@ -142,9 +142,11 @@ export default function PhatGuidePage() {
           </BulletList>
         </Callout>
 
-        <ContentSection id="what-it-is" title="What PHAT is">
+        <ContentSection id="what-it-is" title="What is the PHAT split?">
           <p>
-            PHAT is the five-day cousin of <TextLink href={pages.phul.path}>PHUL</TextLink>. The two
+            The PHAT split is a five-day week of two power days and three hypertrophy days, with
+            every muscle trained twice. It is the five-day cousin of{" "}
+            <TextLink href={pages.phul.path}>PHUL</TextLink>. The two
             power days are the same idea: the big compound lifts, heavier, with long rests. The
             difference is in the hypertrophy half of the week. Instead of one upper and one lower
             volume day, PHAT has three, split by body part: back and shoulders, legs, then chest and
